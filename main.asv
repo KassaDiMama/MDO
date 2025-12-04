@@ -14,7 +14,7 @@ AU = [0.4 0.5 0.5 0.5 0.5 0.1];
 % AL = [-1 -1.5 -0.9 -0.5 -0.5 -1];
 AL=-AU;
 
-[t_upper,y_upper,t_lower, y_lower,] = createAirfoilDat(N1,N2,AU,AL,"test");
+[t_upper,y_upper] = createAirfoilDat(N1,N2,AL,AU);
 
 % Build one continuous contour (upper forward, lower reversed)
 t = [t_upper(:); flipud(t_lower(:))];
