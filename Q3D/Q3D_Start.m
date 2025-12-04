@@ -1,14 +1,7 @@
-% designVector = DesignVector();
-% const = Const();
-% wingDesign = WingDesign(designVector);
-% 
-
+%% Aerodynamic solver setting
 clear all
 close all
 clc
-
-
-%% Aerodynamic solver setting
 
 % Wing planform geometry 
 %                x    y     z   chord(m)    twist angle (deg) 
@@ -28,7 +21,10 @@ AC.Wing.eta = [0;1];  % Spanwise location of the airfoil sections
 
 % Viscous vs inviscid
 AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
-
+AC.Aero.MaxIterIndex = 150;    %Maximum number of Iteration for the
+                                %convergence of viscous calculation
+                                
+                                
 % Flight Condition
 AC.Aero.V     = 68;            % flight speed (m/s)
 AC.Aero.rho   = 1.225;         % air density  (kg/m3)
@@ -42,45 +38,23 @@ AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the
 %% 
 tic
 
-% try 
 Res = Q3D_solver(AC);
-% catch error
-%     CD = inf;
-% end
 
-%Change in line 12 the x value for exercise 3
-t=toc;
-% 0.2252    0.0904    0.2445    0.1314    0.4253   -0.2413   -0.0557   -0.3071  -0.2166    0.4077;
+plot(Res.Wing.Yst, Res.Wing.cl)
+hold on
+plot(Res.Section.Y,Res.Section.Cl)
+xlabel('X-axis')
+ylabel('Y-axis')
+title('Lift Plot')
 
-%% loading file
-createLoadingFile(Res,"test")
+toc
+%% 
+
+plot(Res.Wing.Yst, Res.Wing.cdi)
+hold on
+plot(Res.Section.Y,Res.Section.Cd)
+xlabel('X-axis')
+ylabel('Y-axis')
+title('Drag Plot')
 
 
-
-% 
-% W_to = 52390;
-% W_zf = 46720;
-% 
-% % emwet_wrapper(wingDesign,const, "test",W_to,W_zf)
-% 
-% 
-% N1 = 0.5;
-% N2 = 1;
-% AU = [0.4 0.5 0.5 0.5 0.5 0.1];
-% % AL = [-1 -1.5 -0.9 -0.5 -0.5 -1];
-% AL=-AU;
-% 
-% [t_upper,y_upper,t_lower, y_lower,] = createAirfoilDat(N1,N2,AU,AL,"test");
-% 
-% % Build one continuous contour (upper forward, lower reversed)
-% t = [t_upper(:); flipud(t_lower(:))];
-% y = [y_upper(:); flipud(y_lower(:))];
-% 
-% % Optional: close the loop by repeating the first point
-% t(end+1) = t(1);
-% y(end+1) = y(1);
-% 
-% plot(t, y, '-k');
-% axis equal;
-% xlabel('t'); ylabel('y');
-% grid on;
