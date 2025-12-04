@@ -1,0 +1,31 @@
+function [t_lower, y_lower, t_upper,t_lower] = createAirfoilDat(N1, N2, AL,AU)
+    function result = CST(t,A)
+        cn = t^N1 * (1-t)^N2;
+        s = 0;
+        for i = 0:5
+            si = nchoosek(5,0)*t^i*(1-t)^(5-i)*A(i);
+            s=s+si;
+        end
+        result = cn*s;
+    end
+    points_per_side = 23;
+    t_lower = [];
+    y_lower = [];
+    for index = 0:points_per_side-1
+        t = index/points_per_side;
+        y = CST(t,AL);
+
+        t_lower = [t_lower, t];
+        y_lower = [y_lower, y];
+    end
+    % Calculate upper surface points using a similar approach
+    for index = 1:points_per_side-2
+        t = index/points_per_side;
+        y = CST(t, AU);
+
+        t_upper = [t_upper, t];
+        y_upper = [y_upper, y];
+    end
+end
+
+
