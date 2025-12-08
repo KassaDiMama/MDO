@@ -6,9 +6,9 @@ classdef DesignVector
         c_kink     = 6;
         c_tip      = 1.73;      % tip chord [m]
 
-        % Airfoil coefficients (default 5)
-        AL = ones(1,5) * 0.1;  % lower airfoil shape coefficients
-        AU = ones(1,5) * 0.1;  % upper airfoil shape coefficients
+        % Airfoil coefficients Correct whithcomb
+        AL = [0.136384890434649	-0.148646719150629	0.056443816239522	-0.365167603195488	-0.120664629058709	-0.613945571520703];  % lower airfoil shape coefficients
+        AU = [0.233655457906921	0.079939069830773	0.267462399980753	0.089798155400594	0.277959146200174	0.381599875859377];  % upper airfoil shape coefficients
 
         % Mach and altitude
         Mcr     = 0.8;         % initial guess
@@ -21,24 +21,24 @@ classdef DesignVector
     methods
         function x = toVector(obj)
             x = [];
-            x(0) = obj.b_outboard;
-            x(1) = obj.c_root;
-            x(2) = obj.c_kink;
-            x(3) = obj.c_tip;
-            x(4) = obj.AU(1);
-            x(5) = obj.AU(2);
-            x(6) = obj.AU(3);
-            x(7) = obj.AU(4);
-            x(8) = obj.AU(5);
-            x(9) = obj.AU(6);
-            x(10) = obj.AL(1);
-            x(11) = obj.AL(2);
-            x(12) = obj.AL(3);
-            x(13) = obj.AL(4);
-            x(14) = obj.AL(5);
-            x(15) = obj.AL(6);
-            x(16) = obj.Mcr;
-            x(17) = obj.hcr;
+            x(1) = obj.b_outboard;
+            x(2) = obj.c_root;
+            x(3) = obj.c_kink;
+            x(4) = obj.c_tip;
+            x(5) = obj.AU(1);
+            x(6) = obj.AU(2);
+            x(7) = obj.AU(3);
+            x(8) = obj.AU(4);
+            x(9) = obj.AU(5);
+            x(10) = obj.AU(6);
+            x(11) = obj.AL(1);
+            x(12) = obj.AL(2);
+            x(13) = obj.AL(3);
+            x(14) = obj.AL(4);
+            x(15) = obj.AL(5);
+            x(16) = obj.AL(6);
+            x(17) = obj.Mcr;
+            x(18) = obj.hcr;
         end
         function obj = fromVector(obj, x)
             obj.b_outboard = x(1);
