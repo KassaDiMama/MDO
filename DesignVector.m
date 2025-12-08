@@ -3,7 +3,7 @@ classdef DesignVector
         % Geometric parameters
         b_outboard = 12.51;     % outboard wing span [m]
         c_root     = 8.2;       % root chord [m]
-        LE_sweep  = 28.55;     % leading-edge sweep [deg]
+        c_kink     = 6;
         c_tip      = 1.73;      % tip chord [m]
 
         % Airfoil coefficients (default 5)
@@ -11,17 +11,45 @@ classdef DesignVector
         AU = ones(1,5) * 0.1;  % upper airfoil shape coefficients
 
         % Mach and altitude
-        Mcr_ref = 0.8; 
-        hcr_ref = 11673.84;    % meters
         Mcr     = 0.8;         % initial guess
         hcr     = 11673.84;    % initial guess
+
+        % To add
+        tank_end
+
     end
     methods
-        function CalculateDesign(obj)
-            
+        function x = toVector(obj)
+            x = [];
+            x(0) = obj.b_outboard;
+            x(1) = obj.c_root;
+            x(2) = obj.c_kink;
+            x(3) = obj.c_tip;
+            x(4) = obj.AU(1);
+            x(5) = obj.AU(2);
+            x(6) = obj.AU(3);
+            x(7) = obj.AU(4);
+            x(8) = obj.AU(5);
+            x(9) = obj.AU(6);
+            x(10) = obj.AL(1);
+            x(11) = obj.AL(2);
+            x(12) = obj.AL(3);
+            x(13) = obj.AL(4);
+            x(14) = obj.AL(5);
+            x(15) = obj.AL(6);
+            x(16) = obj.Mcr;
+            x(17) = obj.hcr;
         end
-        function calculateSurfaceArea(obj)
-
+        function obj = fromVector(obj, x)
+            obj.b_outboard = x(1);
+            obj.c_root = x(2);
+            obj.c_kink = x(3);
+            obj.c_tip = x(4);
+            obj.AU = x(5:9);
+            obj.AL = x(10:14);
+            obj.Mcr = x(15);
+            obj.hcr = x(16);
+            
         end
     end
 end

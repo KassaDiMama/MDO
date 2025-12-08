@@ -8,7 +8,7 @@ close all
 clc
 
 
-%% Aerodynamic solver setting
+%% Test create loading
 
 % Wing planform geometry 
 %                x    y     z   chord(m)    twist angle (deg) 
@@ -37,9 +37,8 @@ AC.Aero.Re    = 1.14e7;        % reynolds number (bqased on mean aerodynamic cho
 AC.Aero.M     = 0.2;           % flight Mach number 
 % AC.Aero.CL    = 0.4;          % lift coefficient - comment this line to run the code for given alpha%
 AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
+AC.Aero.MaxIterIndex = 150;
 
-
-%% 
 tic
 
 % try 
@@ -51,12 +50,10 @@ Res = Q3D_solver(AC);
 %Change in line 12 the x value for exercise 3
 t=toc;
 % 0.2252    0.0904    0.2445    0.1314    0.4253   -0.2413   -0.0557   -0.3071  -0.2166    0.4077;
-
-%% loading file
-createLoadingFile(Res,"test")
+createLoadingFile(Res,"test",AC.Aero.rho,AC.Aero.V)
 
 
-
+%% test emwet_wrapper
 % 
 % W_to = 52390;
 % W_zf = 46720;
@@ -64,23 +61,25 @@ createLoadingFile(Res,"test")
 % % emwet_wrapper(wingDesign,const, "test",W_to,W_zf)
 % 
 % 
-% N1 = 0.5;
-% N2 = 1;
-% AU = [0.4 0.5 0.5 0.5 0.5 0.1];
-% % AL = [-1 -1.5 -0.9 -0.5 -0.5 -1];
-% AL=-AU;
-% 
-% [t_upper,y_upper,t_lower, y_lower,] = createAirfoilDat(N1,N2,AU,AL,"test");
-% 
-% % Build one continuous contour (upper forward, lower reversed)
-% t = [t_upper(:); flipud(t_lower(:))];
-% y = [y_upper(:); flipud(y_lower(:))];
-% 
-% % Optional: close the loop by repeating the first point
-% t(end+1) = t(1);
-% y(end+1) = y(1);
-% 
-% plot(t, y, '-k');
-% axis equal;
-% xlabel('t'); ylabel('y');
-% grid on;
+
+%% test create airfoil
+N1 = 0.5;
+N2 = 1;
+AU = [0.4 0.5 0.5 0.5 0.5 0.1];
+% AL = [-1 -1.5 -0.9 -0.5 -0.5 -1];
+AL=-AU;
+
+[t_upper,y_upper,t_lower, y_lower,] = createAirfoilDat(N1,N2,AU,AL,"test");
+
+% Build one continuous contour (upper forward, lower reversed)
+t = [t_upper(:); flipud(t_lower(:))];
+y = [y_upper(:); flipud(y_lower(:))];
+
+% Optional: close the loop by repeating the first point
+t(end+1) = t(1);
+y(end+1) = y(1);
+
+plot(t, y, '-k');
+axis equal;
+xlabel('t'); ylabel('y');
+grid on;

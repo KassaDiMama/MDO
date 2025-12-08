@@ -14,9 +14,6 @@ classdef WingDesign
         y_root = 0 % Correct
         z_root = 0 % Correct
 
-        twist = 0; %TBD
-        incidence = 0; %TBD
-
         E_mod = 70e3 % in N/mm2 which probably needs to be converted, same for values below
         density = 2800 % Correct
         tensile_yield = 295 % Correct but check units
@@ -47,9 +44,7 @@ classdef WingDesign
         
         % Calculated
         LE_sweep
-        b_total
-        S
-
+        
         x_kink
         x_tip
 
@@ -58,7 +53,9 @@ classdef WingDesign
 
         z_kink
         z_tip
-        
+        S
+
+        b_total
     end
 
     methods
@@ -90,19 +87,44 @@ classdef WingDesign
                 obj
             end
 
+            
+
             % Calculate values from current WingDesign
-            obj.LE_sweep = obj.calculateLESweep();
-            obj.b_total = obj.b_inboard + obj.b_outboard;
-            obj.S = obj.calculateSurfaceArea();
+            obj.b_total    = obj.b_inboard + obj.b_outboard;
+            obj.y_tip      = obj.b_total;
+            obj.y_kink     = obj.b_inboard; % todo
+            obj.LE_sweep   = obj.calculateLESweep();
+            obj.x_kink     = obj.c_root - obj.c_kink;
+            obj.x_tip      = obj.b_total * tan(obj.LE_sweep);
+            obj.z_kink     = obj.calculateSectionZ(obj.y_kink);
+            obj.z_tip      = obj.calculateSectionZ(obj.b_total);
+            obj.S          = obj.calculateSurfaceArea();
 
-            obj.x_kink = obj.c_root - obj.c_kink;
-            obj.x_tip = obj.b_total * tan(obj.LE_sweep);
 
-            obj.y_tip = obj.b_total;
-            obj.y_kink = obj.b_inboard;
 
-            obj.z_kink = obj.calculateSectionZ(obj.y_kink);
-            obj.z_tip = obj.calculateSectionZ(obj.b_total);
+
+            % Assign values from DesignVector to WingDesign
+            % obj.b_outboard = dvec.b_outboard;
+            % obj.c_root     = dvec.c_root;
+            % obj.LE_sweep  = dvec.LE_sweep;
+            % obj.c_tip      = dvec.c_tip;
+            % 
+            % obj.AL = dvec.AL;
+            % obj.AU = dvec.AU;
+            % 
+            % obj.Mcr = dvec.Mcr;
+            % obj.hcr = dvec.hcr;
+            % obj.b_total = obj.b_inboard+obj.b_outboard;
+            % obj.y_tip = obj.b_total;
+            % obj.y_kink = obj.b_inboard; % todo
+            % 
+            % obj.LE_sweep = obj.calculateLESweep();
+            % obj.x_kink = obj.c_root-obj.c_kink;
+            % obj.x_tip = obj.b_total * tan(obj.LE_sweep);
+            % obj.z_kink = obj.calculateSectionZ(obj.y_kink);
+            % obj.z_tip = obj.calculateSectionZ(obj.b_total);
+            % obj.S = obj.calculateSurfaceArea();
+
         end
         
         function LE_sweep = calculateLESweep(obj)
@@ -130,6 +152,7 @@ classdef WingDesign
             dvec.c_root = obj.c_root;
             dvec.c_kink = obj.c_kink;
             dvec.c_tip = obj.c_tip;
+            dvec.LE_sweep = obj.LE_sweep;
             dvec.AL = obj.AL;
             dvec.AU = obj.AU;
             dvec.Mcr = obj.Mcr;

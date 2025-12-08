@@ -1,7 +1,0 @@
-function CST(N1, N2, AL1,AL2,AL3,AL4,AL5,AU1,AU2,AU3,AU4,AU5)
-    function upper(t)
-        c = t^N1 * (1-t)^N2;
-        s05 = nchoosek(5,0)*(1-t)^5
-        s15 = nchoosek(5,0)*(1-t)^4
-    end
-end

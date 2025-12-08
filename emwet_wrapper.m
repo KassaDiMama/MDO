@@ -15,14 +15,16 @@ function emwet_wrapper(wingDesign,const,fileName, W_to, W_zf)
     fprintf(fid, string(round(W_to))+" "+string(round(W_zf))+"\n");
     fprintf(fid, string(const.n_max)+"\n");
     fprintf(fid, "%.2f %.2f %d %d\n", wingDesign.S, wingDesign.b_total, wingDesign.number_of_platforms, wingDesign.number_of_airfoils);
-    fprintf(fid, "%.2f %s\n", wingDesign.location_of_airfoil_1, "b737a");
+    fprintf(fid, "%.2f %s\n", wingDesign.y_root, "b737a");
+    fprintf(fid, "%.2f %s\n", wingDesign.y_kink, "b737a");
+    fprintf(fid, "%.2f %s\n", wingDesign.y_tip, "b737a");
     
     fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f\n", ...
-    wingDesign.c_root, wingDesign.x_root, 0, 0, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
+    wingDesign.c_root, wingDesign.x_root, wingDesign.y_root, wingDesign.z_root, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
     fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f | chord, x, y, z, front spar and rear spar position\n", ...
-    wingDesign.c_kink, wingDesign.x_kink, wingDesign.y_kink, 0, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
+    wingDesign.c_kink, wingDesign.x_kink, wingDesign.y_kink, wingDesign.z_kink, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
     fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f\n", ...
-    wingDesign.c_tip, wingDesign.x_tip, wingDesign.y_tip, 0, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
+    wingDesign.c_tip, wingDesign.x_tip, wingDesign.y_tip, wingDesign.z_tip, wingDesign.front_spar_pos,wingDesign.rear_spar_pos);
 
     fprintf(fid, "%.2f %.2f\n", wingDesign.start_tank, wingDesign.end_tank);
     fprintf(fid, "%d\n", wingDesign.engine_each_wing);
