@@ -1,4 +1,4 @@
-classdef WingDesign
+classdef WingDesign < handle
     properties
         % Constant Parameters
         b_inboard = 6.5 % Correct
@@ -74,7 +74,14 @@ classdef WingDesign
 
         z_kink
         z_tip
-        
+
+        rho
+        V
+        Re
+
+        tank_volume 
+        W_fuel
+        W_TO_max
     end
 
     methods
@@ -90,14 +97,13 @@ classdef WingDesign
             obj.c_root     = dvec.c_root;
             obj.c_kink     = dvec.c_kink;
             obj.c_tip      = dvec.c_tip;
-            obj.LE_sweep   = dvec.LE_sweep;
             obj.AL         = dvec.AL;
             obj.AU         = dvec.AU;
             obj.Mcr        = dvec.Mcr;
             obj.hcr        = dvec.hcr;
 
 
-            obj.calculateDesign(dvec);
+            obj.calculateDesign();
         end
 
         %==============================================================
@@ -127,10 +133,25 @@ classdef WingDesign
 
             obj.z_kink = obj.calculateSectionZ(obj.y_kink);
             obj.z_tip = obj.calculateSectionZ(obj.b_total);
+
+            obj.tank_volume = obj.calculateTankVolume();
         end
         
         function LE_sweep = calculateLESweep(obj)
-            LE_sweep = arctan((obj.c_root-obj.c_kink)/obj.b_inboard);
+            LE_sweep = atan((obj.c_root-obj.c_kink)/obj.b_inboard);
+        end
+
+        function MAC = mac_func(obj)
+            % Calculate the MAC of the tapered and kinked wing
+            tap1 = obj.c_kink/obj.c_root; % taper ratio before kink
+            tap2 = obj.c_tip/obj.c_kink; %taper ratio after kink
+
+            mac1 = 2/3 *obj.c_root*(1+tap1+tap1^2)/(1+tap1);
+            mac2 = 2/3* obj.c_kink*(1+tap2+tap2^2)/(1+tap2);   
+            S1 = 6.5/2*(obj.c_root+obj.c_kink);
+            S2 = obj.b_outboard/2*(obj.c_kink+obj.c_tip);
+
+            MAC = (S1*mac1+S2*mac2)/(S1+S2);
         end
 
         function MAC = mac_func(obj)
@@ -158,6 +179,54 @@ classdef WingDesign
             S2 = obj.b_outboard/2*(obj.c_kink+obj.c_tip);
         
             S = S1+S2;
+        end
+        function tank_volume = calculateTankVolume(obj)
+            N1 = 0.5;
+            N2 = 1;
+            function result = CST(t,A)
+                cn = t.^N1 .* (1-t).^N2;
+                s = 0;
+                for i = 0:5
+                    s = s + nchoosek(5,i) * t.^i .* (1-t).^(5-i) .* A(i+1);
+                end
+                result = cn .* s;
+            end
+            points_per_side = 46;
+            ts = linspace(0,1,points_per_side+1);
+            
+            
+            
+            t_upper = ts;     
+            y_upper = CST(t_upper, obj.AU);
+            
+            % Lower surface
+            t_lower = ts;
+            y_lower = -CST(t_lower, obj.AL);
+
+            A_norm = trapz(ts,y_upper) + trapz(ts,y_lower);
+
+            function c = calculateChord(b)
+                if b <= obj.b_inboard
+                    dc = obj.c_root-obj.c_kink;
+                    dc_db = dc/obj.b_inboard;
+                    c = obj.c_root - dc_db*b;
+                elseif b <= obj.b_total
+                    dc = obj.c_kink-obj.c_tip;
+                    dc_db = dc/obj.b_outboard;
+                    c = obj.c_kink - dc_db*(b-obj.b_inboard);
+                else
+                    disp("b is higher than b_total")
+                end
+            end
+
+            bs = linspace(0,obj.b_total,30);
+            cs = calculateChord(bs);
+            As = A_norm * cs;
+
+            tank_volume=trapz(bs, As);
+            disp("Tank Volume"+string(tank_volume));
+            % disp(y_lower)
+
         end
 
         function [rho,a, T] = isa_func(obj)

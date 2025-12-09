@@ -83,3 +83,10 @@ plot(t, y, '-k');
 axis equal;
 xlabel('t'); ylabel('y');
 grid on;
+
+%% Testing volume wing
+clear all
+
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+
