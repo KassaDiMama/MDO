@@ -227,54 +227,6 @@ classdef WingDesign < handle
             % disp(y_lower)
 
         end
-        function tank_volume = calculateTankVolume(obj)
-            N1 = 0.5;
-            N2 = 1;
-            function result = CST(t,A)
-                cn = t.^N1 .* (1-t).^N2;
-                s = 0;
-                for i = 0:5
-                    s = s + nchoosek(5,i) * t.^i .* (1-t).^(5-i) .* A(i+1);
-                end
-                result = cn .* s;
-            end
-            points_per_side = 46;
-            ts = linspace(0,1,points_per_side+1);
-            
-            
-            
-            t_upper = ts;     
-            y_upper = CST(t_upper, obj.AU);
-            
-            % Lower surface
-            t_lower = ts;
-            y_lower = -CST(t_lower, obj.AL);
-
-            A_norm = trapz(ts,y_upper) + trapz(ts,y_lower);
-
-            function c = calculateChord(b)
-                if b <= obj.b_inboard
-                    dc = obj.c_root-obj.c_kink;
-                    dc_db = dc/obj.b_inboard;
-                    c = obj.c_root - dc_db*b;
-                elseif b <= obj.b_total
-                    dc = obj.c_kink-obj.c_tip;
-                    dc_db = dc/obj.b_outboard;
-                    c = obj.c_kink - dc_db*(b-obj.b_inboard);
-                else
-                    disp("b is higher than b_total")
-                end
-            end
-
-            bs = linspace(0,obj.b_total,30);
-            cs = calculateChord(bs);
-            As = A_norm * cs;
-
-            tank_volume=trapz(bs, As);
-            disp("Tank Volume"+string(tank_volume));
-            % disp(y_lower)
-
-        end
 
         function [rho,a, T] = isa_func(obj)
             % ISA_DENSITY_SIMPLE - Calculate ISA air density using piecewise linear approximation
