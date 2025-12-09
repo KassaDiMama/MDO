@@ -3,7 +3,7 @@ classdef DesignVector
         % Geometric parameters
         b_outboard = 12.51;     % outboard wing span [m]
         c_root     = 8.2;       % root chord [m]
-        c_kink     = 6;
+        c_kink     = 4.66;      % kink chord [m]
         c_tip      = 1.73;      % tip chord [m]
 
         % Airfoil coefficients Correct whithcomb

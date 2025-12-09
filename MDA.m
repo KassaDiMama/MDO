@@ -2,8 +2,6 @@ classdef MDA
     properties
         wingDesign WingDesign
         const Const
-        W_TO_max double
-        W_ZF double
     end
     
     methods
@@ -19,9 +17,9 @@ classdef MDA
                         
             % Wing planform geometry 
             %                x    y     z   chord(m)    twist angle (deg) 
-            AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist;
-                            obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist;
-                            obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip         obj.wingDesign.twist];
+            AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1);
+                            obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist(2);
+                            obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip         obj.wingDesign.twist(3)];
             
             % Wing incidence angle (degree)
             AC.Wing.inc  = obj.wingDesign.incidence;   
@@ -39,13 +37,13 @@ classdef MDA
             AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
             
             % Flight Condition
-            AC.Aero.V     = 68;            % flight speed (m/s)
-            AC.Aero.rho   = 1.225;         % air density  (kg/m3)
-            AC.Aero.alt   = 0;             % flight altitude (m)
-            AC.Aero.Re    = 1.14e7;        % reynolds number (bqased on mean aerodynamic chord)
-            AC.Aero.M     = 0.2;           % flight Mach number 
-            % AC.Aero.CL    = 0.4;          % lift coefficient - comment this line to run the code for given alpha%
-            AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
+            AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
+            AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
+            AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
+            AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
+            AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
+            AC.Aero.CL    = obj.wingDesign.c_L;          % lift coefficient - comment this line to run the code for given alpha%
+            % AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
             AC.Aero.MaxIterIndex = 150;
             
             tic
@@ -57,8 +55,8 @@ classdef MDA
             cl = Res.Wing.cl;
             cm = Res.Wing.cm_c4;
             chord = Res.Wing.chord;
-            L = cl.*chord.*y*0.5*rho*V^2;
-            M = cm.*chord.*chord.*y*0.5*rho*V^2;
+            L = cl.*chord.*y*0.5*AC.Aero.rho*AC.Aero.V^2;
+            M = cm.*chord.*chord.*y*0.5*AC.Aero.rho*AC.Aero.V^2;
             lift_distribution.y = y;
             lift_distribution.L = L;
 

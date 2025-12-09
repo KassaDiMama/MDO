@@ -34,19 +34,17 @@ function [rho,a, T] = isa_func(h)
     
 end
 
-%[rho,a, T] = isa_func(11887.2)
+[rho,a, T] = isa_func(11887.2)
 
-function MAC = mac_func(c_r,c_t,LE_sweep,b_outboard)
+function MAC = mac_func(c_r,c_t,c_kink,b_outboard)
     % Calculate the MAC of the tapered and kinked wing
-    ckink = c_r - aifoil_X_coord_func(LE_sweep); % chord at kink
-    tap1 = ckink/c_r; % taper ratio before kink
-    tap2 = c_t/ckink; %taper ratio after kink
+    tap1 = c_kink/c_r; % taper ratio before kink
+    tap2 = c_t/c_kink; %taper ratio after kink
 
     mac1 = 2/3 *c_r*(1+tap1+tap1^2)/(1+tap1);
-    mac2 = 2/3* ckink*(1+tap2+tap2^2)/(1+tap2);
-
-    S1 = 6.5/2*(c_r+ckink);
-    S2 = b_outboard/2*(ckink+c_t);
+    mac2 = 2/3* c_kink*(1+tap2+tap2^2)/(1+tap2);   
+    S1 = 6.5/2*(c_r+c_kink);
+    S2 = b_outboard/2*(c_kink+c_t);
 
     MAC = (S1*mac1+S2*mac2)/(S1+S2);
 end
@@ -66,17 +64,26 @@ end
 
 %Re = re_func(11887.2, 237.159, 5.0417)
 
-function airfoil_x_coord = aifoil_X_coord_func(LE_sweep,b)
+function LE_sweep = le_sweep_func(c_root,c_kink)
+    % Calculate leading edge sweep angle in degrees
+    b = 6.5;  % Default kink location at 6.5m from root
+    
+    LE_sweep = atan((c_root - c_kink) / b); % Leading edge sweep angle in radians
+    LE_sweep = rad2deg(LE_sweep); % Convert to degrees
+end
+
+function airfoil_x_coord = aifoil_X_coord_func(c_root,c_kink,b)
     % Calculate x coordniate of the airfoil section
     if nargin < 2 || isempty(b)
         b = 6.5;  % Default kink location at 6.5m from root
     end
     
+    LE_sweep = le_sweep_func(c_root,c_kink); % Leading edge sweep angle in degrees
     % Calculate x-coordinate
     airfoil_x_coord = tan(deg2rad(LE_sweep)) * b;
 end
 
-airfoil_x_coord = aifoil_X_coord_func(28.55,19.025)
+airfoil_x_coord = aifoil_X_coord_func(8.2,4.66,19.025)
 
 function airfoil_z_coord = aifoil_Z_coord_func(b)
     % Calculate x coordniate of the airfoil section
@@ -87,20 +94,19 @@ end
 
 airfoil_z_coord = aifoil_Z_coord_func(19.025)
 
-function S = SA_Wing_func(c_r,c_t,LE_sweep, b_outboard)
+function S = SA_Wing_func(c_r,c_t,c_kink, b_outboard)
     % Calculate the surface area of the tapered and kinked wing
-    ckink = c_r - aifoil_X_coord_func(LE_sweep); % chord at kink
-    S1 = 6.5/2*(c_r+ckink);
-    S2 = b_outboard/2*(ckink+c_t);
+    S1 = 6.5/2*(c_r+c_kink);
+    S2 = b_outboard/2*(c_kink+c_t);
 
     S = S1+S2;
 end
 
 
 
-function Cl = liftcoef_func(WTo_max,Wfuel,h,V,c_r,c_t,LE_sweep, b_outboard)
+function Cl = liftcoef_func(WTo_max,Wfuel,h,V,c_r,c_t,c_kink, b_outboard)
 %Calculate the required lift coeficient of the aircraft at cruise
-S = SA_Wing_func(c_r,c_t,LE_sweep, b_outboard); %sing suraface area
+S = SA_Wing_func(c_r,c_t,c_kink, b_outboard); %sing suraface area
 [rho,~,~] = isa_func(h);
 
 
