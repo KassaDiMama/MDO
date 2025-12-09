@@ -8,7 +8,7 @@ classdef WingDesign < handle
         rear_spar_pos = 0.9 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
-        engine_location = 0.5 %TBD
+        engine_location = 0.34 %Correct
 
         x_root = 0 % Correct
         y_root = 0 % Correct
@@ -24,14 +24,14 @@ classdef WingDesign < handle
         tensile_yield = 295 % Correct but check units
         compressive_yield = 295 % Correct but check units
         
-        efficiency_factor = 0.96 %TBD
-        rib_pitch =0.5 % Correct
+        efficiency_factor = 0.96 % Zed section stiffners, Argued for in report
+        rib_pitch = 0.5 % Correct
 
 
-        Mcr_ref = 0.8; %TBD
-        hcr_ref = 11673.84; % meters TBD
+        Mcr_ref = 0.8; %Correct
+        hcr_ref = 11673.84; % meters Corect
 
-        engine_weight = 1900 %TBD
+        engine_weight = 3705; %kg correct Source: https://en.wikipedia.org/wiki/Rolls-Royce_RB211
 
         % From Design Vector
         b_outboard   % outboard wing span [m]
