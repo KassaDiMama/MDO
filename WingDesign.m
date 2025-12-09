@@ -29,7 +29,8 @@ classdef WingDesign
 
 
         Mcr_ref = 0.8; %Correct
-        hcr_ref = 11673.84; % meters Corect
+        hcr_ref = 11887.2; % meters Corect
+        
 
         engine_weight = 3705; %kg correct Source: https://en.wikipedia.org/wiki/Rolls-Royce_RB211
 
