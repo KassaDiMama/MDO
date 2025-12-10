@@ -100,3 +100,56 @@ mda = MDA(wingDesign);
 [lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
 
 mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
+%% MDA LOOP TEST
+clear all
+close all
+clc
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+mda = MDA(wingDesign);
+mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
+%% Plot wing
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+
+x_root = wingDesign.x_root;
+x_kink = wingDesign.x_kink;
+x_tip  = wingDesign.x_tip;
+
+y_root = wingDesign.y_root;
+y_kink = wingDesign.y_kink;
+y_tip  = wingDesign.y_tip;
+
+c_root = wingDesign.c_root;
+c_kink = wingDesign.c_kink;
+c_tip  = wingDesign.c_tip;
+
+% Calculate trailing edge coordinates (top view)
+x_te_root = x_root + c_root;
+x_te_kink = x_kink + c_kink;
+x_te_tip  = x_tip  + c_tip;
+
+% Leading edge coordinates (top view)
+LE_x = [x_root, x_kink, x_tip];
+LE_y = [y_root, y_kink, y_tip];
+
+% Trailing edge coordinates (top view)
+TE_x = [x_te_root, x_te_kink, x_te_tip];
+TE_y = [y_root, y_kink, y_tip];
+
+% Combine for plotting the wing outline
+wing_x = [LE_x, fliplr(TE_x)];
+wing_y = [LE_y, fliplr(TE_y)];
+
+% Plot
+figure;
+fill(wing_x, wing_y, [0.6 0.8 1]); % Wing shape filled with color
+hold on;
+plot(LE_x, LE_y, 'ko-', 'LineWidth', 1.5, 'MarkerFaceColor','k'); % Leading edge
+plot(TE_x, TE_y, 'ro-', 'LineWidth', 1.5, 'MarkerFaceColor','r'); % Trailing edge
+axis equal
+xlabel('x (m)');
+ylabel('y (m)');
+title('Top-down view of wing planform');
+grid on;
+legend('Wing','Leading Edge','Trailing Edge');

@@ -14,9 +14,12 @@ AC.Wing.inc  = 0;
             
 % Airfoil coefficients input matrix
 %                    | ->     upper curve coeff.                <-|   | ->       lower curve coeff.       <-| 
-AC.Wing.Airfoils   = [0.2171    0.3450    0.2975    0.2685    0.2893  -0.1299   -0.2388   -0.1635   -0.0476    0.0797;
-                      0.2171    0.3450    0.2975    0.2685    0.2893  -0.1299   -0.2388   -0.1635   -0.0476    0.0797];
-                  
+% AC.Wing.Airfoils   = [0.2171    0.3450    0.2975    0.2685    0.2893  -0.1299   -0.2388   -0.1635   -0.0476    0.0797;
+%                       0.2171    0.3450    0.2975    0.2685    0.2893  -0.1299   -0.2388   -0.1635   -0.0476    0.0797];
+AL = [0.136384890434649	-0.148646719150629	0.056443816239522	-0.365167603195488	-0.120664629058709	-0.613945571520703];  % lower airfoil shape coefficients
+AU = [0.233655457906921	0.079939069830773	0.267462399980753	0.089798155400594	0.277959146200174	0.381599875859377];  % upper airfoil shape coefficients
+AC.Wing.Airfoils = [AU AL;
+                    AU AL]   ;               
 AC.Wing.eta = [0;1];  % Spanwise location of the airfoil sections
 
 % Viscous vs inviscid
@@ -31,8 +34,8 @@ AC.Aero.rho   = 1.225;         % air density  (kg/m3)
 AC.Aero.alt   = 0;             % flight altitude (m)
 AC.Aero.Re    = 1.14e7;        % reynolds number (bqased on mean aerodynamic chord)
 AC.Aero.M     = 0.2;           % flight Mach number 
-% AC.Aero.CL    = 0.4;          % lift coefficient - comment this line to run the code for given alpha%
-AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
+AC.Aero.CL    = 0.4;          % lift coefficient - comment this line to run the code for given alpha%
+% AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
 
 
 %% 

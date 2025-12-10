@@ -10,7 +10,7 @@ classdef WingDesign < handle
         engine_each_wing = 1 % Correct
         engine_location = 0.34*(6.5+12.51) %Correct
 
-        x_root = 20.5 % Correct
+        x_root = 0%20.5 % Correct
         y_root = 0 % Correct
         z_root = 4.1/2 % Correct
         
@@ -260,7 +260,7 @@ classdef WingDesign < handle
                 mu = mu0*((obj.T/ Tref)^1.5) * ((Tref+S_ref)/(obj.T+S_ref));
                 % Calculate the Reynolds number
                 Re = (obj.rho * obj.V * obj.MAC) / mu;
-            end
+        end
 
         function Cl = liftcoef_func(obj,W_TO_max, W_fuel)
             %Calculate the required lift coeficient of the aircraft at cruise
