@@ -16,8 +16,6 @@ classdef MDA
             end
             obj.wingDesign = wingDesign ;
         end
-
-
         function [lift_distribution, moment_distribution] = loadsFunc(obj, W_TO_max, W_fuel)
                         
             % Wing planform geometry 
@@ -215,7 +213,7 @@ classdef MDA
             wing_mass = str2double(massStr{1});                 % convert to double
             disp(wing_mass)
             W_TO_max = Const.W_AminusW+wing_mass+Const.W_fuel;
-            W_ZF = Const.W_AminusW+wing_mass;
+            W_ZF = Const.W_AminusW+wing_mass
         end
     end
 end

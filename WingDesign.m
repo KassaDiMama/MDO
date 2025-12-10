@@ -2,27 +2,30 @@ classdef WingDesign < handle
     properties
         % Constant Parameters
         b_inboard = 6.5 % Correct
-        number_of_platforms = 2 % Correct
+        number_of_platforms = 3 % Correct
         number_of_airfoils = 3 % Correct
-        front_spar_pos = 0.1 % Correct however can be changed later
-        rear_spar_pos = 0.9 % Correct however can be changed later
+        front_spar_pos = 0.2 % Correct however can be changed later
+        rear_spar_pos = 0.6 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
-        engine_location = 0.34 %Correct
+        engine_location = 0.34*(6.5+12.51) %Correct
 
-        x_root = 0 % Correct
+        x_root = 20.5 % Correct
         y_root = 0 % Correct
-        z_root = 0 % Correct
+        z_root = 4.1/2 % Correct
+        
+        start_tank = 0;
+        end_tank = 0.85;
 
-        twist = [+4,+2,-5]; %Correct but can be changed later issues
+        twist = [+4,+2,+2];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
 
-        E_mod = 70e3 % in N/mm2 which probably needs to be converted, same for values below
+        E_mod = 70e9 % in N/mm2 which probably needs to be converted, same for values below
         density = 2800 % Correct
-        tensile_yield = 295 % Correct but check units
-        compressive_yield = 295 % Correct but check units
+        tensile_yield = 295e6 % Correct but check units
+        compressive_yield = 295e6 % Correct but check units
         
         efficiency_factor = 0.96 % Zed section stiffners, Argued for in report
         rib_pitch = 0.5 % Correct
@@ -39,8 +42,7 @@ classdef WingDesign < handle
         c_kink
         c_tip     % tip chord [m]
 
-        start_tank
-        end_tank
+        
         
         AU % upper airfoil shape coefficients
         AL  % lower airfoil shape coefficients
@@ -53,17 +55,14 @@ classdef WingDesign < handle
         a
         T
         Re   % Reynolds number
+        V
 
         LE_sweep 
         b_total
         S
         MAC
 
-        V
-        c_L
 
-        W_fuel
-        W_TO_max
 
         x_kink
         x_tip
@@ -74,13 +73,9 @@ classdef WingDesign < handle
         z_kink
         z_tip
 
-        rho
-        V
-        Re
+        wing_tank_volume 
 
-        tank_volume 
-        W_fuel
-        W_TO_max
+        
     end
 
     methods
@@ -122,10 +117,9 @@ classdef WingDesign < handle
             obj.V = obj.cruiseSpeed();
             obj.Re = obj.re_func();
 
-            obj.c_L = obj.liftcoef_func();
 
-            obj.x_kink = obj.c_root - obj.c_kink;
-            obj.x_tip = obj.b_total * tan(obj.LE_sweep);
+            obj.x_kink = obj.x_root + obj.c_root - obj.c_kink;
+            obj.x_tip = obj.x_root + obj.b_total * tan(obj.LE_sweep);
 
             obj.y_tip = obj.b_total;
             obj.y_kink = obj.b_inboard;
@@ -133,7 +127,7 @@ classdef WingDesign < handle
             obj.z_kink = obj.calculateSectionZ(obj.y_kink);
             obj.z_tip = obj.calculateSectionZ(obj.b_total);
 
-            obj.tank_volume = obj.calculateTankVolume();
+            obj.wing_tank_volume = obj.calculateTankVolume();
         end
         
         function LE_sweep = calculateLESweep(obj)
@@ -153,21 +147,8 @@ classdef WingDesign < handle
             MAC = (S1*mac1+S2*mac2)/(S1+S2);
         end
 
-        function MAC = mac_func(obj)
-            % Calculate the MAC of the tapered and kinked wing
-            tap1 = obj.c_kink/obj.c_root; % taper ratio before kink
-            tap2 = obj.c_tip/obj.c_kink; %taper ratio after kink
-
-            mac1 = 2/3 *obj.c_root*(1+tap1+tap1^2)/(1+tap1);
-            mac2 = 2/3* obj.c_kink*(1+tap2+tap2^2)/(1+tap2);   
-            S1 = 6.5/2*(obj.c_root+obj.c_kink);
-            S2 = obj.b_outboard/2*(obj.c_kink+obj.c_tip);
-
-            MAC = (S1*mac1+S2*mac2)/(S1+S2);
-        end
-
-        function section_z = calculateSectionZ(y)
-            section_z = y * tan(deg2rad(obj.dihedral));
+        function section_z = calculateSectionZ(obj,y)
+            section_z = obj.z_root+ y * tan(deg2rad(obj.dihedral));
         end
         
         function S = calculateSurfaceArea(obj)%, c_r,c_t,LE_sweep, b_outboard)
@@ -179,7 +160,7 @@ classdef WingDesign < handle
         
             S = S1+S2;
         end
-        function tank_volume = calculateTankVolume(obj)
+        function wing_tank_volume = calculateTankVolume(obj)
             N1 = 0.5;
             N2 = 1;
             function result = CST(t,A)
@@ -191,7 +172,7 @@ classdef WingDesign < handle
                 result = cn .* s;
             end
             points_per_side = 46;
-            ts = linspace(0,1,points_per_side+1);
+            ts = linspace(obj.front_spar_pos, obj.rear_spar_pos,points_per_side+1);
             
             
             
@@ -222,8 +203,11 @@ classdef WingDesign < handle
             cs = calculateChord(bs);
             As = A_norm * cs;
 
-            tank_volume=trapz(bs, As);
-            disp("Tank Volume"+string(tank_volume));
+            wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
+            disp("Tank Volume"+string(wing_tank_volume));
+
+            
+
             % disp(y_lower)
 
         end
@@ -278,10 +262,10 @@ classdef WingDesign < handle
                 Re = (obj.rho * obj.V * obj.MAC) / mu;
             end
 
-        function Cl = liftcoef_func(obj)
+        function Cl = liftcoef_func(obj,W_TO_max, W_fuel)
             %Calculate the required lift coeficient of the aircraft at cruise
-            L = sqrt(obj.W_TO_max*(obj.W_TO_max-obj.W_fuel));
-            Cl = L/(1/2*obj.rho*obj.V^2*obj.S);
+            L = sqrt(W_TO_max*(W_TO_max-W_fuel))*9.81;
+            Cl = L/(1/2*obj.rho*obj.V^2*(obj.S*2));
             end
 
         function dvec = toDesignVector(obj)

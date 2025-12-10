@@ -90,3 +90,13 @@ clear all
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 
+%% Calculating Initial W_AminusW
+clear all
+close all
+clc
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+mda = MDA(wingDesign);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
+
+mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
