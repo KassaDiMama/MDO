@@ -1,7 +1,7 @@
 classdef DesignVector
     properties
         % Geometric parameters
-        b_outboard = 12.51;     % outboard wing span [m]
+        b_outboard = 12.525;   % outboard wing span [m]
         c_root     = 8.2;       % root chord [m]
         c_kink     = 4.66;      % kink chord [m]
         c_tip      = 1.73;      % tip chord [m]
@@ -9,7 +9,8 @@ classdef DesignVector
         % Airfoil coefficients Correct whithcomb
         AL = [0.136384890434649	-0.148646719150629	0.056443816239522	-0.365167603195488	-0.120664629058709	-0.613945571520703];  % lower airfoil shape coefficients
         AU = [0.233655457906921	0.079939069830773	0.267462399980753	0.089798155400594	0.277959146200174	0.381599875859377];  % upper airfoil shape coefficients
-
+        % AL = [0.1364,-0.1486,0.0564,-0.3652,-0.1207,-0.6139]; %SC(1)
+        % AU = [0.2337,0.0799,0.2675,0.0898,0.2780,0.3816];
         % Mach and altitude
         Mcr     = 0.8;         % initial guess
         hcr     = 11673.84;    % initial guess

@@ -6,7 +6,8 @@ AL = [-0.04 -0.04 -0.04 -0.04 -0.5 -1];
 
 
 try
-    airfoilData = load('withcomb135.dat');
+    % airfoilData = load('withcomb135.dat');
+    airfoilData = load('sc207210.dat');
     airfoil_X = airfoilData(:, 1);
     airfoil_Y = airfoilData(:, 2);
 catch ME
