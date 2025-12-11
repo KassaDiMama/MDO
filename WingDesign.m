@@ -10,14 +10,14 @@ classdef WingDesign < handle
         engine_each_wing = 1 % Correct
         engine_location = 0.34*(6.5+12.51) %Correct
 
-        x_root = 0%20.5 % Correct
+        x_root = 20.5 % Correct
         y_root = 0 % Correct
         z_root = 4.1/2 % Correct
         
         start_tank = 0;
         end_tank = 0.85;
 
-        twist = [+4,+2,+2];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
@@ -110,7 +110,7 @@ classdef WingDesign < handle
 
             [obj.rho, obj.a, obj.T] = obj.isa_func();
 
-            obj.LE_sweep = obj.calculateLESweep();
+            
             obj.b_total = obj.b_inboard + obj.b_outboard;
             obj.S = obj.calculateSurfaceArea();
             obj.MAC = obj.mac_func();
@@ -118,7 +118,8 @@ classdef WingDesign < handle
             obj.Re = obj.re_func();
 
 
-            obj.x_kink = obj.x_root + obj.c_root - obj.c_kink;
+            obj.x_kink = obj.x_root + obj.c_root - obj.c_kink+0.1;
+            obj.LE_sweep = obj.calculateLESweep();
             obj.x_tip = obj.x_root + obj.b_total * tan(obj.LE_sweep);
 
             obj.y_tip = obj.b_total;
@@ -131,7 +132,7 @@ classdef WingDesign < handle
         end
         
         function LE_sweep = calculateLESweep(obj)
-            LE_sweep = atan((obj.c_root-obj.c_kink)/obj.b_inboard);
+            LE_sweep = atan((obj.x_kink-obj.x_root)/obj.b_inboard);
         end
 
         function MAC = mac_func(obj)

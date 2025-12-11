@@ -2,7 +2,6 @@ classdef MDA < handle
     properties
         wingDesign WingDesign
         
-        W_AminusW
         W_ZF
         W_fuel
         W_TO_max
@@ -83,11 +82,13 @@ classdef MDA < handle
         function [lift_distribution, moment_distribution] = loadsFunc(obj, W_TO_max, W_fuel)
                         
             % Wing planform geometry 
-            %                x    y     z   chord(m)    twist angle (deg) 
-            AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1);
-                            obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist(2);
-                            obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip         obj.wingDesign.twist(3)];
-            
+            %               x    y     z   chord(m)    twist angle (deg) 
+            AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1)
+                            obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist(2)
+                            obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip        obj.wingDesign.twist(3)];
+            % AC.Wing.Geom = [0     0     0     3.5         0;
+            %     0.9  14.5   0     1.4         0
+            %     2*0.9  2*14.5   0     1.4         0];
             % Wing incidence angle (degree)
             AC.Wing.inc  = obj.wingDesign.incidence;   
                         
@@ -100,7 +101,7 @@ classdef MDA < handle
             %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
-            AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
+            AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 150;
             % Flight Condition
             AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
@@ -121,7 +122,7 @@ classdef MDA < handle
             % toc
             y     = Res.Wing.Yst(:);          
             cl    = Res.Wing.cl(:);          
-            cm    = -Res.Wing.cm_c4(:);       
+            cm    = Res.Wing.cm_c4(:);       
             chord = Res.Wing.chord(:);    
             
             rho = AC.Aero.rho;
@@ -314,7 +315,8 @@ classdef MDA < handle
             % Extract the number from the line using regexp
             massStr = regexp(firstLine, '\d+\.?\d*', 'match');  % match numeric values
             wing_mass = str2double(massStr{1});                 % convert to double
-            % disp("wing mass: "+string(wing_mass))
+            disp("wing mass: "+string(wing_mass))
+            disp(obj.wingDesign.LE_sweep*180/pi)
             W_TO_max = Const.W_AminusW+wing_mass+obj.W_fuel;
             W_ZF = Const.W_AminusW+wing_mass;
         end

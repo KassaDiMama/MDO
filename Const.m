@@ -8,6 +8,6 @@ classdef Const
         W_TO_max_initial = 122470; %kg
         W_fuel_initial = 33785; % kg
         W_ZF_initial = 122470-33785; % kg
-        W_AminusW = 88685 - 5044.01;
+        W_AminusW = 88685 - 5047.38;
     end
 end
