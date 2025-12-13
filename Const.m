@@ -9,5 +9,6 @@ classdef Const
         W_fuel_initial = 33785; % kg
         W_ZF_initial = 122470-33785; % kg
         W_AminusW = 88685 - 5047.38;
+        C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
     end
 end

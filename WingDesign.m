@@ -17,7 +17,7 @@ classdef WingDesign < handle
         start_tank = 0;
         end_tank = 0.85;
 
-        twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        twist = [4,2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
