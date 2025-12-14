@@ -108,6 +108,32 @@ dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
 mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
+%% Check Loading
+clear all
+close all
+clc
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+mda = MDA(wingDesign);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
+
+
+% Plot lift and moment distributions
+figure
+
+subplot(2,1,1)
+plot(lift_distribution.y, lift_distribution.L, 'LineWidth', 1.5)
+grid on
+xlabel('Spanwise Location y [m]')
+ylabel('Lift')
+title('Lift Distribution')
+
+subplot(2,1,2)
+plot(moment_distribution.y, moment_distribution.M, 'LineWidth', 1.5)
+grid on
+xlabel('Spanwise Location y [m]')
+ylabel('Moment')
+title('Moment Distribution')
 %% Plot wing
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);

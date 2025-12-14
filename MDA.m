@@ -86,9 +86,7 @@ classdef MDA < handle
             AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1)
                             obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist(2)
                             obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip        obj.wingDesign.twist(3)];
-            % AC.Wing.Geom = [0     0     0     3.5         0;
-            %     0.9  14.5   0     1.4         0
-            %     2*0.9  2*14.5   0     1.4         0];
+
             % Wing incidence angle (degree)
             AC.Wing.inc  = obj.wingDesign.incidence;   
                         
@@ -101,7 +99,7 @@ classdef MDA < handle
             %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
-            AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
+            AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 150;
             % Flight Condition
             AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
@@ -123,10 +121,35 @@ classdef MDA < handle
             y     = Res.Wing.Yst(:);          
             cl    = Res.Wing.cl(:);          
             cm    = Res.Wing.cm_c4(:);       
-            chord = Res.Wing.chord(:);    
-            
+            chord = Res.Wing.chord(:);   
+                
             rho = AC.Aero.rho;
             V   = AC.Aero.V;
+
+            lift_distribution.y = y;
+            lift_distribution.L = 0.5 * rho * V^2 * chord.*cl;
+            moment_distribution.y = y;
+            moment_distribution.M = 0.5 * rho * V^2 * chord .* chord .*cm;
+
+            lift_distribution.y = [0;lift_distribution.y; obj.wingDesign.b_total];
+            lift_distribution.L = [lift_distribution.L(1);lift_distribution.L;2000];
+
+            moment_distribution.y = [0;moment_distribution.y; obj.wingDesign.b_total];
+            moment_distribution.M = [moment_distribution.M(1);moment_distribution.M;-2000];
+
+            L_total = 2 * trapz(lift_distribution.y, lift_distribution.L);
+            M_total = 2 * trapz(moment_distribution.y, moment_distribution.M);
+                
+            if AC.Visc ==1
+                disp("Drag Coefficient: "+string(Res.CDwing));
+            end
+            disp("Total lift [N]: "+string(L_total));
+            disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
+            disp("Total moment in Nm"+string(M_total));
+            return
+            
+           
             
             y = [0;y;obj.wingDesign.b_total];
             cl = [cl(1);cl;0];
@@ -161,7 +184,8 @@ classdef MDA < handle
             end
             lift_distribution.y(end) = obj.wingDesign.b_total;
             lift_distribution.L(end) = 0;
-            total_lift = sum(lift_distribution.L.*dy);
+          
+            total_lift = sum(lift_distribution.L.*dy*2);
 
             for i = 1:length(dy)
                 moment_distribution.y(i) = y_refined(i) + dy(i)/2;
@@ -191,11 +215,11 @@ classdef MDA < handle
             % total_lift   = sum(L);
             % total_moment = sum(M);
 
-            % disp("Total lift in kg: "+string(total_lift/9.81*2));
-            % disp("Cruise mass: "+string(0.68574*0.5*rho*V^2*obj.wingDesign.S*2));
-            % disp("Total moment in Nm"+string(total_moment));
+            disp("Total lift in kg: "+string(total_lift/9.81*2));
+            disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            disp("Total moment in Nm"+string(total_moment));
         end
-        function [W_TO_max, W_ZF] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
+        function [W_TO_max, W_ZF,W_wing] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
             fileName = "optimizing";
             N1 = 0.5;
             N2 = 1;
@@ -227,7 +251,7 @@ classdef MDA < handle
             end
 
             
-            points_per_side = 25;
+            points_per_side = 36;
             ts = linspace(0,1,points_per_side+1);
             
             
@@ -238,7 +262,7 @@ classdef MDA < handle
             
             % Lower surface
             t_lower = ts;
-            y_lower = flip(CST(t_lower, obj.wingDesign.AL));
+            y_lower = CST(t_lower, obj.wingDesign.AL);
             % Calculate upper surface points using a similar approach
             
 
@@ -275,19 +299,18 @@ classdef MDA < handle
             fprintf(fid, string(Const.n_max)+"\n");
             fprintf(fid, "%.2f %.2f %d %d\n", obj.wingDesign.S*2, obj.wingDesign.b_total*2, obj.wingDesign.number_of_platforms, obj.wingDesign.number_of_airfoils);
             fprintf(fid, "%.2f %s\n", obj.wingDesign.y_root/obj.wingDesign.b_total, 'airfoil');
-            fprintf(fid, "%.2f %s\n", obj.wingDesign.y_kink/obj.wingDesign.b_total, 'airfoil');
             fprintf(fid, "%.2f %s\n", obj.wingDesign.y_tip/obj.wingDesign.b_total, 'airfoil');
             
-            fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f\n", ...
+            fprintf(fid, "%.4f %.4f %.4f %.4f %.4f %.4f\n", ...
             obj.wingDesign.c_root, obj.wingDesign.x_root, obj.wingDesign.y_root, obj.wingDesign.z_root, obj.wingDesign.front_spar_pos,obj.wingDesign.rear_spar_pos);
-            fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f\n", ...
+            fprintf(fid, "%.4f %.4f %.4f %.4f %.4f %.4f\n", ...
             obj.wingDesign.c_kink, obj.wingDesign.x_kink, obj.wingDesign.y_kink, obj.wingDesign.z_kink, obj.wingDesign.front_spar_pos,obj.wingDesign.rear_spar_pos);
-            fprintf(fid, "%.2f %.2f %.2f %.2f %.2f %.2f\n", ...
+            fprintf(fid, "%.4f %.4f %.4f %.4f %.4f %.4f\n", ...
             obj.wingDesign.c_tip, obj.wingDesign.x_tip, obj.wingDesign.y_tip, obj.wingDesign.z_tip, obj.wingDesign.front_spar_pos,obj.wingDesign.rear_spar_pos);
         
-            fprintf(fid, "%.2f %.2f\n", obj.wingDesign.start_tank, obj.wingDesign.end_tank);
+            fprintf(fid, "%.4f %.4f\n", obj.wingDesign.start_tank, obj.wingDesign.end_tank);
             fprintf(fid, "%d\n", obj.wingDesign.engine_each_wing);
-            fprintf(fid, "%.2f %d\n",obj.wingDesign.engine_location/obj.wingDesign.b_total, obj.wingDesign.engine_weight);
+            fprintf(fid, "%.4f %d\n",obj.wingDesign.engine_location/obj.wingDesign.b_total, obj.wingDesign.engine_weight);
         
             fprintf(fid, "%.5e %.2f %.5e %.5e\n", obj.wingDesign.E_mod, obj.wingDesign.density, obj.wingDesign.tensile_yield, obj.wingDesign.compressive_yield);
             fprintf(fid, "%.5e %.2f %.5e %.5e\n", obj.wingDesign.E_mod, obj.wingDesign.density, obj.wingDesign.tensile_yield, obj.wingDesign.compressive_yield);
@@ -315,10 +338,11 @@ classdef MDA < handle
             % Extract the number from the line using regexp
             massStr = regexp(firstLine, '\d+\.?\d*', 'match');  % match numeric values
             wing_mass = str2double(massStr{1});                 % convert to double
-            disp("wing mass: "+string(wing_mass))
-            disp(obj.wingDesign.LE_sweep*180/pi)
+            % disp("wing mass: "+string(wing_mass))
+            % disp(obj.wingDesign.LE_sweep*180/pi)
             W_TO_max = Const.W_AminusW+wing_mass+obj.W_fuel;
             W_ZF = Const.W_AminusW+wing_mass;
+            W_wing = wing_mass
         end
     end
 end

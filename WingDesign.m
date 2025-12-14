@@ -3,21 +3,22 @@ classdef WingDesign < handle
         % Constant Parameters
         b_inboard = 6.5 % Correct
         number_of_platforms = 3 % Correct
-        number_of_airfoils = 3 % Correct
+        number_of_airfoils = 2 % Correct
         front_spar_pos = 0.2 % Correct however can be changed later
-        rear_spar_pos = 0.6 % Correct however can be changed later
+        rear_spar_pos = 0.8 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
-        engine_location = 0.34*(6.5+12.51) %Correct
+        engine_location
 
-        x_root = 20.5 % Correct
+        x_root = 20.5 % Correct CHANGED
         y_root = 0 % Correct
         z_root = 4.1/2 % Correct
         
         start_tank = 0;
         end_tank = 0.85;
 
-        twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        %twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        twist = [0,0,0]; %CHANGED
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
@@ -129,6 +130,8 @@ classdef WingDesign < handle
             obj.z_tip = obj.calculateSectionZ(obj.b_total);
 
             obj.wing_tank_volume = obj.calculateTankVolume();
+
+            obj.engine_location =0.34*obj.b_total; %Correct
         end
         
         function LE_sweep = calculateLESweep(obj)
@@ -266,7 +269,8 @@ classdef WingDesign < handle
         function Cl = liftcoef_func(obj,W_TO_max, W_fuel)
             %Calculate the required lift coeficient of the aircraft at cruise
             L = sqrt(W_TO_max*(W_TO_max-W_fuel))*9.81;
-            Cl = L/(1/2*obj.rho*obj.V^2*(obj.S*2));
+            % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
+            Cl = L/(1/2*obj.rho*obj.V^2*(obj.S*2));%CHANGED
             end
 
         function dvec = toDesignVector(obj)

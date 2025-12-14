@@ -1,4 +1,4 @@
-function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fileName,ts)
+function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fileName,ts,CST_order)
     % function result = CST(t,A)
     %     cn = t.^N1 .* (1-t).^N2;
     %     s = 0;
@@ -11,14 +11,15 @@ function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fil
     function result = CST(t,A)
         cn = t.^N1 .* (1-t).^N2;
         s = 0;
-        for i = 0:5
-            s = s + nchoosek(5,i) * t.^i .* (1-t).^(5-i) .* A(i+1);
+        CST_order = length(A)-1;
+        for i = 0:CST_order
+            s = s + nchoosek(CST_order,i) * t.^i .* (1-t).^(CST_order-i) .* A(i+1);
         end
         result = cn .* s;
     end
     saving = false;
     if nargin < 6 || isempty(ts)
-        points_per_side = 46;
+        points_per_side = 205;
         ts = linspace(0,1,points_per_side+1);
         saving = true;
     end
@@ -30,7 +31,7 @@ function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fil
     
     % Lower surface
     t_lower = ts;
-    y_lower = flip(CST(t_lower, AL));
+    y_lower = CST(t_lower, AL);
     % Calculate upper surface points using a similar approach
     
     if saving
