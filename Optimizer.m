@@ -23,10 +23,13 @@ classdef Optimizer < handle
 
         function [LD_cruise] = aerodynamicsFunc(obj,W_TO_max,W_fuel)
             [CL_wing, CD_wing] = obj.calcCL_CD(W_TO_max,W_fuel);
-            CD_fus = Const.CL_initial/Const.LD_initial-Const.CD_initial;
 
-            LD_cruise = CL_wing/(CD_wing+CD_fus);
-            lol = LD_cruise;
+            q=0.5*obj.wingDesign.rho*obj.wingDesign.V^2;
+            drag = CD_wing * q *obj.wingDesign.S*2 + Const.drag_fus_initial/Const.q_initial * q;
+            lift = CL_wing * q *obj.wingDesign.S*2;
+            
+            LD_cruise = lift/drag;
+
         end
         function eta = performanceFunction(obj)
             A = (obj.wingDesign.V-Const.Vcr_ref)^2/(2*70^2);
