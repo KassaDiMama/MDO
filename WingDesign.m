@@ -269,12 +269,18 @@ classdef WingDesign < handle
                 Re = (obj.rho * obj.V * obj.MAC) / mu;
         end
 
-        function Cl = liftcoef_func(obj,W_TO_max, W_fuel)
+        function CL_cruise = calculateCL_cruise(obj,W_TO_max, W_fuel)
             %Calculate the required lift coeficient of the aircraft at cruise
             L = sqrt(W_TO_max*(W_TO_max-W_fuel))*9.81;
             % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
-            Cl = L/(1/2*obj.rho*obj.V^2*(obj.S*2));%CHANGED
-            end
+            CL_cruise = L/(1/2*obj.rho*obj.V^2*(obj.S*2));%CHANGED
+        end
+        function CL_critical = calculateCL_critical(obj,W_TO_max)
+            %Calculate the required lift coeficient of the aircraft at cruise
+            L = W_TO_max*9.81* Const.n_max;
+            % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
+            CL_critical = L/(1/2*Const.rho_ref*Const.V_MO_ref^2*(obj.S*2));%CHANGED
+        end
 
         function dvec = toDesignVector(obj)
             dvec = DesignVector();

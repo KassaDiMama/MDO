@@ -7,13 +7,15 @@ classdef Const
         rho_fuel = 0.81715e3; % kg/m3
         f_tank = 0.93;
         W_TO_max_initial = 122470; %kg
-        W_fuel_initial = 33785; % kg
+        W_fuel_initial = 27220%Calculated using MTOW - W_ZF %33785; % kg
         W_ZF_initial = 95250%122470-33785; % kg
-        W_wing_initial = 5.4582e+03;
-        W_AminusW = 88685 - 5.4582e+03;
+        W_wing_initial = 1.5429e+04;
+        W_AminusW = 95250 - 1.5429e+04;
         LD_initial = 16;
-        CD_initial = 0.030824958721607;
-        CL_initial = 0.6853;
+        CD_initial = 0.0335;
+        CL_initial = 0.7103;
         CT_bar = 1.8639e-4;
+        V_MO_ref = 253.758;
+        rho_ref = 0.327234791343548;
     end
 end

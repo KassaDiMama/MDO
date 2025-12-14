@@ -67,7 +67,7 @@ classdef Optimizer < handle
             AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
             AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
-            AC.Aero.CL    = obj.wingDesign.liftcoef_func(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
+            AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
 
             Res = Q3D_solver(AC);
 
