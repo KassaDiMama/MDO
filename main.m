@@ -179,3 +179,21 @@ ylabel('y (m)');
 title('Top-down view of wing planform');
 grid on;
 legend('Wing','Leading Edge','Trailing Edge');
+
+%% Calculate initial lift and drag
+clear all
+close all
+clc
+
+dvec = DesignVector();
+optimizer = Optimizer(dvec);
+[CL_wing, CD_wing] = optimizer.calcCL_CD(Const.W_TO_max_initial,Const.W_fuel_initial);
+
+%% Calculate range
+clear all
+close all
+clc
+
+dvec = DesignVector();
+optimizer = Optimizer(dvec);
+range = optimizer.objective_loop(); % in meters

@@ -5,7 +5,7 @@ classdef WingDesign < handle
         number_of_platforms = 3 % Correct
         number_of_airfoils = 2 % Correct
         front_spar_pos = 0.2 % Correct however can be changed later
-        rear_spar_pos = 0.8 % Correct however can be changed later
+        rear_spar_pos = 0.6 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
         engine_location
@@ -137,7 +137,10 @@ classdef WingDesign < handle
         function LE_sweep = calculateLESweep(obj)
             LE_sweep = atan((obj.x_kink-obj.x_root)/obj.b_inboard);
         end
-
+        function qc_sweep = calculateQCSweep(obj)
+            
+            qc_sweep = atan((obj.y_tip-obj.y_root)/(obj.x_tip+0.25*obj.c_tip-obj.x_root-0.25*obj.c_root))*180/pi;
+        end
         function MAC = mac_func(obj)
             % Calculate the MAC of the tapered and kinked wing
             tap1 = obj.c_kink/obj.c_root; % taper ratio before kink

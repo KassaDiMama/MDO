@@ -2,7 +2,7 @@ classdef DesignVector
     properties
         % Geometric parameters
         b_outboard = 12.525;   % outboard wing span [m]
-        c_root     = 8.2;       % root chord [m]
+        c_root     = 8.2; %11.5 increases weight but also LE sweep       % root chord [m]
         c_kink     = 4.66;      % kink chord [m]
         c_tip      = 1.73;      % tip chord [m]
 
@@ -12,6 +12,10 @@ classdef DesignVector
         % % Airfoil coefficients sc207210
         % AL = [-0.1311,-0.1702,0.0499,-0.4795,0.2237,-0.1444];
         % AU = [0.1603,0.0407,0.2865,-0.1000,0.4355,-0.0540];
+
+        % % Airfoil coefficients 652215
+        % AL = [-0.1501,-0.1081,-0.2376,-0.1453,-0.1916,0.0175];
+        % AU = [0.1688,0.1787,0.2578,0.2543,0.2285,0.1353];
         
         Mcr     = 0.8;         % initial guess
         hcr     = 11673.84;    % initial guess

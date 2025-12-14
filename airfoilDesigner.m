@@ -5,18 +5,19 @@ clc
 N1 = 0.5;
 N2 = 1;
 CST_order = 5;
-total_points = 205;
+total_points = 51;
 num_per_side = (total_points+1)/2;
+airfoil_name = '652215.dat';
 % AU = [0.4 0.5 0.5 0.5 0.5 0.1];
 AU = 0.5 * ones(1, CST_order+1);
 % AL = [-0.04 -0.04 -0.04 -0.04 -0.5 -1];
-AL = 0.5 * ones(1, CST_order+1);
+AL = -0.5 * ones(1, CST_order+1);
 % AL=-AU;
 
 
 try
     % airfoilData = load('withcomb135.dat');
-    airfoilData = load('sc207210.dat');
+    airfoilData = load(airfoil_name);
     airfoil_X = airfoilData(:, 1);
     airfoil_Y = airfoilData(:, 2);
 catch ME
@@ -24,7 +25,7 @@ catch ME
     return; % Exit the script if the file cannot be loaded
 end
 ts= airfoilData(1:num_per_side, 1);
-[t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order);
+[t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order,num_per_side);
 
 % Build one continuous contour (upper forward, lower reversed)
 t = [t_upper; t_lower];
@@ -43,7 +44,7 @@ y = [y_upper; y_lower];
 % STEP 2: Load the Airfoil Data
 % Replace 'naca0012.dat' with your actual file name
 try
-    airfoilData = load('sc207210.dat');
+    airfoilData = load(airfoil_name);
     airfoil_X = airfoilData(:, 1);
     airfoil_Y = airfoilData(:, 2);
 catch ME
@@ -75,7 +76,7 @@ function objective = objectiveFunction(x, N1, N2, airfoilData, airfoil_Y,CST_ord
     AU = x(1:CST_order+1);
     AL = x(CST_order+2:2*CST_order+2);
     ts= airfoilData(1:num_per_side, 1);
-    [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order);
+    [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order,num_per_side);
     
     % Build one continuous contour (upper forward, lower reversed)
     y = [y_upper; y_lower];
@@ -116,7 +117,7 @@ AL = x_opt(CST_order+2:2*CST_order+2);
 
 ts_original= airfoilData(1:num_per_side, 1);
 ts = linspace(0,1,num_per_side);
-[t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts));
+[t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order,num_per_side);
 
 % Build one continuous contour (upper forward, lower reversed)
 t = [t_upper t_lower];

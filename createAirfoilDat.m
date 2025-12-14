@@ -1,4 +1,4 @@
-function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fileName,ts,CST_order)
+function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fileName,ts,CST_order,points_per_side)
     % function result = CST(t,A)
     %     cn = t.^N1 .* (1-t).^N2;
     %     s = 0;
@@ -19,7 +19,7 @@ function [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1, N2, AU,AL,fil
     end
     saving = false;
     if nargin < 6 || isempty(ts)
-        points_per_side = 205;
+        % points_per_side = 205;
         ts = linspace(0,1,points_per_side+1);
         saving = true;
     end

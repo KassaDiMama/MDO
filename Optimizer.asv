@@ -1,46 +1,17 @@
 classdef Optimizer < handle
     properties
-        mda MDA
-        dvec DesignVector
-        wingDesign WingDesign
+        mda
+        dvec
+        wingDesign
     end
     
     methods
-        function obj = Optimizer(dvec)
-            obj.dvec = dvec;
-            obj.wingDesign = WingDesign(obj.dvec);
+        function obj = Optimizer()
+            obj.dvec = DesignVector();
+            obj.wingDesign = wingDesign(obj.dvec);
             obj.mda = MDA(obj.wingDesign);
         end
-        
-        function objective = objective_loop(obj)
-            obj.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
-            LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.mda.W_fuel);
-            eta = obj.performanceFunction();
-            objective = obj.objectiveFunc(obj.mda.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
-                     
-
-        end
-
         function [LD_cruise] = aerodynamicsFunc(obj,W_TO_max,W_fuel)
-            [CL_wing, CD_wing] = obj.calcCL_CD(W_TO_max,W_fuel);
-            CD_fus = Const.CL_initial/Const.LD_initial-Const.CD_initial;
-
-            LD_cruise = CL_wing/(CD_wing+CD_fus);
-            lol = LD_cruise;
-        end
-        function eta = performanceFunction(obj)
-            A = (obj.wingDesign.V-Const.Vcr_ref)^2/(2*70^2);
-            B = (obj.wingDesign.hcr - Const.hcr_ref)^2/(2*2500^2);
-            eta = exp(-A-B);
-            
-        end
-        function objective = objectiveFunc(obj,W_fuel, W_TO_max, LD_cr, eta)
-            W_cr_ratio = 1/((W_fuel/W_TO_max-1)/-0.9938);
-            CT = Const.CT_bar/eta;
-            R = obj.wingDesign.V /CT *LD_cr *log(W_cr_ratio);
-            objective = R;
-        end
-        function [CL_wing,CD_wing] = calcCL_CD(obj,W_TO_max,W_fuel)
             % Wing planform geometry 
             %               x    y     z   chord(m)    twist angle (deg) 
             AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1)
@@ -74,6 +45,13 @@ classdef Optimizer < handle
             CL_wing = Res.CLwing;
             CD_wing = Res.CDwing;
 
+            CD_fus = Const.LD_initial/Const.CL_initial-Const.CD_initial;
+
+            LD_cruise = CL_wing/(CD_wing+CD_fus);
+
+        end
+        
+        function objective = objectiveFunc(obj)
         end
     end
 end
