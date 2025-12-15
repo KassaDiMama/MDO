@@ -256,3 +256,12 @@ dvec = DesignVector();
 optimizer = Optimizer(dvec);
 x = dvec.toVector();
 range = optimizer.objective_wrapper(x); % in meters
+
+%% Surface Area
+clear all
+
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+const = Const();
+
+fprintf("Wing surface area S equals: %g\n",wingDesign.S);

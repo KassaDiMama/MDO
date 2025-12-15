@@ -144,5 +144,13 @@ classdef Optimizer < handle
             CD_wing = Res.CDwing;
 
         end
+        function [c,ceq] = constrainsts(obj,x)
+            % dvec = DesignVector().fromVector(x);
+            % wingDesign = WingDesign(dvec);
+            
+            % No inequality constraints
+            c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/Const.S_ref; % Wing loading constraint  
+            ceq = [];
+        end
     end
 end
