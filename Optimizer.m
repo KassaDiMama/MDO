@@ -16,7 +16,7 @@ classdef Optimizer < handle
 
             objective = @(x) obj.objective_wrapper(x);
 
-
+            
             % Options (recommended)
             options = optimoptions('fmincon',...
                 'Algorithm','sqp', ...
@@ -35,7 +35,7 @@ classdef Optimizer < handle
             obj.dvec = DesignVector().fromVector(x);
             obj.wingDesign = WingDesign(obj.dvec);
             obj.mda.wingDesign = obj.wingDesign;
-            objective = obj.objective_loop();
+            objective = -obj.objective_loop();
         end
         function objective = objective_loop(obj)
             obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF)
