@@ -3,21 +3,22 @@ classdef WingDesign < handle
         % Constant Parameters
         b_inboard = 6.5 % Correct
         number_of_platforms = 3 % Correct
-        number_of_airfoils = 3 % Correct
+        number_of_airfoils = 2 % Correct
         front_spar_pos = 0.2 % Correct however can be changed later
         rear_spar_pos = 0.6 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
-        engine_location = 0.34*(6.5+12.51) %Correct
+        engine_location
 
-        x_root = 20.5 % Correct
+        x_root = 20.5 % Correct CHANGED
         y_root = 0 % Correct
         z_root = 4.1/2 % Correct
         
         start_tank = 0;
         end_tank = 0.85;
 
-        twist = [4,2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        %twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
+        twist = [0,0,0]; %CHANGED
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
@@ -74,7 +75,7 @@ classdef WingDesign < handle
         z_kink
         z_tip
 
-        wing_tank_volume 
+        W_fuel
 
         
     end
@@ -129,13 +130,18 @@ classdef WingDesign < handle
             obj.z_kink = obj.calculateSectionZ(obj.y_kink);
             obj.z_tip = obj.calculateSectionZ(obj.b_total);
 
-            obj.wing_tank_volume = obj.calculateTankVolume();
+            obj.W_fuel = obj.calculateFuelWeight();
+
+            obj.engine_location =0.34*obj.b_total; %Correct
         end
         
         function LE_sweep = calculateLESweep(obj)
             LE_sweep = atan((obj.x_kink-obj.x_root)/obj.b_inboard);
         end
-
+        function qc_sweep = calculateQCSweep(obj)
+            
+            qc_sweep = atan((obj.y_tip-obj.y_root)/(obj.x_tip+0.25*obj.c_tip-obj.x_root-0.25*obj.c_root))*180/pi;
+        end
         function MAC = mac_func(obj)
             % Calculate the MAC of the tapered and kinked wing
             tap1 = obj.c_kink/obj.c_root; % taper ratio before kink
@@ -162,7 +168,7 @@ classdef WingDesign < handle
         
             S = S1+S2;
         end
-        function wing_tank_volume = calculateTankVolume(obj)
+        function W_fuel = calculateFuelWeight(obj)
             N1 = 0.5;
             N2 = 1;
             function result = CST(t,A)
@@ -208,11 +214,16 @@ classdef WingDesign < handle
             wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
             disp("Tank Volume"+string(wing_tank_volume));
 
-            
+            %internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
 
+            total_volume = Const.internal_tank_volume + wing_tank_volume;
+
+            W_fuel = total_volume * Const.rho_fuel;
             % disp(y_lower)
 
         end
+
+
 
         function [rho,a, T] = isa_func(obj)
             % ISA_DENSITY_SIMPLE - Calculate ISA air density using piecewise linear approximation
@@ -264,11 +275,18 @@ classdef WingDesign < handle
                 Re = (obj.rho * obj.V * obj.MAC) / mu;
         end
 
-        function Cl = liftcoef_func(obj,W_TO_max, W_fuel)
+        function CL_cruise = calculateCL_cruise(obj,W_TO_max, W_fuel)
             %Calculate the required lift coeficient of the aircraft at cruise
             L = sqrt(W_TO_max*(W_TO_max-W_fuel))*9.81;
-            Cl = L/(1/2*obj.rho*obj.V^2*(obj.S*2));
-            end
+            % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
+            CL_cruise = L/(1/2*obj.rho*obj.V^2*(obj.S*2));%CHANGED
+        end
+        function CL_critical = calculateCL_critical(obj,W_TO_max)
+            %Calculate the required lift coeficient of the aircraft at cruise
+            L = W_TO_max*9.81* Const.n_max;
+            % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
+            CL_critical = L/(1/2*Const.rho_ref*Const.V_MO_ref^2*(obj.S*2));%CHANGED
+        end
 
         function dvec = toDesignVector(obj)
             dvec = DesignVector();

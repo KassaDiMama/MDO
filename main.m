@@ -96,8 +96,8 @@ close all
 clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
-mda = MDA(wingDesign);
-[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
+mda = MDA(wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial);
 
 mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
 %% MDA LOOP TEST
@@ -107,7 +107,33 @@ clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
-mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
+mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,wingDesign.W_fuel)
+%% Check Loading
+clear all
+close all
+clc
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
+mda = MDA(wingDesign);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,wingDesign.W_fuel);
+
+
+% Plot lift and moment distributions
+figure
+
+subplot(2,1,1)
+plot(lift_distribution.y, lift_distribution.L, 'LineWidth', 1.5)
+grid on
+xlabel('Spanwise Location y [m]')
+ylabel('Lift')
+title('Lift Distribution')
+
+subplot(2,1,2)
+plot(moment_distribution.y, moment_distribution.M, 'LineWidth', 1.5)
+grid on
+xlabel('Spanwise Location y [m]')
+ylabel('Moment')
+title('Moment Distribution')
 %% Plot wing
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
@@ -211,3 +237,22 @@ Cdw = drag_estimation(Res,AC.Visc,true)
 
 Cd_AnoW = Res.CLwing/16 - Cdw
 
+
+%% Calculate initial lift and drag
+clear all
+close all
+clc
+
+dvec = DesignVector();
+optimizer = Optimizer(dvec);
+[CL_wing, CD_wing] = optimizer.calcCL_CD(Const.W_TO_max_initial,optimizer.wingDesign.W_fuel);
+
+%% Calculate range
+clear all
+close all
+clc
+
+dvec = DesignVector();
+optimizer = Optimizer(dvec);
+x = dvec.toVector();
+range = optimizer.objective_wrapper(x); % in meters

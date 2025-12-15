@@ -2,21 +2,26 @@ classdef DesignVector
     properties
         % Geometric parameters
         b_outboard = 12.525;   % outboard wing span [m]
-        c_root     = 8.2;       % root chord [m]
+        c_root     = 8.2; %11.5 increases weight but also LE sweep       % root chord [m]
         c_kink     = 4.66;      % kink chord [m]
         c_tip      = 1.73;      % tip chord [m]
 
         % Airfoil coefficients Correct whithcomb
-        AL = [0.136384890434649	-0.148646719150629	0.056443816239522	-0.365167603195488	-0.120664629058709	-0.613945571520703];  % lower airfoil shape coefficients
-        AU = [0.233655457906921	0.079939069830773	0.267462399980753	0.089798155400594	0.277959146200174	0.381599875859377];  % upper airfoil shape coefficients
-        % AL = [0.1364,-0.1486,0.0564,-0.3652,-0.1207,-0.6139]; %SC(1)
-        % AU = [0.2337,0.0799,0.2675,0.0898,0.2780,0.3816];
-        % Mach and altitude
+        AL = [-0.2253,-0.1637,-0.0464,-0.4778,0.0741,0.3252];
+        AU = [0.2337,0.0800,0.2674,0.0899,0.2779,0.3816];
+        % % Airfoil coefficients sc207210
+        % AL = [-0.1311,-0.1702,0.0499,-0.4795,0.2237,-0.1444];
+        % AU = [0.1603,0.0407,0.2865,-0.1000,0.4355,-0.0540];
+
+        % % Airfoil coefficients 652215
+        % AL = [-0.1501,-0.1081,-0.2376,-0.1453,-0.1916,0.0175];
+        % AU = [0.1688,0.1787,0.2578,0.2543,0.2285,0.1353];
+        
         Mcr     = 0.8;         % initial guess
         hcr     = 11673.84;    % initial guess
 
-        % To add
-        tank_end
+        % To add later
+        %tank_end
 
     end
     methods
@@ -46,10 +51,10 @@ classdef DesignVector
             obj.c_root = x(2);
             obj.c_kink = x(3);
             obj.c_tip = x(4);
-            obj.AU = x(5:9);
-            obj.AL = x(10:14);
-            obj.Mcr = x(15);
-            obj.hcr = x(16);
+            obj.AU = x(5:10);
+            obj.AL = x(11:16);
+            obj.Mcr = x(17);
+            obj.hcr = x(18);
             
         end
     end
