@@ -11,7 +11,32 @@ classdef Optimizer < handle
             obj.wingDesign = WingDesign(obj.dvec);
             obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
         end
-        
+        function start(obj)
+            x0 = obj.dvec.toVector();
+
+            objective = @(x) obj.objective_wrapper(x);
+
+
+            % Options (recommended)
+            options = optimoptions('fmincon',...
+                'Algorithm','sqp', ...
+                'Display','iter-detailed', ...
+                'MaxIterations',500, ...
+                'FunctionTolerance',1e-12, ...
+                'StepTolerance',1e-12, ...
+                'MaxFunctionEvaluations', 1e6, ...
+                'OptimalityTolerance',1e-10);
+            [x_opt, fval, exitflag, output] = fmincon(objective, ...
+                                          x0, A, b, Aeq, beq, lb, ub, ...
+                                          nonlcon, options);
+        end
+
+        function objective = objective_wrapper(obj,x)
+            obj.dvec = DesignVector().fromVector(x);
+            obj.wingDesign = WingDesign(obj.dvec);
+            obj.mda.wingDesign = obj.wingDesign;
+            objective = obj.objective_loop();
+        end
         function objective = objective_loop(obj)
             obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF)
             LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.wingDesign.W_fuel);

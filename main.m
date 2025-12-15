@@ -196,4 +196,5 @@ clc
 
 dvec = DesignVector();
 optimizer = Optimizer(dvec);
-range = optimizer.objective_loop(); % in meters
+x = dvec.toVector();
+range = optimizer.objective_wrapper(x); % in meters

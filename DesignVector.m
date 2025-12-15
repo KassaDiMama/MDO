@@ -51,10 +51,10 @@ classdef DesignVector
             obj.c_root = x(2);
             obj.c_kink = x(3);
             obj.c_tip = x(4);
-            obj.AU = x(5:9);
-            obj.AL = x(10:14);
-            obj.Mcr = x(15);
-            obj.hcr = x(16);
+            obj.AU = x(5:10);
+            obj.AL = x(11:16);
+            obj.Mcr = x(17);
+            obj.hcr = x(18);
             
         end
     end
