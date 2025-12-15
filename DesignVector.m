@@ -20,8 +20,8 @@ classdef DesignVector
         Mcr     = 0.8;         % initial guess
         hcr     = 11673.84;    % initial guess
 
-        % To add
-        tank_end
+        % To add later
+        %tank_end
 
     end
     methods

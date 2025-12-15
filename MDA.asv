@@ -16,7 +16,7 @@ classdef MDA < handle
             end
             obj.wingDesign = wingDesign ;
             obj.W_TO_max = W_TO_max;
-            obj.W_ZF = W_ZF;
+            obj.W_ZF = W_
         end
         function derivative =  W_TO_max_prime(obj)
             delta_W = 1;
@@ -49,7 +49,7 @@ classdef MDA < handle
             
             W_init = W_TO_max;
             obj.W_TO_max = W_TO_max;
-            % obj.W_fuel = W_fuel;
+            obj.W_fuel = W_fuel;
             obj.W_ZF = W_ZF;
             
             [lift_dist, moment_dist] = obj.loadsFunc(W_TO_max);

@@ -96,8 +96,8 @@ close all
 clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
-mda = MDA(wingDesign);
-[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
+mda = MDA(wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial);
 
 mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
 %% MDA LOOP TEST
@@ -107,7 +107,7 @@ clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
-mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
+mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,wingDesign.W_fuel)
 %% Check Loading
 clear all
 close all
@@ -115,7 +115,7 @@ clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
-[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,Const.W_fuel_initial);
+[lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial,wingDesign.W_fuel);
 
 
 % Plot lift and moment distributions
@@ -187,7 +187,7 @@ clc
 
 dvec = DesignVector();
 optimizer = Optimizer(dvec);
-[CL_wing, CD_wing] = optimizer.calcCL_CD(Const.W_TO_max_initial,Const.W_fuel_initial);
+[CL_wing, CD_wing] = optimizer.calcCL_CD(Const.W_TO_max_initial,optimizer.wingDesign.W_fuel);
 
 %% Calculate range
 clear all

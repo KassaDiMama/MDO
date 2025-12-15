@@ -9,14 +9,14 @@ classdef Optimizer < handle
         function obj = Optimizer(dvec)
             obj.dvec = dvec;
             obj.wingDesign = WingDesign(obj.dvec);
-            obj.mda = MDA(obj.wingDesign);
+            obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
         end
         
         function objective = objective_loop(obj)
-            obj.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,Const.W_ZF_initial)
-            LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.mda.W_fuel);
+            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF)
+            LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.wingDesign.W_fuel);
             eta = obj.performanceFunction();
-            objective = obj.objectiveFunc(obj.mda.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
+            objective = obj.objectiveFunc(obj.wingDesign.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
                      
 
         end

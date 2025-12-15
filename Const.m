@@ -19,5 +19,6 @@ classdef Const
         rho_ref = 0.327234791343548;
         drag_fus_initial = 1.6251e+04;
         q_initial = 9.1170e+03;
+        internal_tank_volume =26.1383;
     end
 end

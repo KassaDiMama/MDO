@@ -74,7 +74,7 @@ classdef WingDesign < handle
         z_kink
         z_tip
 
-        wing_tank_volume 
+        W_fuel
 
         
     end
@@ -129,7 +129,7 @@ classdef WingDesign < handle
             obj.z_kink = obj.calculateSectionZ(obj.y_kink);
             obj.z_tip = obj.calculateSectionZ(obj.b_total);
 
-            obj.wing_tank_volume = obj.calculateTankVolume();
+            obj.W_fuel = obj.calculateFuelWeight();
 
             obj.engine_location =0.34*obj.b_total; %Correct
         end
@@ -167,7 +167,7 @@ classdef WingDesign < handle
         
             S = S1+S2;
         end
-        function wing_tank_volume = calculateTankVolume(obj)
+        function W_fuel = calculateFuelWeight(obj)
             N1 = 0.5;
             N2 = 1;
             function result = CST(t,A)
@@ -213,11 +213,16 @@ classdef WingDesign < handle
             wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
             disp("Tank Volume"+string(wing_tank_volume));
 
-            
+            %internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
 
+            total_volume = Const.internal_tank_volume + wing_tank_volume;
+
+            W_fuel = total_volume * Const.rho_fuel;
             % disp(y_lower)
 
         end
+
+
 
         function [rho,a, T] = isa_func(obj)
             % ISA_DENSITY_SIMPLE - Calculate ISA air density using piecewise linear approximation
