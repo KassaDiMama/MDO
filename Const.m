@@ -8,10 +8,10 @@ classdef Const
         f_tank = 0.93;
         W_TO_max_initial = 122470; %kg
         C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
-        W_fuel_initial = 27220%Calculated using MTOW - W_ZF %33785; % kg
-        W_ZF_initial = 95250%122470-33785; % kg
-        W_wing_initial = 1.3409e+04;
-        W_AminusW = 95250 - 1.3409e+04;
+        W_fuel_initial = 27220;%Calculated using MTOW - W_ZF %33785; % kg
+        W_ZF_initial = 95250;%122470-33785; % kg
+        W_wing_initial = 15429.2;
+        W_AminusW = 95250 - 15429.2;
         LD_initial = 16;
         CD_initial = 0.0335;
         CL_initial = 0.7103;

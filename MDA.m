@@ -105,11 +105,14 @@ classdef MDA < handle
             AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 150;
             % Flight Condition
-            AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
+            [rho_dont_use,a,T_dont_use] = obj.wingDesign.isa_func();
+            Mcritical = Const.V_MO_ref/a;
+            Re_corrected = obj.wingDesign.Re/Const.V_MO_ref*obj.wingDesign.V;
+            AC.Aero.V     = Const.V_MO_ref;            % flight speed (m/s)
             AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
             AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
-            AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
-            AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
+            AC.Aero.Re    = Re_corrected;        % reynolds number (bqased on mean aerodynamic chord)
+            AC.Aero.M     = Mcritical;           % flight Mach number 
             AC.Aero.CL    = obj.wingDesign.calculateCL_critical(W_TO_max);          % lift coefficient - comment this line to run the code for given alpha%
             % AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
 
