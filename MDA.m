@@ -146,13 +146,13 @@ classdef MDA < handle
             L_total = 2 * trapz(lift_distribution.y, lift_distribution.L);
             M_total = 2 * trapz(moment_distribution.y, moment_distribution.M);
                 
-            if AC.Visc ==1
-                disp("Drag Coefficient: "+string(Res.CDwing));
-            end
-            disp("Total lift [N]: "+string(L_total));
-            disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
-            disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
-            disp("Total moment in Nm"+string(M_total));
+            % if AC.Visc ==1
+            %     disp("Drag Coefficient: "+string(Res.CDwing));
+            % end
+            % disp("Total lift [N]: "+string(L_total));
+            % disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            % disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
+            % disp("Total moment in Nm"+string(M_total));
             return
             
            
@@ -221,9 +221,9 @@ classdef MDA < handle
             % total_lift   = sum(L);
             % total_moment = sum(M);
 
-            disp("Total lift in kg: "+string(total_lift/9.81*2));
-            disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
-            disp("Total moment in Nm"+string(total_moment));
+            % disp("Total lift in kg: "+string(total_lift/9.81*2));
+            % disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            % disp("Total moment in Nm"+string(total_moment));
         end
         function [W_TO_max, W_ZF,W_wing] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
             fileName = "optimizing";
@@ -344,7 +344,7 @@ classdef MDA < handle
             % Extract the number from the line using regexp
             massStr = regexp(firstLine, '\d+\.?\d*', 'match');  % match numeric values
             wing_mass = str2double(massStr{1});                 % convert to double
-            disp("wing mass: "+string(wing_mass))
+            % disp("wing mass: "+string(wing_mass))
             % disp(obj.wingDesign.LE_sweep*180/pi)
             W_TO_max = Const.W_AminusW+wing_mass+obj.wingDesign.W_fuel;
             W_ZF = Const.W_AminusW+wing_mass;

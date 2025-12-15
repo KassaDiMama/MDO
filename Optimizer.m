@@ -3,6 +3,7 @@ classdef Optimizer < handle
         mda MDA
         dvec DesignVector
         wingDesign WingDesign
+        x0
     end
     
     methods
@@ -12,11 +13,16 @@ classdef Optimizer < handle
             obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
         end
         function start(obj)
-            x0 = obj.dvec.toVector();
+            obj.x0 = obj.dvec.toVector();
+            x0_normalized = obj.x0./obj.x0;
+            
 
+            lb_normalized = lb./obj.x0;
+            ub_normalized = ub./obj.x0;
             objective = @(x) obj.objective_wrapper(x);
+            nonlcon = @(x) obj.constraints(x);
             ub = [];
-            ub(1) = 52/2 - WingDesign.b_inboard; %b_outboard
+            ub(1) = 52/2 - obj.wingDesign.b_inboard; %b_outboard
             ub(2) = 15;
             ub(3) = 10;
             ub(4) = 3;
@@ -34,11 +40,52 @@ classdef Optimizer < handle
             ub(16) = 1;
             ub(17) = 0.88;
             ub(18) = 13075.92;
+
+
+            diffminchange(1) = 0.2;
+            diffminchange(2) = 0.1;
+            diffminchange(3) = 0.1;
+            diffminchange(4) = 0.1;
+            diffminchange(5) = 0.05;
+            diffminchange(6) = 0.05;
+            diffminchange(7) = 0.05;
+            diffminchange(8) = 0.05;
+            diffminchange(9) = 0.05;
+            diffminchange(10) = 0.05;
+            diffminchange(11) = 0.05;
+            diffminchange(12) = 0.05;
+            diffminchange(13) = 0.05;
+            diffminchange(14) = 0.05;
+            diffminchange(15) = 0.05;
+            diffminchange(16) = 0.05;
+            diffminchange(17) = 0.1;
+            diffminchange(18) = 100;
+
+
+            diffmaxchange(1) = 1;
+            diffmaxchange(2) = 0.5;
+            diffmaxchange(3) = 0.3;
+            diffmaxchange(4) = 0.3;
+            diffmaxchange(5) = 0.2;
+            diffmaxchange(6) = 0.2;
+            diffmaxchange(7) = 0.2;
+            diffmaxchange(8) = 0.2;
+            diffmaxchange(9) = 0.2;
+            diffmaxchange(10) = 0.2;
+            diffmaxchange(11) = 0.2;
+            diffmaxchange(12) = 0.2;
+            diffmaxchange(13) = 0.2;
+            diffmaxchange(14) = 0.2;
+            diffmaxchange(15) = 0.2;
+            diffmaxchange(16) = 0.2;
+            diffmaxchange(17) = 0.4;
+            diffmaxchange(18) = 500;
+
             
-            lb(1) = 24/2- WingDesign.b_inboard;
+            lb(1) = 24/2- obj.wingDesign.b_inboard;
             lb(2) = 4;
             lb(3) = 2;
-            lb(4) = -1;
+            lb(4) = 1;
             lb(5) = -1;
             lb(6) = -1;
             lb(7) = -1;
@@ -51,35 +98,44 @@ classdef Optimizer < handle
             lb(14) = -1;
             lb(15) = -1;
             lb(16) = -1;
-            ub(17) = 0.72;
-            ub(18) = 10698.48;
+            lb(17) = 0.72;
+            lb(18) = 10698.48;
+
+            
+
             A = [];
             b = [];
             Aeq = []; % Equality constraints
             beq = []; % Right-hand side for equality constraints
 
             % Options (recommended)
-            options = optimoptions('fmincon',...
-                'Algorithm','sqp', ...
-                'Display','iter-detailed', ...
-                'MaxIterations',500, ...
-                'FunctionTolerance',1e-6, ...
-                'StepTolerance',1e-6, ...
-                'MaxFunctionEvaluations', 1e6, ...
-                'OptimalityTolerance',1e-10);
-            [x_opt, fval, exitflag, output] = fmincon(objective, ...
-                                          x0, A, b, Aeq, beq, lb, ub, ...
-                                          nonlcon, options);
-        end
+            options = optimoptions('fmincon', ...
+            'Algorithm','sqp', ...
+            'Display','iter-detailed', ...
+            'MaxIterations',500, ...
+            'MaxFunctionEvaluations',1e6, ...
+            'FunctionTolerance',1e-6, ...
+            'StepTolerance',1e-6, ...
+            'OptimalityTolerance',1e-10, ...
+            'DiffMinChange',1e-2, ...
+            'DiffMaxChange',1e-1);
 
-        function objective = objective_wrapper(obj,x)
+            
+
+            [x_opt, fval, exitflag, output] = fmincon(objective, ...
+                                          x0_normalized, A, b, Aeq, beq,lb_normalized ,ub_normalized , ...
+                                          nonlcon, options);
+            disp("Done optimizing!")
+        end
+        function objective = objective_wrapper(obj,x_normalized)
+            x=x_normalized*obj.x0;
             obj.dvec = DesignVector().fromVector(x);
             obj.wingDesign = WingDesign(obj.dvec);
             obj.mda.wingDesign = obj.wingDesign;
             objective = -obj.objective_loop();
         end
         function objective = objective_loop(obj)
-            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF)
+            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
             LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.wingDesign.W_fuel);
             eta = obj.performanceFunction();
             objective = obj.objectiveFunc(obj.wingDesign.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
@@ -144,11 +200,13 @@ classdef Optimizer < handle
             CD_wing = Res.CDwing;
 
         end
-        function [c,ceq] = constrainsts(obj,x)
-            % dvec = DesignVector().fromVector(x);
-            % wingDesign = WingDesign(dvec);
+        function [c,ceq] = constraints(obj,x_normalized)
+            x=x_normalized*obj.x0;
+            obj.dvec = DesignVector().fromVector(x);
+            obj.wingDesign = WingDesign(obj.dvec);
             
             % No inequality constraints
+            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
             c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/Const.S_ref; % Wing loading constraint  
             ceq = [];
         end
