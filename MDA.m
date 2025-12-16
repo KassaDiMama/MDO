@@ -105,11 +105,14 @@ classdef MDA < handle
             AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 150;
             % Flight Condition
-            AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
+            [rho_dont_use,a,T_dont_use] = obj.wingDesign.isa_func();
+            Mcritical = Const.V_MO_ref/a;
+            Re_corrected = obj.wingDesign.Re/Const.V_MO_ref*obj.wingDesign.V;
+            AC.Aero.V     = Const.V_MO_ref;            % flight speed (m/s)
             AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
             AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
-            AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
-            AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
+            AC.Aero.Re    = Re_corrected;        % reynolds number (bqased on mean aerodynamic chord)
+            AC.Aero.M     = Mcritical;           % flight Mach number 
             AC.Aero.CL    = obj.wingDesign.calculateCL_critical(W_TO_max);          % lift coefficient - comment this line to run the code for given alpha%
             % AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
 
@@ -143,13 +146,13 @@ classdef MDA < handle
             L_total = 2 * trapz(lift_distribution.y, lift_distribution.L);
             M_total = 2 * trapz(moment_distribution.y, moment_distribution.M);
                 
-            if AC.Visc ==1
-                disp("Drag Coefficient: "+string(Res.CDwing));
-            end
-            disp("Total lift [N]: "+string(L_total));
-            disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
-            disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
-            disp("Total moment in Nm"+string(M_total));
+            % if AC.Visc ==1
+            %     disp("Drag Coefficient: "+string(Res.CDwing));
+            % end
+            % disp("Total lift [N]: "+string(L_total));
+            % disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            % disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
+            % disp("Total moment in Nm"+string(M_total));
             return
             
            
@@ -218,9 +221,9 @@ classdef MDA < handle
             % total_lift   = sum(L);
             % total_moment = sum(M);
 
-            disp("Total lift in kg: "+string(total_lift/9.81*2));
-            disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
-            disp("Total moment in Nm"+string(total_moment));
+            % disp("Total lift in kg: "+string(total_lift/9.81*2));
+            % disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
+            % disp("Total moment in Nm"+string(total_moment));
         end
         function [W_TO_max, W_ZF,W_wing] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
             fileName = "optimizing";
@@ -341,7 +344,7 @@ classdef MDA < handle
             % Extract the number from the line using regexp
             massStr = regexp(firstLine, '\d+\.?\d*', 'match');  % match numeric values
             wing_mass = str2double(massStr{1});                 % convert to double
-            disp("wing mass: "+string(wing_mass))
+            % disp("wing mass: "+string(wing_mass))
             % disp(obj.wingDesign.LE_sweep*180/pi)
             W_TO_max = Const.W_AminusW+wing_mass+obj.wingDesign.W_fuel;
             W_ZF = Const.W_AminusW+wing_mass;

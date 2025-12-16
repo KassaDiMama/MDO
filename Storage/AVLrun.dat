@@ -1,11 +1,11 @@
 load AVLinput.avl
 oper
 m
-mn 0.8
-v 236.054
-d 0.327235
+mn 0.72
+v 213.408
+d 0.378134
 
-a c 0.710255
+a c 0.751777
 x
 st AVLaero.dat
 vm AVLload.dat

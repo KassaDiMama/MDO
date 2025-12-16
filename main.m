@@ -107,11 +107,12 @@ clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
-mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,wingDesign.W_fuel)
+mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_initial,wingDesign.W_fuel);
 %% Check Loading
 clear all
 close all
 clc
+
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign);
@@ -269,3 +270,13 @@ const = Const();
 fprintf("Wing surface area S equals: %g\n",wingDesign.S);
 fprintf("Wing MAC equals: %g\n",wingDesign.MAC);
 fprintf("Wing LE Sweep equals: %g\n",wingDesign.LE_sweep);
+
+%% Run the optimization
+clear all
+close all
+clc
+
+echo on
+dvec = DesignVector();
+optimizer = Optimizer(dvec);
+optimizer.start();
