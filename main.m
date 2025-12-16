@@ -214,7 +214,7 @@ AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
 %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
 AC.Wing.eta = [0;1];
 % Viscous vs inviscid
-AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
+AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
 AC.Aero.MaxIterIndex = 150;
 % Flight Condition
 AC.Aero.V     = obj.wingDesign.V;          % flight speed (m/s)
@@ -222,7 +222,7 @@ AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
 AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
 AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
 AC.Aero.M     = obj.wingDesign.Mcr;          % flight Mach number 
-AC.Aero.CL    = obj.wingDesign.liftcoef_func(Const.W_TO_max_initial,const.W_fuel_initial);          % lift coefficient - comment this line to run the code for given alpha%
+AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(Const.W_TO_max_initial, const.W_fuel_initial);          % lift coefficient - comment this line to run the code for given alpha%
 % AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
 
 % tic
@@ -230,12 +230,14 @@ AC.Aero.CL    = obj.wingDesign.liftcoef_func(Const.W_TO_max_initial,const.W_fuel
 % try 
 % disp("Starting Q3D");
 Res = Q3D_solver(AC);
-
-AC.Aero.M
-AC.Aero.V
+Res.Alpha
+% AC.Aero.M
+% AC.Aero.V
 Cdw = drag_estimation(Res,AC.Visc,true)
-
-Cd_AnoW = Res.CLwing/16 - Cdw
+[CDi_total, CDv_total] = Drag_coeff_from_spanwise(Res, wingDesign.S);
+fprintf("induced drag equals: %g\n",CDi_total);
+fprintf("profile drag equals: %g\n",CDv_total);
+% Cd_AnoW = Res.CLwing/16 - Cdw
 
 
 %% Calculate initial lift and drag
@@ -257,7 +259,7 @@ optimizer = Optimizer(dvec);
 x = dvec.toVector();
 range = optimizer.objective_wrapper(x); % in meters
 
-%% Surface Area
+%% Reference aircraft values
 clear all
 
 dvec = DesignVector();
@@ -265,3 +267,5 @@ wingDesign = WingDesign(dvec);
 const = Const();
 
 fprintf("Wing surface area S equals: %g\n",wingDesign.S);
+fprintf("Wing MAC equals: %g\n",wingDesign.MAC);
+fprintf("Wing LE Sweep equals: %g\n",wingDesign.LE_sweep);

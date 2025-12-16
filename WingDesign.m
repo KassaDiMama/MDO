@@ -194,22 +194,39 @@ classdef WingDesign < handle
             A_norm = trapz(ts,y_upper) + trapz(ts,y_lower);
 
             function c = calculateChord(b)
-                if b <= obj.b_inboard
-                    dc = obj.c_root-obj.c_kink;
-                    dc_db = dc/obj.b_inboard;
-                    c = obj.c_root - dc_db*b;
-                elseif b <= obj.b_total
-                    dc = obj.c_kink-obj.c_tip;
-                    dc_db = dc/obj.b_outboard;
-                    c = obj.c_kink - dc_db*(b-obj.b_inboard);
-                else
-                    disp("b is higher than b_total")
+                % Initialize output array
+                c = zeros(size(b));
+                
+                % Create logical masks
+                inboard_mask = (b <= obj.b_inboard);
+                outboard_mask = (b > obj.b_inboard) & (b <= obj.b_total);
+                beyond_mask = (b > obj.b_total);
+                
+                % Calculate for inboard section
+                if any(inboard_mask)
+                    dc = obj.c_root - obj.c_kink;
+                    dc_db = dc / obj.b_inboard;
+                    c(inboard_mask) = obj.c_root - dc_db * b(inboard_mask);
+                end
+                
+                % Calculate for outboard section
+                if any(outboard_mask)
+                    dc = obj.c_kink - obj.c_tip;
+                    dc_db = dc / obj.b_outboard;
+                    b_relative = b(outboard_mask) - obj.b_inboard;
+                    c(outboard_mask) = obj.c_kink - dc_db * b_relative;
+                end
+                
+                % Handle points beyond wing tip
+                if any(beyond_mask)
+                    % You can extrapolate, set to 0, or set to NaN
+                    c(beyond_mask) = 0;  % or obj.c_tip, or NaN
                 end
             end
 
-            bs = linspace(0,obj.b_total,30);
+            bs = linspace(0,obj.b_total*obj.end_tank,30);
             cs = calculateChord(bs);
-            As = A_norm * cs;
+            As = A_norm * cs.^2;
 
             wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
             disp("Tank Volume"+string(wing_tank_volume));
