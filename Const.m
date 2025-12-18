@@ -29,9 +29,11 @@ classdef Const
         b_outboard_ref = 12.525
         MAC_ref = 5.04;
         LE_sweep_ref = 0.510488 %rad
+        AR_ref = 7.82;
         alpha_ref = -2.8384 %deg
         CD_i_ref = 0.0154725 % Induced drag
         CD_p_ref = 0.0147834 % Profile Drag
+        fuel_weight_max_ref = 34890
         % prop_eff, , Range
     end
 end

@@ -127,7 +127,7 @@ classdef Optimizer < handle
         function [LD_cruise] = aerodynamicsFunc(obj,W_TO_max,W_fuel)
             [CL_wing, CD_wing] = obj.calcCL_CD(W_TO_max,W_fuel);
 
-            q=0.5*obj.wingDesign.rho*obj.wingDesign.V^2;
+            q=obj.calculateDesignDynamicPressure();
             drag = CD_wing * q *obj.wingDesign.S*2 + Const.drag_fus_initial/Const.q_initial * q;
             lift = CL_wing * q *obj.wingDesign.S*2;
             
@@ -169,7 +169,7 @@ classdef Optimizer < handle
             AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
                                   obj.wingDesign.AU obj.wingDesign.AL];
                               
-            %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
+            %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half;obj.wingDesign.y_tip/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
             AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
@@ -194,6 +194,9 @@ classdef Optimizer < handle
             % disp("CL_wing = " + string(CL_wing) + ", CD_wing = " + string(CD_wing));
             
 
+        end
+        function q = calculateDesignDynamicPressure(obj)
+            q=0.5*obj.wingDesign.rho*obj.wingDesign.V^2;
         end
         function [c,ceq] = constraints(obj,x_normalized)
             x=x_normalized.*obj.x_normalizer;

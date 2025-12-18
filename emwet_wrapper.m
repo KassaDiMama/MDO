@@ -14,7 +14,7 @@ function emwet_wrapper(wingDesign,const,fileName, W_to, W_zf)
     
     fprintf(fid, string(round(W_to))+" "+string(round(W_zf))+"\n");
     fprintf(fid, string(const.n_max)+"\n");
-    fprintf(fid, "%.2f %.2f %d %d\n", wingDesign.S, wingDesign.b_total, wingDesign.number_of_platforms, wingDesign.number_of_airfoils);
+    fprintf(fid, "%.2f %.2f %d %d\n", wingDesign.S, wingDesign.b_half, wingDesign.number_of_platforms, wingDesign.number_of_airfoils);
     fprintf(fid, "%.2f %s\n", wingDesign.y_root, "b737a");
     fprintf(fid, "%.2f %s\n", wingDesign.y_kink, "b737a");
     fprintf(fid, "%.2f %s\n", wingDesign.y_tip, "b737a");

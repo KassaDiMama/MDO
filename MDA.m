@@ -99,7 +99,7 @@ classdef MDA < handle
             AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
                                   obj.wingDesign.AU obj.wingDesign.AL];
                               
-            %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
+            %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half;obj.wingDesign.y_tip/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
             AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
@@ -137,10 +137,10 @@ classdef MDA < handle
             moment_distribution.y = y;
             moment_distribution.M = 0.5 * rho * V^2 * chord .* chord .*cm;
 
-            lift_distribution.y = [0;lift_distribution.y; obj.wingDesign.b_total];
+            lift_distribution.y = [0;lift_distribution.y; obj.wingDesign.b_half];
             lift_distribution.L = [lift_distribution.L(1);lift_distribution.L;2000];
 
-            moment_distribution.y = [0;moment_distribution.y; obj.wingDesign.b_total];
+            moment_distribution.y = [0;moment_distribution.y; obj.wingDesign.b_half];
             moment_distribution.M = [moment_distribution.M(1);moment_distribution.M;-2000];
 
             L_total = 2 * trapz(lift_distribution.y, lift_distribution.L);
@@ -171,9 +171,9 @@ classdef MDA < handle
         
                 % write the line to file
                 if i < length(lift_distribution.y)
-                    fprintf(fid, "%.6f %.6f %.6f\n", lift_distribution.y(i)/obj.wingDesign.b_total, lift_distribution.L(i), moment_distribution.M(i));
+                    fprintf(fid, "%.6f %.6f %.6f\n", lift_distribution.y(i)/obj.wingDesign.b_half, lift_distribution.L(i), moment_distribution.M(i));
                 else
-                    fprintf(fid, "%.6f %.6f %.6f", lift_distribution.y(i)/obj.wingDesign.b_total, lift_distribution.L(i), moment_distribution.M(i));
+                    fprintf(fid, "%.6f %.6f %.6f", lift_distribution.y(i)/obj.wingDesign.b_half, lift_distribution.L(i), moment_distribution.M(i));
                 end
             end
             fclose(fid);
@@ -234,9 +234,9 @@ classdef MDA < handle
             
             fprintf(fid, string(round(W_TO_max))+" "+string(round(W_ZF))+"\n");
             fprintf(fid, string(Const.n_max)+"\n");
-            fprintf(fid, "%.2f %.2f %d %d\n", obj.wingDesign.S*2, obj.wingDesign.b_total*2, obj.wingDesign.number_of_platforms, obj.wingDesign.number_of_airfoils);
-            fprintf(fid, "%.2f %s\n", obj.wingDesign.y_root/obj.wingDesign.b_total, 'airfoil');
-            fprintf(fid, "%.2f %s\n", obj.wingDesign.y_tip/obj.wingDesign.b_total, 'airfoil');
+            fprintf(fid, "%.2f %.2f %d %d\n", obj.wingDesign.S*2, obj.wingDesign.b_half*2, obj.wingDesign.number_of_platforms, obj.wingDesign.number_of_airfoils);
+            fprintf(fid, "%.2f %s\n", obj.wingDesign.y_root/obj.wingDesign.b_half, 'airfoil');
+            fprintf(fid, "%.2f %s\n", obj.wingDesign.y_tip/obj.wingDesign.b_half, 'airfoil');
             
             fprintf(fid, "%.4f %.4f %.4f %.4f %.4f %.4f\n", ...
             obj.wingDesign.c_root, obj.wingDesign.x_root, obj.wingDesign.y_root, obj.wingDesign.z_root, obj.wingDesign.front_spar_pos,obj.wingDesign.rear_spar_pos);
@@ -247,7 +247,7 @@ classdef MDA < handle
         
             fprintf(fid, "%.4f %.4f\n", obj.wingDesign.start_tank, obj.wingDesign.end_tank);
             fprintf(fid, "%d\n", obj.wingDesign.engine_each_wing);
-            fprintf(fid, "%.4f %d\n",obj.wingDesign.engine_location/obj.wingDesign.b_total, obj.wingDesign.engine_weight);
+            fprintf(fid, "%.4f %d\n",obj.wingDesign.engine_location/obj.wingDesign.b_half, obj.wingDesign.engine_weight);
         
             fprintf(fid, "%.5e %.2f %.5e %.5e\n", obj.wingDesign.E_mod, obj.wingDesign.density, obj.wingDesign.tensile_yield, obj.wingDesign.compressive_yield);
             fprintf(fid, "%.5e %.2f %.5e %.5e\n", obj.wingDesign.E_mod, obj.wingDesign.density, obj.wingDesign.tensile_yield, obj.wingDesign.compressive_yield);

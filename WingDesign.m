@@ -37,6 +37,13 @@ classdef WingDesign < handle
         
 
         engine_weight = 3705; %kg correct Source: https://en.wikipedia.org/wiki/Rolls-Royce_RB211
+        
+
+        % From Design Vector
+        b_half
+        LE_sweep 
+        TR
+        AR
 
         % From Design Vector
         b_outboard   % outboard wing span [m]
@@ -59,8 +66,7 @@ classdef WingDesign < handle
         Re   % Reynolds number
         V
 
-        LE_sweep 
-        b_total
+        
         S
         MAC
 
@@ -89,10 +95,10 @@ classdef WingDesign < handle
                 dvec DesignVector   % input must be a DesignVector object
             end
             % Assign values from DesignVector to WingDesign
-            obj.b_outboard = dvec.b_outboard;
-            obj.c_root     = dvec.c_root;
-            obj.c_kink     = dvec.c_kink;
-            obj.c_tip      = dvec.c_tip;
+            obj.b_half = dvec.b_half;
+            obj.LE_sweep = dvec.LE_sweep;
+            obj.TR = dvec.TR;
+            obj.AR = dvec.AR;
             obj.AL         = dvec.AL;
             obj.AU         = dvec.AU;
             obj.Mcr        = dvec.Mcr;
@@ -108,10 +114,10 @@ classdef WingDesign < handle
                 dvec DesignVector   % input must be a DesignVector object
             end
             % Assign values from DesignVector to WingDesign
-            obj.b_outboard = dvec.b_outboard;
-            obj.c_root     = dvec.c_root;
-            obj.c_kink     = dvec.c_kink;
-            obj.c_tip      = dvec.c_tip;
+            obj.b_half = dvec.b_half;
+            obj.LE_sweep = dvec.LE_sweep;
+            obj.TR = dvec.TR;
+            obj.AR = dvec.AR;
             obj.AL         = dvec.AL;
             obj.AU         = dvec.AU;
             obj.Mcr        = dvec.Mcr;
@@ -128,27 +134,39 @@ classdef WingDesign < handle
 
             [obj.rho, obj.a, obj.T] = obj.isa_func();
 
+
+            obj.b_outboard = obj.b_half - obj.b_inboard;
+            obj.S = (2*obj.b_half)^2 / obj.AR;
             
-            obj.b_total = obj.b_inboard + obj.b_outboard;
-            obj.S = obj.calculateSurfaceArea();
+
+            F = @(v) [                              
+                (v(1) + v(2))/2 *obj.b_inboard + (v(2) + v(3))/2 *obj.b_outboard - obj.S/2
+                v(1)/v(3) - obj.TR
+                v(1)-v(2)-obj.b_inboard*tan(obj.LE_sweep)
+                ];
+            chords = fsolve(F, [Const.c_root_ref, Const.c_kink_ref, Const.c_tip_ref]);
+            obj.c_root = chords(1);
+            obj.c_kink = chords(2);
+            obj.c_tip = chords(3);
+            % obj.S = obj.calculateSurfaceArea();
             obj.MAC = obj.mac_func();
             obj.V = obj.cruiseSpeed();
             obj.Re = obj.re_func();
 
 
             obj.x_kink = obj.x_root + obj.c_root - obj.c_kink+0.1;
-            obj.LE_sweep = obj.calculateLESweep();
-            obj.x_tip = obj.x_root + obj.b_total * tan(obj.LE_sweep);
+            % obj.LE_sweep = obj.calculateLESweep();
+            obj.x_tip = obj.x_root + obj.b_half * tan(obj.LE_sweep);
 
-            obj.y_tip = obj.b_total;
+            obj.y_tip = obj.b_half;
             obj.y_kink = obj.b_inboard;
 
             obj.z_kink = obj.calculateSectionZ(obj.y_kink);
-            obj.z_tip = obj.calculateSectionZ(obj.b_total);
+            obj.z_tip = obj.calculateSectionZ(obj.b_half);
 
             obj.W_fuel = obj.calculateFuelWeight();
 
-            obj.engine_location =0.34*obj.b_total; %Correct
+            obj.engine_location =0.34*obj.b_half; %Correct
         end
         
         function LE_sweep = calculateLESweep(obj)
@@ -184,7 +202,7 @@ classdef WingDesign < handle
         
             S = S1+S2;
         end
-        function W_fuel = calculateFuelWeight(obj)
+        function wing_tank_volume = calculateWingTankVolume(obj)
             N1 = 0.5;
             N2 = 1;
             function result = CST(t,A)
@@ -214,28 +232,29 @@ classdef WingDesign < handle
                     dc = obj.c_root-obj.c_kink;
                     dc_db = dc/obj.b_inboard;
                     c = obj.c_root - dc_db*b;
-                elseif b <= obj.b_total
+                elseif b <= obj.b_half
                     dc = obj.c_kink-obj.c_tip;
                     dc_db = dc/obj.b_outboard;
                     c = obj.c_kink - dc_db*(b-obj.b_inboard);
                 else
-                    disp("b is higher than b_total");
+                    disp("b is higher than b_half");
                 end
             end
 
-            bs = linspace(0,obj.b_total*obj.end_tank,30);
+            bs = linspace(0,obj.b_half*obj.end_tank,30);
             cs =[];
             for i = 1:length(bs)
                 cs(i) = calculateChord(bs(i));
             end
             As = A_norm .* cs .*cs;
-
             wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
-            disp("Tank Volume"+ string(wing_tank_volume));
+        end
+        function W_fuel = calculateFuelWeight(obj)
+            wing_tank_volume = obj.calculateWingTankVolume();
         
 
-            internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
-            disp("Internal Tank Volume"+ string(internal_tank_volume));
+            % internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
+            % disp("Internal Tank Volume"+ string(internal_tank_volume));
             total_volume = Const.internal_tank_volume + wing_tank_volume;
 
             W_fuel = total_volume * Const.rho_fuel;
@@ -311,10 +330,10 @@ classdef WingDesign < handle
         function dvec = toDesignVector(obj)
             dvec = DesignVector();
 
-            dvec.b_outboard = obj.b_outboard;
-            dvec.c_root = obj.c_root;
-            dvec.c_kink = obj.c_kink;
-            dvec.c_tip = obj.c_tip;
+            dvec.b_half = obj.b_half;
+            dvec.LE_sweep = obj.LE_sweep;
+            dvec.TR = obj.TR;
+            dvec.AR = obj.AR;
             dvec.AL = obj.AL;
             dvec.AU = obj.AU;
             dvec.Mcr = obj.Mcr;

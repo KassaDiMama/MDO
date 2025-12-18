@@ -137,6 +137,7 @@ ylabel('Moment')
 title('Moment Distribution')
 %% Plot wing
 dvec = DesignVector();
+% dvec.LE_sweep = 20/180*pi;
 wingDesign = WingDesign(dvec);
 
 x_root = wingDesign.x_root;
@@ -212,7 +213,7 @@ legend('Wing','Leading Edge','Trailing Edge');
 % AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
 %                       obj.wingDesign.AU obj.wingDesign.AL];
 % 
-% %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
+% %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
 % AC.Wing.eta = [0;1];
 % % Viscous vs inviscid
 % AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
@@ -234,11 +235,11 @@ legend('Wing','Leading Edge','Trailing Edge');
 % 
 % AC.Aero.M
 % AC.Aero.V
-Cdw = drag_estimation(Res,AC.Visc,true)
-[CDi_total, CDv_total] = Drag_coeff_from_spanwise(Res, wingDesign.S);
-fprintf("induced drag equals: %g\n",CDi_total);
-fprintf("profile drag equals: %g\n",CDv_total);
-% Cd_AnoW = Res.CLwing/16 - Cdw
+% Cdw = drag_estimation(Res,AC.Visc,true)
+% [CDi_total, CDv_total] = Drag_coeff_from_spanwise(Res, wingDesign.S);
+% fprintf("induced drag equals: %g\n",CDi_total);
+% fprintf("profile drag equals: %g\n",CDv_total);
+% % Cd_AnoW = Res.CLwing/16 - Cdw
 
 
 %% Calculate initial lift and drag
@@ -287,3 +288,9 @@ msg = [
 
 logMessage(msg, "log.file")
 optimizer.start();
+%% Test Initializer
+clear all
+close all
+clc
+dvec = DesignVector();
+initializer = Initializer(dvec);

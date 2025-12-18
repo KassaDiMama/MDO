@@ -1,10 +1,10 @@
 classdef DesignVector
     properties
         % Geometric parameters
-        b_outboard = 12.525;   % outboard wing span [m]
-        c_root     = 8.2; %11.5 increases weight but also LE sweep       % root chord [m]
-        c_kink     = 4.66;      % kink chord [m]
-        c_tip      = 1.73;      % tip chord [m]
+        b_half = Const.b_inboard_ref+Const.b_outboard_ref;  
+        LE_sweep  = Const.LE_sweep_ref; 
+        TR = Const.c_root_ref/Const.c_tip_ref;      
+        AR  = Const.AR_ref;      % tip chord [m]
 
         % Airfoil coefficients Correct whithcomb
         AL = [-0.2253,-0.1637,-0.0464,-0.4778,0.0741,0.3252];
@@ -27,10 +27,10 @@ classdef DesignVector
     methods
         function x = toVector(obj)
             x = [];
-            x(1) = obj.b_outboard;
-            x(2) = obj.c_root;
-            x(3) = obj.c_kink;
-            x(4) = obj.c_tip;
+            x(1) = obj.b_half;
+            x(2) = obj.LE_sweep;
+            x(3) = obj.TR;
+            x(4) = obj.AR;
             x(5) = obj.AU(1);
             x(6) = obj.AU(2);
             x(7) = obj.AU(3);
@@ -47,10 +47,10 @@ classdef DesignVector
             x(18) = obj.hcr;
         end
         function obj = fromVector(obj, x)
-            obj.b_outboard = x(1);
-            obj.c_root = x(2);
-            obj.c_kink = x(3);
-            obj.c_tip = x(4);
+            obj.b_half = x(1);
+            obj.LE_sweep = x(2);
+            obj.TR = x(3);
+            obj.AR = x(4);
             obj.AU = x(5:10);
             obj.AL = x(11:16);
             obj.Mcr = x(17);
@@ -59,15 +59,15 @@ classdef DesignVector
         end
         function str = toString(obj)
             str = sprintf(['DesignVector:\n' ...
-                'b_outboard: %.4f\n' ...
-                'c_root: %.4f\n' ...
-                'c_kink: %.4f\n' ...
-                'c_tip: %.4f\n' ...
+                'b_half: %.4f\n' ...
+                'LE_sweep: %.4f\n' ...
+                'TR: %.4f\n' ...
+                'AR: %.4f\n' ...
                 'AU: [%s]\n' ...
                 'AL: [%s]\n' ...
                 'Mcr: %.4f\n' ...
                 'hcr: %.2f'], ...
-                obj.b_outboard, obj.c_root, obj.c_kink, obj.c_tip, ...
+                obj.b_half, obj.LE_sweep, obj.TR, obj.AR, ...
                 sprintf('%.4f ', obj.AU), sprintf('%.4f ', obj.AL), ...
                 obj.Mcr, obj.hcr);
         end
