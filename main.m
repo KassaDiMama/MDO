@@ -234,8 +234,10 @@ legend('Wing','Leading Edge','Trailing Edge');
 % 
 % AC.Aero.M
 % AC.Aero.V
-% Cdw = drag_estimation(Res,AC.Visc,true)
-% 
+Cdw = drag_estimation(Res,AC.Visc,true)
+[CDi_total, CDv_total] = Drag_coeff_from_spanwise(Res, wingDesign.S);
+fprintf("induced drag equals: %g\n",CDi_total);
+fprintf("profile drag equals: %g\n",CDv_total);
 % Cd_AnoW = Res.CLwing/16 - Cdw
 
 
@@ -258,7 +260,7 @@ optimizer = Optimizer(dvec);
 x = dvec.toVector();
 range = optimizer.objective_wrapper(x./x); % in meters
 
-%% Surface Area
+%% Reference aircraft values
 clear all
 
 dvec = DesignVector();
@@ -266,6 +268,8 @@ wingDesign = WingDesign(dvec);
 const = Const();
 
 fprintf("Wing surface area S equals: %g\n",wingDesign.S);
+fprintf("Wing MAC equals: %g\n",wingDesign.MAC);
+fprintf("Wing LE Sweep equals: %g\n",wingDesign.LE_sweep);
 
 %% Run the optimization
 clear all

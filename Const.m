@@ -22,5 +22,16 @@ classdef Const
         q_initial = 9.1170e+03;
         internal_tank_volume =3.1877;
         S_ref = 81.8124; %[m^2]
+        c_root_ref = 8.2;
+        c_kink_ref = 4.66;
+        c_tip_ref = 1.73;
+        b_inboard_ref = 6.5;
+        b_outboard_ref = 12.525
+        MAC_ref = 5.04;
+        LE_sweep_ref = 0.510488 %rad
+        alpha_ref = -2.8384 %deg
+        CD_i_ref = 0.0154725 % Induced drag
+        CD_p_ref = 0.0147834 % Profile Drag
+        % prop_eff, , Range
     end
 end
