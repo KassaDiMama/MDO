@@ -72,13 +72,13 @@ classdef MDA < handle
                 obj.W_TO_max = new_W_TO;
                 obj.W_ZF = new_ZF;
                 % Optional: display the iteration progress
-                fprintf('Iteration: W_TO_assumed = %.2f, W_TO_new = %.2f, Difference = %.2f\n', W_TO_old, new_W_TO, abs(W_TO_old - new_W_TO));
+                % fprintf('Iteration: W_TO_assumed = %.2f, W_TO_new = %.2f, Difference = %.2f\n', W_TO_old, new_W_TO, abs(W_TO_old - new_W_TO));
             end
             [lift_dist, moment_dist] = obj.loadsFunc(obj.W_TO_max);
             [W_TO_final, W_ZF_final] = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
             obj.W_TO_max = W_TO_final;
             obj.W_ZF = W_ZF_final;
-            fprintf('Finished Iterating: W_TO_initial = %.2f, W_TO_final = %.2f, Difference = %.2f\n', W_init, W_TO_final, abs(W_init - W_TO_final));
+            % fprintf('Finished Iterating: W_TO_initial = %.2f, W_TO_final = %.2f, Difference = %.2f\n', W_init, W_TO_final, abs(W_init - W_TO_final));
 
         end
 
@@ -153,77 +153,8 @@ classdef MDA < handle
             % disp("Cruise lift [N]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
             % disp("Cruise lift [kg]: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2/9.81));
             % disp("Total moment in Nm"+string(M_total));
-            return
-            
-           
-            
-            y = [0;y;obj.wingDesign.b_total];
-            cl = [cl(1);cl;0];
-            cm = [cm(1);cm;0];
-            chord = [obj.wingDesign.c_root;chord;obj.wingDesign.c_tip];
-            % function A = calcA(index)
-            % 
-            % end
-            % function g(b)
-            % end
-            
-            y_refined = linspace(0,obj.wingDesign.b_total,1000);
-            cl_refined  = interp1(y, cl, y_refined, 'linear');
-            cm_refined  = interp1(y, cm, y_refined, 'linear');
-            chord_refined = interp1(y, chord, y_refined, 'linear');
-            
-            dy = diff(y_refined);
-            function local_lift = calcLocalLift(i);
-                local_lift = 0.5 * rho * V^2 * cl_refined(i)*chord_refined(i);%*dy(i);
-            end
-
-            function local_moment = calcLocalMoment(i)
-                local_moment = 0.5 * rho * V^2 * cm_refined(i) * chord_refined(i)^2 ;%* dy(i);
-            end
-            
-
-            
-            
-            for i = 1:length(dy)
-                lift_distribution.y(i) = y_refined(i)+dy(i)/2;
-                lift_distribution.L(i) = calcLocalLift(i);
-            end
-            lift_distribution.y(end) = obj.wingDesign.b_total;
-            lift_distribution.L(end) = 0;
-          
-            total_lift = sum(lift_distribution.L.*dy*2);
-
-            for i = 1:length(dy)
-                moment_distribution.y(i) = y_refined(i) + dy(i)/2;
-                moment_distribution.M(i) = calcLocalMoment(i);
-            end
-            
-            % Tip point
-            moment_distribution.y(end) = obj.wingDesign.b_total;
-            moment_distribution.M(end) = 0;
-
-            total_moment = sum(moment_distribution.M.*dy);
-
-
-            % % Sectional lift per segment
-            % L = 0.5 * rho * V^2 .* cl(1:end-1) .* chord(1:end-1) .* dy;
-            % 
-            % % Sectional moment per segment about quarter-chord
-            % M = 0.5 * rho * V^2 .* cm(1:end-1) .* chord(1:end-1).^2 .* dy;
-            % 
-            % % Store distributions (append 0 at tip for plotting)
-            % lift_distribution.y = y;
-            % lift_distribution.L = [L; 0];
-            % 
-            % moment_distribution.y = y;
-            % moment_distribution.M = [M; 0];
-            % 
-            % total_lift   = sum(L);
-            % total_moment = sum(M);
-
-            % disp("Total lift in kg: "+string(total_lift/9.81*2));
-            % disp("Cruise mass: "+string(AC.Aero.CL*0.5*rho*V^2*obj.wingDesign.S*2));
-            % disp("Total moment in Nm"+string(total_moment));
+        
+              
         end
         function [W_TO_max, W_ZF,W_wing] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
             fileName = "optimizing";
@@ -329,6 +260,7 @@ classdef MDA < handle
             fclose(fid);
             
             EMWET optimizing;
+            
             fid = fopen(fileName+'.weight','r');  % replace with your file name
 
             if fid == -1

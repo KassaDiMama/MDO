@@ -50,7 +50,7 @@ Res = Q3D_solver(AC);
 %Change in line 12 the x value for exercise 3
 t=toc;
 % 0.2252    0.0904    0.2445    0.1314    0.4253   -0.2413   -0.0557   -0.3071  -0.2166    0.4077;
-createLoadingFile(Res,"test",AC.Aero.rho,AC.Aero.V)
+createLoadingFile(Res,"test",AC.Aero.rho,AC.Aero.V);
 
 
 %% test emwet_wrapper
@@ -99,7 +99,7 @@ wingDesign = WingDesign(dvec);
 mda = MDA(wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
 [lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial);
 
-mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
+[W_TO_max_out, W_ZF_out, W_wing_out] = mda.structuresFunc(lift_distribution, moment_distribution, Const.W_TO_max_initial, Const.W_ZF_initial);
 %% MDA LOOP TEST
 clear all
 close all
@@ -212,7 +212,7 @@ legend('Wing','Leading Edge','Trailing Edge');
 % AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
 %                       obj.wingDesign.AU obj.wingDesign.AL];
 % 
-% %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total;obj.wingDesign.y_tip/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
+% %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_total;obj.wingDesign.y_kink/obj.wingDesign.b_total];  % Spanwise location of the airfoil sections
 % AC.Wing.eta = [0;1];
 % % Viscous vs inviscid
 % AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
@@ -256,7 +256,7 @@ clc
 dvec = DesignVector();
 optimizer = Optimizer(dvec);
 x = dvec.toVector();
-range = optimizer.objective_wrapper(x); % in meters
+range = optimizer.objective_wrapper(x./x); % in meters
 
 %% Surface Area
 clear all
@@ -272,7 +272,14 @@ clear all
 close all
 clc
 
-echo on
+echo all off
 dvec = DesignVector();
 optimizer = Optimizer(dvec);
+msg = [
+    "---------------------------------"
+    "---------------------------------"
+    "Starting new run at " + string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))
+];
+
+logMessage(msg, "log.file")
 optimizer.start();
