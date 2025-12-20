@@ -3,83 +3,67 @@ classdef Optimizer < handle
         mda MDA
         dvec DesignVector
         wingDesign WingDesign
+        initializer Initializer
         x0
         x_normalizer
     end
     
     methods
-        function obj = Optimizer(dvec)
-            obj.dvec = dvec;
-            obj.wingDesign = WingDesign(obj.dvec);
-            obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
+        function obj = Optimizer(dvec, wingDesign,initializer)
+            obj.dvec =dvec;
+            obj.x0 = obj.dvec.toVector();
+            obj.wingDesign = wingDesign;
+            obj.initializer = initializer;
+            obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,obj.initializer.W_ZF_initial);
         end
         function start(obj)
-            obj.x0 = obj.dvec.toVector();
+            
             
             objective = @(x) obj.objective_wrapper(x);
             nonlcon = @(x) obj.constraints(x);
             ub = [];
-            ub(1) = 52/2 - obj.wingDesign.b_inboard; %b_outboard
-            ub(2) = 15;
-            ub(3) = 10;
-            ub(4) = 3;
-            ub(5) = 1;
-            ub(6) = 1;
-            ub(7) = 1;
-            ub(8) = 1;
-            ub(9) = 1;
-            ub(10) = 1;
-            ub(11) = 1;
-            ub(12) = 1;
-            ub(13) = 1;
-            ub(14) = 1;
-            ub(15) = 1;
-            ub(16) = 1;
-            ub(17) = 0.88;
-            ub(18) = 13075.92;
+            ub(1) = 26/obj.x0(1); %b_outboard
+            ub(2) = 40/180*pi/obj.x0(2);
+            ub(3) = 0.85/obj.x0(3);
+            ub(4) = 12/obj.x0(4);
+            ub(5) = 2.62;
+            ub(6) = 2.62;
+            ub(7) = 2.62;
+            ub(8) = 2.62;
+            ub(9) = 2.62;
+            ub(10) = 2.62;
+            ub(11) = 1.084;
+            ub(12) = 1.084;
+            ub(13) = 1.084;
+            ub(14) = 1.084;
+            ub(15) = 1.084;
+            ub(16) = 1.084;
+            ub(17) = 0.88/obj.x0(17);
+            ub(18) = 13075.92/obj.x0(18);
 
             
-            lb(1) = 24/2- obj.wingDesign.b_inboard;
-            lb(2) = 4;
-            lb(3) = 2;
-            lb(4) = 1;
-            lb(5) = -1;
-            lb(6) = -1;
-            lb(7) = -1;
-            lb(8) = -1;
-            lb(9) = -1;
-            lb(10) = -1;
-            lb(11) = -1;
-            lb(12) = -1;
-            lb(13) = -1;
-            lb(14) = -1;
-            lb(15) = -1;
-            lb(16) = -1;
-            lb(17) = 0.72;
-            lb(18) = 10698.48;
+            lb(1) = 15/obj.x0(1);
+            lb(2) = 0/obj.x0(2);
+            lb(3) = 0.2/obj.x0(3);
+            lb(4) = 6/obj.x0(4);
+            lb(5) = -0.916;
+            lb(6) = -0.916;
+            lb(7) = -0.916;
+            lb(8) = -0.916;
+            lb(9) = -0.916;
+            lb(10) = -0.916;
+            lb(11) = -2.09;
+            lb(12) = -2.09;
+            lb(13) = -2.09;
+            lb(14) = -2.09;
+            lb(15) = -2.09;
+            lb(16) = -2.09;
+            lb(17) = 0.72/obj.x0(17);
+            lb(18) = 10698.48/obj.x0(18);
 
-            obj.x_normalizer = [];
-            obj.x_normalizer(1) = abs(obj.x0(1));
-            obj.x_normalizer(2) = abs(obj.x0(2));
-            obj.x_normalizer(3) = abs(obj.x0(3));
-            obj.x_normalizer(4) = abs(obj.x0(4));
-            obj.x_normalizer(5) = 1;
-            obj.x_normalizer(6) = 1;
-            obj.x_normalizer(7) = 1;
-            obj.x_normalizer(8) = 1;
-            obj.x_normalizer(9) = 1;
-            obj.x_normalizer(10) = 1;
-            obj.x_normalizer(11) = 1;
-            obj.x_normalizer(12) = 1;
-            obj.x_normalizer(13) = 1;
-            obj.x_normalizer(14) = 1;
-            obj.x_normalizer(15) = 1;
-            obj.x_normalizer(16) = 1;
-            obj.x_normalizer(17) = abs(obj.x0(17));
-            obj.x_normalizer(18) = abs(obj.x0(18));
-            x0_normalized = obj.x0./obj.x_normalizer;
-            lb_normalized = lb./obj.x_normalizer;
-            ub_normalized = ub./obj.x_normalizer;
+   
+            x0_normalized = obj.x0./obj.x0;
+            
 
             A = [];
             b = [];
@@ -101,12 +85,12 @@ classdef Optimizer < handle
             
 
             [x_opt, fval, exitflag, output] = fmincon(objective, ...
-                                          x0_normalized, A, b, Aeq, beq,lb_normalized ,ub_normalized , ...
+                                          x0_normalized, A, b, Aeq, beq,lb ,ub , ...
                                           nonlcon, options);
             disp("Done optimizing!");
         end
         function objective = objective_wrapper(obj,x_normalized)
-            x=x_normalized.*obj.x_normalizer;
+            x=x_normalized.*obj.x0;
             obj.dvec = obj.dvec.fromVector(x);
             obj.wingDesign = obj.wingDesign.fromDesignVector(obj.dvec);
             obj.mda.wingDesign = obj.wingDesign;
@@ -116,7 +100,7 @@ classdef Optimizer < handle
             objective = -obj.objective_loop();
         end
         function objective = objective_loop(obj)
-            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
+            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
             LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.wingDesign.W_fuel);
             eta = obj.performanceFunction();
             objective = obj.objectiveFunc(obj.wingDesign.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
@@ -128,8 +112,8 @@ classdef Optimizer < handle
             [CL_wing, CD_wing] = obj.calcCL_CD(W_TO_max,W_fuel);
 
             q=obj.calculateDesignDynamicPressure();
-            drag = CD_wing * q *obj.wingDesign.S*2 + Const.drag_fus_initial/Const.q_initial * q;
-            lift = CL_wing * q *obj.wingDesign.S*2;
+            drag = CD_wing * q *obj.wingDesign.S + obj.initializer.drag_fus_initial/obj.initializer.q_design_initial * q;
+            lift = CL_wing * q *obj.wingDesign.S;
             
             LD_cruise = lift/drag;
 
@@ -199,15 +183,15 @@ classdef Optimizer < handle
             q=0.5*obj.wingDesign.rho*obj.wingDesign.V^2;
         end
         function [c,ceq] = constraints(obj,x_normalized)
-            x=x_normalized.*obj.x_normalizer;
+            x=x_normalized.*obj.x0;
             obj.dvec = obj.dvec.fromVector(x);
             obj.wingDesign = obj.wingDesign.fromDesignVector(obj.dvec);
             obj.mda.wingDesign = obj.wingDesign;
 
             
             % No inequality constraints
-            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
-            c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/Const.S_ref; % Wing loading constraint  
+            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
+            c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/obj.initializer.S_initial; % Wing loading constraint  
             ceq = [];
         end
     end

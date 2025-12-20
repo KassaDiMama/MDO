@@ -1,7 +1,6 @@
 classdef MDA < handle
     properties
         wingDesign WingDesign
-        
         W_ZF
         W_TO_max
     end
@@ -18,21 +17,28 @@ classdef MDA < handle
             obj.W_TO_max = W_TO_max;
             obj.W_ZF = W_ZF;
         end
-        function derivative =  W_TO_max_prime(obj)
+        function derivative =  W_TO_max_prime(obj, W_AminusW_initial,V_MO_initial)
             delta_W = 1;
             W_TO_plus = obj.W_TO_max+delta_W;
-            [lift_distribution_plus, moment_distribution_plus] = obj.loadsFunc(W_TO_plus);
-            [W_TO_max_plus, ~] = obj.structuresFunc(lift_distribution_plus, moment_distribution_plus, W_TO_plus, obj.W_ZF);
+            [lift_distribution_plus, moment_distribution_plus] = obj.loadsFunc(W_TO_plus,V_MO_initial);
+            W_wing_plus = obj.structuresFunc(lift_distribution_plus, moment_distribution_plus, W_TO_plus, obj.W_ZF);
+            W_TO_max_plus = W_AminusW_initial+W_wing_plus+obj.wingDesign.W_fuel;
+            
+            % [W_TO_max_plus, ~] = obj.structuresFunc(lift_distribution_plus, moment_distribution_plus, W_TO_plus, obj.W_ZF);
             derivative = (W_TO_max_plus - obj.W_TO_max) / delta_W;
         end
         
-        function new_W = newton(obj)
-            [lift_dist, moment_dist] = obj.loadsFunc(obj.W_TO_max);
-            [W_TO_calc, W_ZF_calc] = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+        function new_W = newton(obj,W_AminusW_initial,V_MO_initial)
+            [lift_dist, moment_dist] = obj.loadsFunc(obj.W_TO_max,V_MO_initial);
+            
+            % [W_TO_calc, W_ZF_calc] = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+            W_fuel_calc = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+            W_TO_calc = W_AminusW_initial+W_fuel_calc+obj.wingDesign.W_fuel;
+            W_ZF_calc = W_AminusW_initial+W_fuel_calc;
             f_x = obj.W_TO_max - W_TO_calc;
     
            
-            d_W_calc_d_W = obj.W_TO_max_prime();
+            d_W_calc_d_W = obj.W_TO_max_prime(W_AminusW_initial,V_MO_initial);
         
             f_prime_x = 1 - d_W_calc_d_W;
         
@@ -45,44 +51,52 @@ classdef MDA < handle
             end
         end
 
-        function obj= MDA_loop(obj,W_TO_max,W_fuel,W_ZF)
+        function obj= MDA_loop(obj,W_TO_max,W_fuel,W_ZF,W_AminusW_initial,V_MO_initial)
             
             W_init = W_TO_max;
             obj.W_TO_max = W_TO_max;
             % obj.W_fuel = W_fuel;
             obj.W_ZF = W_ZF;
             
-            [lift_dist, moment_dist] = obj.loadsFunc(W_TO_max);
-            obj.W_TO_max, obj.W_ZF = obj.structuresFunc(lift_dist, moment_dist, W_TO_max, W_ZF);
-            
+            [lift_dist, moment_dist] = obj.loadsFunc(W_TO_max,V_MO_initial);
+            W_wing = obj.structuresFunc(lift_dist, moment_dist, W_TO_max, W_ZF);
+            obj.W_TO_max = W_AminusW_initial+W_wing+obj.wingDesign.W_fuel;
+            obj.W_ZF = W_AminusW_initial+W_wing;
 
             W_TO_old = 0;
-            while abs(obj.W_TO_max - W_TO_old) > 4
+            while abs(obj.W_TO_max - W_TO_old) > W_TO_old * 0.01
     
                 % Store the current assumed weight before iteration for the convergence check
                 W_TO_old = obj.W_TO_max;
                 
                 % Perform one step of the Newton-Raphson iteration to get a better estimate
                 % The 'newton' function already calculates W_TO_calculated for the assumed W_TO_max.
-                new_W_TO = obj.newton();
+                new_W_TO = obj.newton(W_AminusW_initial,V_MO_initial);
                 
                 % Update the assumed weight (W_TO_max) with the new, calculated value for the next iteration
-                [new_lift_dist, new_moment_dist] = obj.loadsFunc(new_W_TO);
-                [new_W_TO, new_ZF] = obj.structuresFunc(new_lift_dist, new_moment_dist, W_TO_max, W_ZF);
+                [new_lift_dist, new_moment_dist] = obj.loadsFunc(new_W_TO,V_MO_initial);
+                % [new_W_TO, new_ZF] = obj.structuresFunc(new_lift_dist, new_moment_dist, W_TO_max, W_ZF);
+                new_W_wing = obj.structuresFunc(new_lift_dist, new_moment_dist, W_TO_max, W_ZF);
+                new_W_TO = W_AminusW_initial+new_W_wing+obj.wingDesign.W_fuel;
+                new_ZF = W_AminusW_initial+new_W_wing;
+                
                 obj.W_TO_max = new_W_TO;
                 obj.W_ZF = new_ZF;
                 % Optional: display the iteration progress
                 % fprintf('Iteration: W_TO_assumed = %.2f, W_TO_new = %.2f, Difference = %.2f\n', W_TO_old, new_W_TO, abs(W_TO_old - new_W_TO));
             end
-            [lift_dist, moment_dist] = obj.loadsFunc(obj.W_TO_max);
-            [W_TO_final, W_ZF_final] = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+            [lift_dist, moment_dist] = obj.loadsFunc(obj.W_TO_max,V_MO_initial);
+            % [W_TO_final, W_ZF_final] = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+            W_wing_final = obj.structuresFunc(lift_dist, moment_dist, obj.W_TO_max, obj.W_ZF);
+            W_TO_final = W_AminusW_initial+W_wing_final+obj.wingDesign.W_fuel;
+            W_ZF_final = W_AminusW_initial+W_wing_final;
             obj.W_TO_max = W_TO_final;
             obj.W_ZF = W_ZF_final;
             % fprintf('Finished Iterating: W_TO_initial = %.2f, W_TO_final = %.2f, Difference = %.2f\n', W_init, W_TO_final, abs(W_init - W_TO_final));
 
         end
 
-        function [lift_distribution, moment_distribution] = loadsFunc(obj, W_TO_max)
+        function [lift_distribution, moment_distribution] = loadsFunc(obj, W_TO_max, V_MO_initial)
                         
             % Wing planform geometry 
             %               x    y     z   chord(m)    twist angle (deg) 
@@ -106,14 +120,14 @@ classdef MDA < handle
             AC.Aero.MaxIterIndex = 150;
             % Flight Condition
             [rho_dont_use,a,T_dont_use] = obj.wingDesign.isa_func();
-            Mcritical = Const.V_MO_ref/a;
-            Re_corrected = obj.wingDesign.Re/Const.V_MO_ref*obj.wingDesign.V;
-            AC.Aero.V     = Const.V_MO_ref;            % flight speed (m/s)
+            Mcritical = V_MO_initial/a;
+            Re_corrected = obj.wingDesign.Re/V_MO_initial*obj.wingDesign.V;
+            AC.Aero.V     = V_MO_initial;            % flight speed (m/s)
             AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
             AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
             AC.Aero.Re    = Re_corrected;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = Mcritical;           % flight Mach number 
-            AC.Aero.CL    = obj.wingDesign.calculateCL_critical(W_TO_max);          % lift coefficient - comment this line to run the code for given alpha%
+            AC.Aero.CL    = obj.wingDesign.calculateCL_critical(W_TO_max,V_MO_initial);          % lift coefficient - comment this line to run the code for given alpha%
             % AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
 
             % tic
@@ -156,7 +170,7 @@ classdef MDA < handle
         
               
         end
-        function [W_TO_max, W_ZF,W_wing] = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
+        function W_wing = structuresFunc(obj, lift_distribution, moment_distribution, W_TO_max, W_ZF)
             fileName = "optimizing";
             N1 = 0.5;
             N2 = 1;
@@ -234,7 +248,7 @@ classdef MDA < handle
             
             fprintf(fid, string(round(W_TO_max))+" "+string(round(W_ZF))+"\n");
             fprintf(fid, string(Const.n_max)+"\n");
-            fprintf(fid, "%.2f %.2f %d %d\n", obj.wingDesign.S*2, obj.wingDesign.b_half*2, obj.wingDesign.number_of_platforms, obj.wingDesign.number_of_airfoils);
+            fprintf(fid, "%.2f %.2f %d %d\n", obj.wingDesign.S, obj.wingDesign.b_half*2, obj.wingDesign.number_of_platforms, obj.wingDesign.number_of_airfoils);
             fprintf(fid, "%.2f %s\n", obj.wingDesign.y_root/obj.wingDesign.b_half, 'airfoil');
             fprintf(fid, "%.2f %s\n", obj.wingDesign.y_tip/obj.wingDesign.b_half, 'airfoil');
             
@@ -278,8 +292,7 @@ classdef MDA < handle
             wing_mass = str2double(massStr{1});                 % convert to double
             % disp("wing mass: "+string(wing_mass))
             % disp(obj.wingDesign.LE_sweep*180/pi)
-            W_TO_max = Const.W_AminusW+wing_mass+obj.wingDesign.W_fuel;
-            W_ZF = Const.W_AminusW+wing_mass;
+            
             W_wing = wing_mass;
         end
     end

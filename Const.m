@@ -7,33 +7,43 @@ classdef Const
         rho_fuel = 0.81715e3; % kg/m3
         f_tank = 0.93;
         W_TO_max_initial = 122470; %kg
-        C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
-        W_fuel_initial = 33785 ;%Got from excel %33785; % kg
-        W_ZF_initial = 122470-33785; % kg
-        W_wing_initial = 15429.2;
-        W_AminusW = 95250 - 15429.2;
-        LD_initial = 16;
-        CD_initial = 0.0335;
-        CL_initial = 0.7103;
+        W_fuel_cruise_initial = 33785 ;%Got from excel %33785; % kg
+        LD_initial = 18;
         CT_bar = 1.8639e-4;
-        V_MO_ref = 253.758;
-        rho_ref = 0.327234791343548;
-        drag_fus_initial = 1.6251e+04;
-        q_initial = 9.1170e+03;
-        internal_tank_volume =3.1877;
-        S_ref = 81.8124; %[m^2]
-        c_root_ref = 8.2;
-        c_kink_ref = 4.66;
-        c_tip_ref = 1.73;
+        internal_tank_volume =0;
         b_inboard_ref = 6.5;
         b_outboard_ref = 12.525
-        MAC_ref = 5.04;
-        LE_sweep_ref = 0.510488 %rad
+        LE_sweep_ref = 0.49836829593%+ 4 / 180 *pi%0.510488 %rad
         AR_ref = 7.82;
-        alpha_ref = -2.8384 %deg
-        CD_i_ref = 0.0154725 % Induced drag
-        CD_p_ref = 0.0147834 % Profile Drag
+        TR_ref = 0.243;
         fuel_weight_max_ref = 34890
+        airfoil_ref = 'withcomb135.dat'
+        airfoil_thickness_multiplier = 0.95
+        % C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
+        
+        % W_ZF_initial = 122470-33785; % kg
+        % W_wing_initial = 15429.2;
+        % W_AminusW = 95250 - 15429.2;
+        
+        % CD_initial = 0.0335;
+        % CL_initial = 0.7103;
+        
+        % V_MO_ref = 253.758;
+        % rho_ref = 0.327234791343548;
+        % drag_fus_initial = 1.6251e+04;
+        % q_initial = 9.1170e+03;
+        
+        % S_ref = 81.8124; %[m^2]
+        % c_root_ref = 8.2;
+        % c_kink_ref = 4.66;
+        % c_tip_ref = 1.73;
+        
+        % MAC_ref = 5.04;
+        
+        % alpha_ref = -2.8384 %deg
+        % CD_i_ref = 0.0154725 % Induced drag
+        % CD_p_ref = 0.0147834 % Profile Drag
+        
         % prop_eff, , Range
     end
 end

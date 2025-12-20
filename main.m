@@ -257,9 +257,12 @@ close all
 clc
 
 dvec = DesignVector();
-optimizer = Optimizer(dvec);
+initializer = Initializer(dvec);
+optimizer = initializer.optimizer;
 x = dvec.toVector();
 range = optimizer.objective_wrapper(x./x); % in meters
+fprintf("Initial range equals: %g km\n",-range/1000);
+
 
 %% Reference aircraft values
 clear all

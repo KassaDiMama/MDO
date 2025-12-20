@@ -3,7 +3,7 @@ classdef DesignVector
         % Geometric parameters
         b_half = Const.b_inboard_ref+Const.b_outboard_ref;  
         LE_sweep  = Const.LE_sweep_ref; 
-        TR = Const.c_root_ref/Const.c_tip_ref;      
+        TR = Const.TR_ref;      
         AR  = Const.AR_ref;      % tip chord [m]
 
         % Airfoil coefficients Correct whithcomb

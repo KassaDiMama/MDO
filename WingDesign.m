@@ -82,6 +82,7 @@ classdef WingDesign < handle
         z_tip
 
         W_fuel
+        internal_tank_volume = 0
 
         
     end
@@ -141,10 +142,10 @@ classdef WingDesign < handle
 
             F = @(v) [                              
                 (v(1) + v(2))/2 *obj.b_inboard + (v(2) + v(3))/2 *obj.b_outboard - obj.S/2
-                v(1)/v(3) - obj.TR
+                v(3)/v(1) - obj.TR
                 v(1)-v(2)-obj.b_inboard*tan(obj.LE_sweep)
                 ];
-            chords = fsolve(F, [Const.c_root_ref, Const.c_kink_ref, Const.c_tip_ref]);
+            chords = fsolve(F, [9.03, 5.39, 1.91]);
             obj.c_root = chords(1);
             obj.c_kink = chords(2);
             obj.c_tip = chords(3);
@@ -255,9 +256,9 @@ classdef WingDesign < handle
 
             % internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
             % disp("Internal Tank Volume"+ string(internal_tank_volume));
-            total_volume = Const.internal_tank_volume + wing_tank_volume;
+            total_volume = obj.internal_tank_volume + wing_tank_volume;
 
-            W_fuel = total_volume * Const.rho_fuel;
+            W_fuel = min(Const.W_fuel_cruise_initial,total_volume * Const.rho_fuel);
             % disp(y_lower)
 
         end
@@ -318,13 +319,13 @@ classdef WingDesign < handle
             %Calculate the required lift coeficient of the aircraft at cruise
             L = sqrt(W_TO_max*(W_TO_max-W_fuel))*9.81;
             % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
-            CL_cruise = L/(1/2*obj.rho*obj.V^2*(obj.S*2));%CHANGED
+            CL_cruise = L/(1/2*obj.rho*obj.V^2*(obj.S));%CHANGED
         end
-        function CL_critical = calculateCL_critical(obj,W_TO_max)
+        function CL_critical = calculateCL_critical(obj,W_TO_max,V_MO_initial)
             %Calculate the required lift coeficient of the aircraft at cruise
             L = W_TO_max*9.81* Const.n_max;
             % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
-            CL_critical = L/(1/2*obj.rho*Const.V_MO_ref^2*(obj.S*2));%CHANGED
+            CL_critical = L/(1/2*obj.rho*V_MO_initial^2*(obj.S));%CHANGED
         end
 
         function dvec = toDesignVector(obj)
