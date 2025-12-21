@@ -28,7 +28,7 @@ classdef WingDesign < handle
         tensile_yield = 295e6 % Correct but check units
         compressive_yield = 295e6 % Correct but check units
         
-        efficiency_factor = 0.96 % Zed section stiffners, Argued for in report
+        efficiency_factor = 0.96 % u-hat section stiffners, Argued for in report
         rib_pitch = 0.5 % Correct
 
 

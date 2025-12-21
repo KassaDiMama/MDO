@@ -54,21 +54,46 @@ function plotCSTairfoil(N1, N2, AU, AL)
 
     % --- parametric domain ---
     t = linspace(0, 1, 400);  % resolution for plotting
-
+    r = linspace(0,0.2,100);
     % --- compute upper and lower surfaces ---
-    yu = CSTcurve(t, AU, N1, N2, CST_order);
-    yl = CSTcurve(t, AL, N1, N2, CST_order);
+    for i = 1:length(r)
+        ratio = r(i);
+        yu = CSTcurve(t, AU*(1-ratio), N1, N2, CST_order);
+        yl = CSTcurve(t, AL * (1+ratio), N1, N2, CST_order);
+        % if ratio == 0
+        %     figure; hold on; grid on;
+        %     plot(t, yu, 'r-', 'LineWidth', 2);
+        %     plot(t, yl, 'b-', 'LineWidth', 2);
+        %     axis equal;
+        % 
+        %     xlabel('x');
+        %     ylabel('y');
+        %     title('CST Airfoil');
+        %     legend('Upper Surface','Lower Surface');
+        % 
+        % end
+        mask_u = yu(2:end-1);
+        mask_l = yl(2:end-1);
+        res = mask_u > mask_l;
+        if sum(res) < size(res,2)
+            display(ratio)
+            fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
+             % % --- plot ---
+            figure; hold on; grid on;
+            plot(t, yu, 'r-', 'LineWidth', 2);
+            plot(t, yl, 'b-', 'LineWidth', 2);
+            axis equal;
 
-    % --- plot ---
-    figure; hold on; grid on;
-    plot(t, yu, 'r-', 'LineWidth', 2);
-    plot(t, yl, 'b-', 'LineWidth', 2);
-    axis equal;
-
-    xlabel('x');
-    ylabel('y');
-    title('CST Airfoil');
-    legend('Upper Surface','Lower Surface');
+            xlabel('x');
+            ylabel('y');
+            title('CST Airfoil');
+            legend('Upper Surface','Lower Surface');
+            return
+           
+        end
+    end
+    
+    
 
 end
 function y = CSTcurve(t, A, N1, N2, n)
@@ -94,5 +119,7 @@ dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 N1 = 0.5;
 N2 = 1;
+wingDesign.AL*(2.09)
 plotCSTairfoil(N1,N2,wingDesign.AU,wingDesign.AL);
 plotDatCoords('airfoil.dat')
+

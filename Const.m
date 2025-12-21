@@ -20,7 +20,8 @@ classdef Const
         rho_ref = 0.327234791343548;
         drag_fus_initial = 1.6251e+04;
         q_initial = 9.1170e+03;
-        internal_tank_volume =26.1383;
+        wing_vol_ref = 38.1573 %m^3
+        internal_tank_volume =5.3327; % Used standard fuel value from excel - wing_vol_ref
         S_ref = 81.8124; %[m^2]
         c_root_ref = 8.2;
         c_kink_ref = 4.66;

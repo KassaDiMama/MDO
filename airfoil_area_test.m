@@ -136,7 +136,7 @@ function plotAirfoilWithPartialArea(x_common, upper_y, lower_y, ...
     figure('Position', [100, 100, 1200, 500], 'Name', 'Airfoil Area Analysis');
     
     % Plot 1: Full airfoil with highlighted section
-    subplot(1, 3, 1);
+    subplot(1, 2, 1);
     
     % Plot full airfoil
     fill([x_common, fliplr(x_common)], [upper_y, fliplr(lower_y)], ...
@@ -167,13 +167,13 @@ function plotAirfoilWithPartialArea(x_common, upper_y, lower_y, ...
     grid on;
     
     % Plot 2: Thickness distribution with highlighted section
-    subplot(1, 3, 2);
+    subplot(1, 2, 2);
     
     thickness = upper_y - lower_y;
     thickness_partial = upper_partial - lower_partial;
     
     % Plot full thickness
-    plot(x_common, thickness, 'k-', 'LineWidth', 2, 'DisplayName', 'Thickness');
+    plot(x_common, thickness, 'b-', 'LineWidth', 2, 'DisplayName', 'Thickness');
     hold on;
     
     % Highlight partial section
@@ -192,39 +192,10 @@ function plotAirfoilWithPartialArea(x_common, upper_y, lower_y, ...
     legend('Location', 'best');
     grid on;
     
-    % Plot 3: Data points comparison - FIXED VERSION
-    subplot(1, 3, 3);
-    
-    % Find actual data points in the partial region
-    bar_data = [total_area, partial_area];
-    bar_labels = {'Total Area (0-100%)', sprintf('Partial Area (%d-%d%%)', start_percent, end_percent)};
-    
-    % Create bar chart with explicit color control
-    bars = barh(bar_data);
-    
-    % Set bar colors correctly - FIXED HERE
-    bars.FaceColor = 'flat';  % Enable per-bar coloring
-    bars.CData(1,:) = [0.7, 0.7, 0.7];  % Gray for total
-    bars.CData(2,:) = [0.3, 0.8, 0.3];  % Green for partial
-    
-    % Add value labels
-    for i = 1:length(bar_data)
-        text(bar_data(i) + max(bar_data)*0.01, i, ...
-             sprintf('%.6f', bar_data(i)), ...
-             'VerticalAlignment', 'middle', 'FontWeight', 'bold');
-    end
-    
-    set(gca, 'YTickLabel', bar_labels);
-    xlabel('Area');
-    title('Area Comparison');
-    grid on;
-    
-    % Add ratio text
-    ratio = (partial_area/total_area)*100;
-    annotation('textbox', [0.02, 0.02, 0.3, 0.05], ...
-               'String', sprintf('Partial/Total = %.1f%%', ratio), ...
-               'FitBoxToText', 'on', 'BackgroundColor', 'w', ...
-               'FontSize', 10, 'FontWeight', 'bold');
 end
 % Example usage:
-[total_area, partial_area] = calculateAirfoilAreaPartial('withcomb135.dat', 20, 60);
+[total_area, partial_area] = calculateAirfoilAreaPartial('withcomb135.dat', 15, 55);
+% atan(tan(25*pi/180)+1/7.82*(1-0.243)/(1+0.243))*180/pi
+% 
+% log(0.2/0.45)/-0.
+

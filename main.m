@@ -96,7 +96,7 @@ close all
 clc
 dvec = DesignVector();
 wingDesign = WingDesign(dvec);
-mda = MDA(wingDesign,Const.W_TO_max_initial,Const.W_ZF_initial);
+mda = MDA(wingDesign, Const.W_TO_max_initial, Const.W_ZF_initial);
 [lift_distribution, moment_distribution] = mda.loadsFunc(Const.W_TO_max_initial);
 
 mda.structuresFunc(lift_distribution,moment_distribution,Const.W_TO_max_initial,Const.W_ZF_initial);
@@ -187,12 +187,12 @@ designVector = DesignVector();
 const = Const();
 wingDesign = WingDesign(designVector);
 
-function obj = MDA(wingDesign)
-            arguments
-                wingDesign WingDesign
-            end
-            obj.wingDesign = wingDesign ;
-end
+% function obj = MDA(wingDesign)
+%             arguments
+%                 wingDesign WingDesign
+%             end
+%             obj.wingDesign = wingDesign ;
+% end
 
 obj = MDA(wingDesign)
 % Wing planform geometry 
