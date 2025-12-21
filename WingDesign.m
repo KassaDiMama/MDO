@@ -102,6 +102,22 @@ classdef WingDesign < handle
             obj.calculateDesign();
         end
 
+        function obj = fromDesignVector(obj,dvec)
+            arguments
+                obj
+                dvec DesignVector   % input must be a DesignVector object
+            end
+            % Assign values from DesignVector to WingDesign
+            obj.b_outboard = dvec.b_outboard;
+            obj.c_root     = dvec.c_root;
+            obj.c_kink     = dvec.c_kink;
+            obj.c_tip      = dvec.c_tip;
+            obj.AL         = dvec.AL;
+            obj.AU         = dvec.AU;
+            obj.Mcr        = dvec.Mcr;
+            obj.hcr        = dvec.hcr;
+            obj.calculateDesign();
+        end
         %==============================================================
         function obj = calculateDesign(obj)
             arguments
@@ -180,7 +196,7 @@ classdef WingDesign < handle
                 result = cn .* s;
             end
             points_per_side = 46;
-            ts = linspace(obj.front_spar_pos, obj.rear_spar_pos,points_per_side+1);
+            ts = linspace(obj.front_spar_pos, obj.rear_spar_pos,points_per_side);
             
             
             
@@ -191,48 +207,35 @@ classdef WingDesign < handle
             t_lower = ts;
             y_lower = -CST(t_lower, obj.AL);
 
-            A_norm = trapz(ts,y_upper) + trapz(ts,y_lower);
+            A_norm = trapz(ts,y_upper+y_lower) ;%+ trapz(ts,y_lower);
 
             function c = calculateChord(b)
-                % Initialize output array
-                c = zeros(size(b));
-                
-                % Create logical masks
-                inboard_mask = (b <= obj.b_inboard);
-                outboard_mask = (b > obj.b_inboard) & (b <= obj.b_total);
-                beyond_mask = (b > obj.b_total);
-                
-                % Calculate for inboard section
-                if any(inboard_mask)
-                    dc = obj.c_root - obj.c_kink;
-                    dc_db = dc / obj.b_inboard;
-                    c(inboard_mask) = obj.c_root - dc_db * b(inboard_mask);
-                end
-                
-                % Calculate for outboard section
-                if any(outboard_mask)
-                    dc = obj.c_kink - obj.c_tip;
-                    dc_db = dc / obj.b_outboard;
-                    b_relative = b(outboard_mask) - obj.b_inboard;
-                    c(outboard_mask) = obj.c_kink - dc_db * b_relative;
-                end
-                
-                % Handle points beyond wing tip
-                if any(beyond_mask)
-                    % You can extrapolate, set to 0, or set to NaN
-                    c(beyond_mask) = 0;  % or obj.c_tip, or NaN
+                if b <= obj.b_inboard
+                    dc = obj.c_root-obj.c_kink;
+                    dc_db = dc/obj.b_inboard;
+                    c = obj.c_root - dc_db*b;
+                elseif b <= obj.b_total
+                    dc = obj.c_kink-obj.c_tip;
+                    dc_db = dc/obj.b_outboard;
+                    c = obj.c_kink - dc_db*(b-obj.b_inboard);
+                else
+                    disp("b is higher than b_total");
                 end
             end
 
             bs = linspace(0,obj.b_total*obj.end_tank,30);
-            cs = calculateChord(bs);
-            As = A_norm * cs.^2;
+            cs =[];
+            for i = 1:length(bs)
+                cs(i) = calculateChord(bs(i));
+            end
+            As = A_norm .* cs .*cs;
 
             wing_tank_volume=trapz(bs, As)*Const.f_tank * 2;
-            disp("Tank Volume"+string(wing_tank_volume));
+            disp("Tank Volume"+ string(wing_tank_volume));
+        
 
-            %internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
-
+            internal_tank_volume = Const.W_fuel_initial/(0.81715e3)-wing_tank_volume;
+            disp("Internal Tank Volume"+ string(internal_tank_volume));
             total_volume = Const.internal_tank_volume + wing_tank_volume;
 
             W_fuel = total_volume * Const.rho_fuel;
@@ -317,6 +320,40 @@ classdef WingDesign < handle
             dvec.Mcr = obj.Mcr;
             dvec.hcr = obj.hcr;
 
+        end
+        function s = toString(obj)
+            % Convert WingDesign object to a column string array for logging
+            props = properties(obj);
+            lines = {};
+    
+            for i = 1:length(props)
+                val = obj.(props{i});
+    
+                % Handle numeric arrays
+                if isnumeric(val)
+                    if isscalar(val)
+                        lines{end+1} = sprintf('%s = %.6g', props{i}, val);
+                    else
+                        % Convert numeric arrays to a single string
+                        arrayStr = num2str(val(:).', ' %.6g');  % flatten row
+                        lines{end+1} = sprintf('%s = [%s]', props{i}, strtrim(arrayStr));
+                    end
+    
+                % Handle string or char
+                elseif isstring(val) || ischar(val)
+                    lines{end+1} = sprintf('%s = %s', props{i}, string(val));
+    
+                % Handle other types (like function handles)
+                elseif isa(val,'function_handle')
+                    lines{end+1} = sprintf('%s = <function_handle>', props{i});
+    
+                else
+                    lines{end+1} = sprintf('%s = <%s>', props{i}, class(val));
+                end
+            end
+    
+            % Convert to string array and ensure column
+            s = string(lines(:));
         end
     end
 end

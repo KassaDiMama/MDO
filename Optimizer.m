@@ -4,6 +4,7 @@ classdef Optimizer < handle
         dvec DesignVector
         wingDesign WingDesign
         x0
+        x_normalizer
     end
     
     methods
@@ -14,11 +15,7 @@ classdef Optimizer < handle
         end
         function start(obj)
             obj.x0 = obj.dvec.toVector();
-            x0_normalized = obj.x0./obj.x0;
             
-
-            lb_normalized = lb./obj.x0;
-            ub_normalized = ub./obj.x0;
             objective = @(x) obj.objective_wrapper(x);
             nonlcon = @(x) obj.constraints(x);
             ub = [];
@@ -41,46 +38,6 @@ classdef Optimizer < handle
             ub(17) = 0.88;
             ub(18) = 13075.92;
 
-
-            diffminchange(1) = 0.2;
-            diffminchange(2) = 0.1;
-            diffminchange(3) = 0.1;
-            diffminchange(4) = 0.1;
-            diffminchange(5) = 0.05;
-            diffminchange(6) = 0.05;
-            diffminchange(7) = 0.05;
-            diffminchange(8) = 0.05;
-            diffminchange(9) = 0.05;
-            diffminchange(10) = 0.05;
-            diffminchange(11) = 0.05;
-            diffminchange(12) = 0.05;
-            diffminchange(13) = 0.05;
-            diffminchange(14) = 0.05;
-            diffminchange(15) = 0.05;
-            diffminchange(16) = 0.05;
-            diffminchange(17) = 0.1;
-            diffminchange(18) = 100;
-
-
-            diffmaxchange(1) = 1;
-            diffmaxchange(2) = 0.5;
-            diffmaxchange(3) = 0.3;
-            diffmaxchange(4) = 0.3;
-            diffmaxchange(5) = 0.2;
-            diffmaxchange(6) = 0.2;
-            diffmaxchange(7) = 0.2;
-            diffmaxchange(8) = 0.2;
-            diffmaxchange(9) = 0.2;
-            diffmaxchange(10) = 0.2;
-            diffmaxchange(11) = 0.2;
-            diffmaxchange(12) = 0.2;
-            diffmaxchange(13) = 0.2;
-            diffmaxchange(14) = 0.2;
-            diffmaxchange(15) = 0.2;
-            diffmaxchange(16) = 0.2;
-            diffmaxchange(17) = 0.4;
-            diffmaxchange(18) = 500;
-
             
             lb(1) = 24/2- obj.wingDesign.b_inboard;
             lb(2) = 4;
@@ -101,7 +58,28 @@ classdef Optimizer < handle
             lb(17) = 0.72;
             lb(18) = 10698.48;
 
-            
+            obj.x_normalizer = [];
+            obj.x_normalizer(1) = abs(obj.x0(1));
+            obj.x_normalizer(2) = abs(obj.x0(2));
+            obj.x_normalizer(3) = abs(obj.x0(3));
+            obj.x_normalizer(4) = abs(obj.x0(4));
+            obj.x_normalizer(5) = 1;
+            obj.x_normalizer(6) = 1;
+            obj.x_normalizer(7) = 1;
+            obj.x_normalizer(8) = 1;
+            obj.x_normalizer(9) = 1;
+            obj.x_normalizer(10) = 1;
+            obj.x_normalizer(11) = 1;
+            obj.x_normalizer(12) = 1;
+            obj.x_normalizer(13) = 1;
+            obj.x_normalizer(14) = 1;
+            obj.x_normalizer(15) = 1;
+            obj.x_normalizer(16) = 1;
+            obj.x_normalizer(17) = abs(obj.x0(17));
+            obj.x_normalizer(18) = abs(obj.x0(18));
+            x0_normalized = obj.x0./obj.x_normalizer;
+            lb_normalized = lb./obj.x_normalizer;
+            ub_normalized = ub./obj.x_normalizer;
 
             A = [];
             b = [];
@@ -117,25 +95,28 @@ classdef Optimizer < handle
             'FunctionTolerance',1e-6, ...
             'StepTolerance',1e-6, ...
             'OptimalityTolerance',1e-10, ...
-            'DiffMinChange',1e-2, ...
-            'DiffMaxChange',1e-1);
+            'DiffMinChange',1e-3, ...
+            'DiffMaxChange',1e-2);
 
             
 
             [x_opt, fval, exitflag, output] = fmincon(objective, ...
                                           x0_normalized, A, b, Aeq, beq,lb_normalized ,ub_normalized , ...
                                           nonlcon, options);
-            disp("Done optimizing!")
+            disp("Done optimizing!");
         end
         function objective = objective_wrapper(obj,x_normalized)
-            x=x_normalized*obj.x0;
-            obj.dvec = DesignVector().fromVector(x);
-            obj.wingDesign = WingDesign(obj.dvec);
+            x=x_normalized.*obj.x_normalizer;
+            obj.dvec = obj.dvec.fromVector(x);
+            obj.wingDesign = obj.wingDesign.fromDesignVector(obj.dvec);
             obj.mda.wingDesign = obj.wingDesign;
+            % obj.dvec = DesignVector().fromVector(x);
+            % obj.wingDesign = WingDesign(obj.dvec);
+            % obj.mda.wingDesign = obj.wingDesign;
             objective = -obj.objective_loop();
         end
         function objective = objective_loop(obj)
-            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
+            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
             LD_cr = obj.aerodynamicsFunc(obj.mda.W_TO_max,obj.wingDesign.W_fuel);
             eta = obj.performanceFunction();
             objective = obj.objectiveFunc(obj.wingDesign.W_fuel, obj.mda.W_TO_max, LD_cr, eta);
@@ -164,6 +145,13 @@ classdef Optimizer < handle
             CT = Const.CT_bar/eta;
             R = obj.wingDesign.V /CT *LD_cr *log(W_cr_ratio);
             objective = R;
+            msg = [
+                "Ran objective function that resulted in range = " + string(R)
+                "With designVector:"
+                obj.dvec.toString()  % column string array
+            ];
+            
+            logMessage(msg, "log.file");
         end
         function [CL_wing,CD_wing] = calcCL_CD(obj,W_TO_max,W_fuel)
             % Wing planform geometry 
@@ -193,20 +181,29 @@ classdef Optimizer < handle
             AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
             AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
+            logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
 
             Res = Q3D_solver(AC);
-
             CL_wing = Res.CLwing;
             CD_wing = Res.CDwing;
+            if isnan(CD_wing)
+                CD_wing = 10;
+                disp("CD_wing was NaN")
+            end
+            logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC) + " | CL: " + string(CL_wing) + " | CD: " + string(CD_wing)], "log.file");
+            % disp("CL_wing = " + string(CL_wing) + ", CD_wing = " + string(CD_wing));
+            
 
         end
         function [c,ceq] = constraints(obj,x_normalized)
-            x=x_normalized*obj.x0;
-            obj.dvec = DesignVector().fromVector(x);
-            obj.wingDesign = WingDesign(obj.dvec);
+            x=x_normalized.*obj.x_normalizer;
+            obj.dvec = obj.dvec.fromVector(x);
+            obj.wingDesign = obj.wingDesign.fromDesignVector(obj.dvec);
+            obj.mda.wingDesign = obj.wingDesign;
+
             
             % No inequality constraints
-            obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
+            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF);
             c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/Const.S_ref; % Wing loading constraint  
             ceq = [];
         end
