@@ -4,8 +4,8 @@ classdef WingDesign < handle
         b_inboard = 6.5 % Correct
         number_of_platforms = 3 % Correct
         number_of_airfoils = 2 % Correct
-        front_spar_pos = 0.2 % Correct however can be changed later
-        rear_spar_pos = 0.6 % Correct however can be changed later
+        front_spar_pos = 0.15 % Correct however can be changed later
+        rear_spar_pos = 0.55 % Correct however can be changed later
         
         engine_each_wing = 1 % Correct
         engine_location
@@ -18,7 +18,7 @@ classdef WingDesign < handle
         end_tank = 0.85;
 
         %twist = [+4,+2,-5];%!!!! TURNED -5 at the tip to +2!!! %Correct but can be changed later issues
-        twist = [0,0,0]; %CHANGED
+        twist = [0,-1,-2]; %CHANGED
         incidence = 3.2; %degrees Correct
         dihedral = 5; % degrees Correct
         
@@ -145,7 +145,8 @@ classdef WingDesign < handle
                 v(3)/v(1) - obj.TR
                 v(1)-v(2)-obj.b_inboard*tan(obj.LE_sweep)
                 ];
-            chords = fsolve(F, [9.03, 5.39, 1.91]);
+            opts = optimoptions('fsolve','Display','off');
+            chords = fsolve(F, [9.03, 5.39, 1.91],opts);
             obj.c_root = chords(1);
             obj.c_kink = chords(2);
             obj.c_tip = chords(3);

@@ -3,12 +3,12 @@ classdef Const
         n_max = 2.5;
         Mcr_ref = 0.8; 
         hcr_ref = 11673.84;    % meters
-        Vcr_ref = 236.05;
+        % Vcr_ref = 236.05;
         rho_fuel = 0.81715e3; % kg/m3
         f_tank = 0.93;
         W_TO_max_initial = 122470; %kg
         W_fuel_cruise_initial = 33785 ;%Got from excel %33785; % kg
-        LD_initial = 18;
+        LD_initial = 14;
         CT_bar = 1.8639e-4;
         internal_tank_volume =0;
         b_inboard_ref = 6.5;
@@ -18,7 +18,7 @@ classdef Const
         TR_ref = 0.243;
         fuel_weight_max_ref = 34890
         airfoil_ref = 'withcomb135.dat'
-        airfoil_thickness_multiplier = 0.95
+        airfoil_thickness_multiplier = 1
         % C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
         
         % W_ZF_initial = 122470-33785; % kg

@@ -152,10 +152,10 @@ classdef MDA < handle
             moment_distribution.M = 0.5 * rho * V^2 * chord .* chord .*cm;
 
             lift_distribution.y = [0;lift_distribution.y; obj.wingDesign.b_half];
-            lift_distribution.L = [lift_distribution.L(1);lift_distribution.L;2000];
+            lift_distribution.L = [lift_distribution.L(1);lift_distribution.L;0];
 
             moment_distribution.y = [0;moment_distribution.y; obj.wingDesign.b_half];
-            moment_distribution.M = [moment_distribution.M(1);moment_distribution.M;-2000];
+            moment_distribution.M = [moment_distribution.M(1);moment_distribution.M;0];
 
             L_total = 2 * trapz(lift_distribution.y, lift_distribution.L);
             M_total = 2 * trapz(moment_distribution.y, moment_distribution.M);

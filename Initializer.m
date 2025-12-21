@@ -1,8 +1,8 @@
 classdef Initializer < handle
     properties
-        dvec DesignVector
-        wingDesign WingDesign
-        mda MDA
+        % dvec DesignVector
+        % wingDesign WingDesign
+        % mda MDA
         optimizer Optimizer
         CD_wing_initial
         CL_initial
@@ -14,7 +14,7 @@ classdef Initializer < handle
         W_AminusW_initial;
 
         V_MO_initial 
-        
+        V_cr_ref_initial
         wing_tank_volume_initial
         internal_tank_volume
         S_initial
@@ -24,44 +24,56 @@ classdef Initializer < handle
 
         AU
         AL
-
+        AU_lower_bound
+        AL_upper_bound
+        AU_upper_bound
+        AL_lower_bound
+        range_initial
     end
     methods
         function obj = Initializer(dvec)
             arguments
                 dvec DesignVector
             end
-            obj.dvec = dvec;
+            % obj.dvec = dvec;
             [obj.AU,obj.AL] = obj.defineCST(Const.airfoil_ref);
-            obj.dvec.AU = Const.airfoil_thickness_multiplier*obj.AU;
-            obj.dvec.AL = Const.airfoil_thickness_multiplier*obj.AL;
-            obj.wingDesign = WingDesign(obj.dvec);
-            obj.W_ZF_initial = Const.W_TO_max_initial - Const.W_fuel_cruise_initial;
-            obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,obj.W_ZF_initial);
-            obj.optimizer = Optimizer(obj.dvec, obj.wingDesign, obj);
+            dvec.AU = Const.airfoil_thickness_multiplier*obj.AU;
+            dvec.AL = Const.airfoil_thickness_multiplier*obj.AL;
+            obj.optimizer = Optimizer(dvec, WingDesign(dvec), obj);
             
+            % obj.wingDesign = WingDesign(obj.dvec);
+            obj.W_ZF_initial = Const.W_TO_max_initial - Const.W_fuel_cruise_initial;
+            % obj.mda = MDA(obj.wingDesign,Const.W_TO_max_initial,obj.W_ZF_initial);
+            
+            obj.wing_tank_volume_initial = obj.optimizer.wingDesign.calculateWingTankVolume();
+
+            obj.internal_tank_volume = max(0,Const.fuel_weight_max_ref/(Const.rho_fuel)-obj.wing_tank_volume_initial);
+            obj.optimizer.wingDesign.internal_tank_volume = obj.internal_tank_volume;
+            obj.optimizer.wingDesign.W_fuel = obj.optimizer.wingDesign.calculateFuelWeight();
             [obj.CL_initial, obj.CD_wing_initial] = obj.optimizer.calcCL_CD(Const.W_TO_max_initial,obj.optimizer.wingDesign.W_fuel);
             CDaminusw = obj.CL_initial/Const.LD_initial - obj.CD_wing_initial;
             obj.q_design_initial = obj.optimizer.calculateDesignDynamicPressure();
-            obj.drag_fus_initial = CDaminusw * obj.q_design_initial * obj.wingDesign.S*2;
-            obj.V_MO_initial = 0.86 * obj.wingDesign.a;
+            obj.drag_fus_initial = CDaminusw * obj.q_design_initial * obj.optimizer.wingDesign.S;
+            obj.V_MO_initial = 0.86 * obj.optimizer.wingDesign.a;
+            obj.V_cr_ref_initial = obj.optimizer.wingDesign.cruiseSpeed();
+            [lift_dist, moment_dist] = obj.optimizer.mda.loadsFunc(Const.W_TO_max_initial,obj.V_MO_initial);
             
-            [lift_dist, moment_dist] = obj.mda.loadsFunc(Const.W_TO_max_initial,obj.V_MO_initial);
-            
-            obj.W_wing_initial = obj.mda.structuresFunc(lift_dist, moment_dist, Const.W_TO_max_initial, obj.W_ZF_initial);
+            obj.W_wing_initial = obj.optimizer.mda.structuresFunc(lift_dist, moment_dist, Const.W_TO_max_initial, obj.W_ZF_initial);
             
             obj.W_AminusW_initial = obj.W_ZF_initial - obj.W_wing_initial;
-
+            obj.optimizer.mda.W_ZF = obj.W_ZF_initial;
             
-            obj.wing_tank_volume_initial = obj.wingDesign.calculateWingTankVolume();
-
-            obj.internal_tank_volume = max(0,Const.fuel_weight_max_ref/(Const.rho_fuel)-obj.wing_tank_volume_initial);
-            obj.wingDesign.internal_tank_volume = obj.internal_tank_volume;
-            obj.S_initial = obj.wingDesign.S;
-            obj.c_root_initial = obj.wingDesign.c_root;
-            obj.c_kink_initial = obj.wingDesign.c_kink;
-            obj.c_tip_initial = obj.wingDesign.c_tip;
             
+            
+            obj.S_initial = obj.optimizer.wingDesign.S;
+            obj.c_root_initial = obj.optimizer.wingDesign.c_root;
+            obj.c_kink_initial = obj.optimizer.wingDesign.c_kink;
+            obj.c_tip_initial = obj.optimizer.wingDesign.c_tip;
+            [obj.AU_lower_bound, obj.AL_upper_bound, obj.AU_upper_bound, obj.AL_lower_bound] = obj.calculateAirfoilBounds();
+            
+            obj.optimizer.wingDesign.fromDesignVector(obj.optimizer.dvec);
+            obj.range_initial = obj.optimizer.objective_loop(); % in meters
+            fprintf("Initial range equals: %g km\n",-obj.range_initial/1000);
             
         end
         function [AU, AL] = defineCST(obj,airfoil_name)
@@ -85,7 +97,7 @@ classdef Initializer < handle
                 AU = x(1:CST_order+1);
                 AL = x(CST_order+2:2*CST_order+2);
                 ts= airfoilData(1:num_per_side, 1);
-                [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"test",flip(ts),CST_order,num_per_side);
+                [t_upper,y_upper,t_lower, y_lower] = createAirfoilDat(N1,N2,AU,AL,"initial_airfoil",flip(ts),CST_order,num_per_side);
                 
                 % Build one continuous contour (upper forward, lower reversed)
                 y = [y_upper; y_lower];
@@ -93,8 +105,8 @@ classdef Initializer < handle
                 objective = sum((y-airfoil_Y).^2);
             end
             x0 = [AU;AL];
-            lb = -0.1 * ones(1, 2*(CST_order+1));
-            ub = -50*lb;
+            lb = -50 * ones(1, 2*(CST_order+1));
+            ub = -lb;
             
             A = [];
             b = [];
@@ -117,6 +129,68 @@ classdef Initializer < handle
 
             AU = x_opt(1:CST_order+1);
             AL = x_opt(CST_order+2:2*CST_order+2);
+        end
+        function [AU_lower_bound,AL_upper_bound,AU_upper_bound,AL_lower_bound] =calculateAirfoilBounds(obj)
+            function y = CSTcurve(t, A, N1, N2, n)
+
+                % Class function
+                C = t.^N1 .* (1 - t).^N2;
+
+                % Shape function 
+                S = zeros(size(t));
+                for i = 0:n
+                    S = S + nchoosek(n, i) .* t.^i .* (1 - t).^(n - i) .* A(i + 1);
+                end
+
+                y = C .* S;
+            end
+            N1 = 0.5;
+            N2 = 1;
+            CST_order = length(obj.AU) - 1;
+
+            % --- parametric domain ---
+            ts = linspace(0, 1, 10000);  % resolution for plotting
+            ratios = linspace(0,3,500);
+            % --- compute upper and lower surfaces ---
+            for i = 1:length(ratios)
+                ratio = ratios(i);
+                yu = CSTcurve(ts, obj.AU*(1-ratio), N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * (1+ratio), N1, N2, CST_order);
+
+                mask_u = yu(2:end-1);
+                mask_l = yl(2:end-1);
+                res = mask_u > mask_l;
+                if sum(res) < size(res,2)
+                    % display(ratio)
+                    fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
+                    AU_lower_bound = (1 - ratios(i-1));
+                    AL_upper_bound = (1 + ratios(i-1));
+                    break;
+                end
+            end
+            ratios = linspace(0,20,500);
+            for i = 1:length(ratios)
+                ratio = ratios(i);
+                yu = CSTcurve(ts, obj.AU*(1+ratio), N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
+
+                mask_u = yu(2:end-1);
+                mask_l = yl(2:end-1);
+                res = mask_u > mask_l;
+                if max(yu+yl)>0.3
+                    % display(ratio)
+                    fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
+                    % disp(max(yu+yl));
+                    
+                    AU_upper_bound = (1 + ratios(i-1));
+                    AL_lower_bound = (1 - ratios(i-1));
+                    break;
+                end
+            end
+            % disp(AU_upper_bound);
+            % disp(AL_lower_bound);
+            % fprintf("AU: %f",1/max(obj.AU));
+            % fprintf("AL: %f",-1/max(obj.AL))
         end
     end
 end

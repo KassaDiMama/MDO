@@ -26,18 +26,18 @@ classdef Optimizer < handle
             ub(2) = 40/180*pi/obj.x0(2);
             ub(3) = 0.85/obj.x0(3);
             ub(4) = 12/obj.x0(4);
-            ub(5) = 2.62;
-            ub(6) = 2.62;
-            ub(7) = 2.62;
-            ub(8) = 2.62;
-            ub(9) = 2.62;
-            ub(10) = 2.62;
-            ub(11) = 1.084;
-            ub(12) = 1.084;
-            ub(13) = 1.084;
-            ub(14) = 1.084;
-            ub(15) = 1.084;
-            ub(16) = 1.084;
+            ub(5) = obj.initializer.AU_upper_bound;
+            ub(6) = obj.initializer.AU_upper_bound;
+            ub(7) = obj.initializer.AU_upper_bound;
+            ub(8) = obj.initializer.AU_upper_bound;
+            ub(9) = obj.initializer.AU_upper_bound;
+            ub(10) = obj.initializer.AU_upper_bound;
+            ub(11) = obj.initializer.AL_upper_bound;
+            ub(12) = obj.initializer.AL_upper_bound;
+            ub(13) = obj.initializer.AL_upper_bound;
+            ub(14) = obj.initializer.AL_upper_bound;
+            ub(15) = obj.initializer.AL_upper_bound;
+            ub(16) = obj.initializer.AL_upper_bound;
             ub(17) = 0.88/obj.x0(17);
             ub(18) = 13075.92/obj.x0(18);
 
@@ -46,18 +46,18 @@ classdef Optimizer < handle
             lb(2) = 0/obj.x0(2);
             lb(3) = 0.2/obj.x0(3);
             lb(4) = 6/obj.x0(4);
-            lb(5) = -0.916;
-            lb(6) = -0.916;
-            lb(7) = -0.916;
-            lb(8) = -0.916;
-            lb(9) = -0.916;
-            lb(10) = -0.916;
-            lb(11) = -2.09;
-            lb(12) = -2.09;
-            lb(13) = -2.09;
-            lb(14) = -2.09;
-            lb(15) = -2.09;
-            lb(16) = -2.09;
+            lb(5) = obj.initializer.AU_lower_bound;
+            lb(6) = obj.initializer.AU_lower_bound;
+            lb(7) = obj.initializer.AU_lower_bound;
+            lb(8) = obj.initializer.AU_lower_bound;
+            lb(9) = obj.initializer.AU_lower_bound;
+            lb(10) = obj.initializer.AU_lower_bound;
+            lb(11) = obj.initializer.AL_lower_bound;
+            lb(12) = obj.initializer.AL_lower_bound;
+            lb(13) = obj.initializer.AL_lower_bound;
+            lb(14) = obj.initializer.AL_lower_bound;
+            lb(15) = obj.initializer.AL_lower_bound;
+            lb(16) = obj.initializer.AL_lower_bound;
             lb(17) = 0.72/obj.x0(17);
             lb(18) = 10698.48/obj.x0(18);
 
@@ -79,15 +79,19 @@ classdef Optimizer < handle
             'FunctionTolerance',1e-6, ...
             'StepTolerance',1e-6, ...
             'OptimalityTolerance',1e-10, ...
-            'DiffMinChange',1e-3, ...
-            'DiffMaxChange',1e-2);
+            'DiffMinChange',1e-2, ...
+            'DiffMaxChange',1e-1);
 
+            disp(string(datetime('now')) + " | Starting optimization...");
+            tic;
             
-
-            [x_opt, fval, exitflag, output] = fmincon(objective, ...
+            [x_opt, fval, history, searchdir] = fmincon(objective, ...
                                           x0_normalized, A, b, Aeq, beq,lb ,ub , ...
                                           nonlcon, options);
+            toc;
+            disp(string(datetime('now')) + " | Finished optimization...");
             disp("Done optimizing!");
+            save('fmincon_results.mat', 'x_opt', 'fval', 'history', 'searchdir');
         end
         function objective = objective_wrapper(obj,x_normalized)
             x=x_normalized.*obj.x0;
@@ -97,7 +101,9 @@ classdef Optimizer < handle
             % obj.dvec = DesignVector().fromVector(x);
             % obj.wingDesign = WingDesign(obj.dvec);
             % obj.mda.wingDesign = obj.wingDesign;
-            objective = -obj.objective_loop();
+            range = obj.objective_loop();
+            fprintf("At "+string(datetime('now'))+" calculated range: %g km\n",range/1000);
+            objective = -(range/obj.initializer.range_initial);
         end
         function objective = objective_loop(obj)
             lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
@@ -119,7 +125,7 @@ classdef Optimizer < handle
 
         end
         function eta = performanceFunction(obj)
-            A = (obj.wingDesign.V-Const.Vcr_ref)^2/(2*70^2);
+            A = (obj.wingDesign.V-obj.initializer.V_cr_ref_initial)^2/(2*70^2);
             B = (obj.wingDesign.hcr - Const.hcr_ref)^2/(2*2500^2);
             eta = exp(-A-B);
             
@@ -135,7 +141,7 @@ classdef Optimizer < handle
                 obj.dvec.toString()  % column string array
             ];
             
-            logMessage(msg, "log.file");
+            % logMessage(msg, "log.file");
         end
         function [CL_wing,CD_wing] = calcCL_CD(obj,W_TO_max,W_fuel)
             % Wing planform geometry 
@@ -165,7 +171,7 @@ classdef Optimizer < handle
             AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
             AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
-            logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
+            % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
 
             Res = Q3D_solver(AC);
             CL_wing = Res.CLwing;
@@ -174,7 +180,7 @@ classdef Optimizer < handle
                 CD_wing = 10;
                 disp("CD_wing was NaN")
             end
-            logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC) + " | CL: " + string(CL_wing) + " | CD: " + string(CD_wing)], "log.file");
+            % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC) + " | CL: " + string(CL_wing) + " | CD: " + string(CD_wing)], "log.file");
             % disp("CL_wing = " + string(CL_wing) + ", CD_wing = " + string(CD_wing));
             
 

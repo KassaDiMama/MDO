@@ -282,13 +282,16 @@ clc
 
 echo all off
 dvec = DesignVector();
-optimizer = Optimizer(dvec);
+initializer = Initializer(dvec);
+save('initializer.mat', 'initializer');
+optimizer = initializer.optimizer;
 msg = [
     "---------------------------------"
     "---------------------------------"
     "Starting new run at " + string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))
 ];
-
+diary('run: '+string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))+'.txt')
+diary on
 logMessage(msg, "log.file")
 optimizer.start();
 %% Test Initializer
