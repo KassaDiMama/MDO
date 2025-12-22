@@ -1,0 +1,4 @@
+At 22-Dec-2025 21:40:06 calculated range: 5612.6525 km
+At 22-Dec-2025 21:40:23 calculated range: 5677.1296 km
+At 22-Dec-2025 21:40:40 calculated range: 5616.4497 km
+At 22-Dec-2025 21:40:58 calculated range: 5610.9976 km

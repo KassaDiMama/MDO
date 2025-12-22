@@ -24,7 +24,7 @@ AC.Wing.eta = [0;1];  % Spanwise location of the airfoil sections
 
 % Viscous vs inviscid
 AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
-AC.Aero.MaxIterIndex = 150;    %Maximum number of Iteration for the
+AC.Aero.MaxIterIndex = 30;    %Maximum number of Iteration for the
                                 %convergence of viscous calculation
                                 
                                 

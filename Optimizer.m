@@ -102,12 +102,12 @@ classdef Optimizer < handle
             % obj.wingDesign = WingDesign(obj.dvec);
             % obj.mda.wingDesign = obj.wingDesign;
             range = obj.objective_loop();
-            % logmsg("--------------------------------");
+            logmsg("--------------------------------");
             logmsg("At " + string(datetime('now')) + ...
                 " calculated range: " + string(range/1000) + " km");
-            % logmsg("With wing design:");
-            % logmsg(obj.wingDesign.toString());
-            % logmsg("--------------------------------");
+            logmsg("With wing design:");
+            logmsg(obj.wingDesign.toString());
+            logmsg("--------------------------------");
             objective = -(range/obj.initializer.range_initial);
         end
         function objective = objective_loop(obj)
@@ -168,7 +168,7 @@ classdef Optimizer < handle
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
             AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
-            AC.Aero.MaxIterIndex = 150;
+            AC.Aero.MaxIterIndex = 30;
             % Flight Condition
             AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
             AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)

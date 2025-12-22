@@ -291,8 +291,10 @@ msg = [
     "Starting new run at " + string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))
 ];
 fname = "run_" + datestr(now,'yyyy-mm-dd_HH-MM-SS') + ".txt";
-% diary(fname)
+diary(fname)
 % diary on
+% echo Optimizer.m on
+% echo MDA.m on
 logMessage(msg, "log.file")
 optimizer.start();
 %% Test Initializer
