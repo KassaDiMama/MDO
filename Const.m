@@ -13,7 +13,7 @@ classdef Const
         internal_tank_volume =0;
         b_inboard_ref = 6.5;
         b_outboard_ref = 12.525
-        LE_sweep_ref = 0.49836829593%+ 4 / 180 *pi%0.510488 %rad
+        LE_sweep_ref = 0.49836829593%THIS IS 25 deg qc to LE converted   + 4 / 180 *pi%0.510488 %rad THIS
         AR_ref = 7.82;
         TR_ref = 0.243;
         fuel_weight_max_ref = 34890

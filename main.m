@@ -290,8 +290,9 @@ msg = [
     "---------------------------------"
     "Starting new run at " + string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))
 ];
-diary('run: '+string(datestr(now, 'yyyy-mm-dd HH:MM:SS'))+'.txt')
-diary on
+fname = "run_" + datestr(now,'yyyy-mm-dd_HH-MM-SS') + ".txt";
+% diary(fname)
+% diary on
 logMessage(msg, "log.file")
 optimizer.start();
 %% Test Initializer

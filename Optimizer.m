@@ -102,7 +102,12 @@ classdef Optimizer < handle
             % obj.wingDesign = WingDesign(obj.dvec);
             % obj.mda.wingDesign = obj.wingDesign;
             range = obj.objective_loop();
-            fprintf("At "+string(datetime('now'))+" calculated range: %g km\n",range/1000);
+            % logmsg("--------------------------------");
+            logmsg("At " + string(datetime('now')) + ...
+                " calculated range: " + string(range/1000) + " km");
+            % logmsg("With wing design:");
+            % logmsg(obj.wingDesign.toString());
+            % logmsg("--------------------------------");
             objective = -(range/obj.initializer.range_initial);
         end
         function objective = objective_loop(obj)
