@@ -74,6 +74,7 @@ classdef Optimizer < handle
             options = optimoptions('fmincon', ...
             'Algorithm','sqp', ...
             'Display','iter-detailed', ...
+            'OutputFcn', @outputFcn, ...
             'MaxIterations',500, ...
             'MaxFunctionEvaluations',1e6, ...
             'FunctionTolerance',1e-6, ...
@@ -101,12 +102,16 @@ classdef Optimizer < handle
             % obj.dvec = DesignVector().fromVector(x);
             % obj.wingDesign = WingDesign(obj.dvec);
             % obj.mda.wingDesign = obj.wingDesign;
-            range = obj.objective_loop();
             logmsg("--------------------------------");
-            logmsg("At " + string(datetime('now')) + ...
-                " calculated range: " + string(range/1000) + " km");
+            range = obj.objective_loop();
             logmsg("With wing design:");
             logmsg(obj.wingDesign.toString());
+            logmsg("At " + string(datetime('now')) + ...
+                " calculated range: " + string(range/1000) + " km");
+            logmsg("With W_TO_max"+string(obj.mda.W_TO_max));
+            logmsg("and with wingloading W_TO_max/S: "+string(obj.mda.W_TO_max/obj.wingDesign.S));
+            memStr = evalc('memory');
+            logmsg(memStr);
             logmsg("--------------------------------");
             objective = -(range/obj.initializer.range_initial);
         end
@@ -168,7 +173,7 @@ classdef Optimizer < handle
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
             AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
-            AC.Aero.MaxIterIndex = 30;
+            AC.Aero.MaxIterIndex = 600;
             % Flight Condition
             AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
             AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
@@ -177,10 +182,11 @@ classdef Optimizer < handle
             AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
             AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
             % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
-
+            
             Res = Q3D_solver(AC);
             CL_wing = Res.CLwing;
             CD_wing = Res.CDwing;
+
             if isnan(CD_wing)
                 CD_wing = 10;
                 disp("CD_wing was NaN")

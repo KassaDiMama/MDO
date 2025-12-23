@@ -283,7 +283,7 @@ clc
 echo all off
 dvec = DesignVector();
 initializer = Initializer(dvec);
-save('initializer.mat', 'initializer');
+save("initializer"+datestr(now,'yyyy-mm-dd_HH-MM-SS')+".mat", 'initializer');
 optimizer = initializer.optimizer;
 msg = [
     "---------------------------------"
@@ -303,3 +303,109 @@ close all
 clc
 dvec = DesignVector();
 initializer = Initializer(dvec);
+
+%% See result
+clear all
+close all
+clc
+
+function plotWing(ax, wingDesign, varargin)
+    % plotWing  Plot wing planform into specified axes
+    %
+    % Inputs:
+    %   ax         - axes handle
+    %   wingDesign - struct or object with wing geometry fields
+    %
+    % Name-value pairs (optional):
+    %   'Color'    - RGB triplet or color char (default: [0.6 0.8 1])
+    %   'Label'    - Legend label (default: 'Wing')
+    %   'Alpha'    - Face transparency (default: 0.6)
+
+    % --- Defaults ---
+    p = inputParser;
+    addParameter(p,'Color',[0.6 0.8 1]);
+    addParameter(p,'Label','Wing');
+    addParameter(p,'Alpha',0.6);
+    parse(p,varargin{:});
+
+    wingColor = p.Results.Color;
+    wingLabel = p.Results.Label;
+    alphaVal  = p.Results.Alpha;
+
+    % --- Extract geometry ---
+    x_root = wingDesign.x_root;
+    x_kink = wingDesign.x_kink;
+    x_tip  = wingDesign.x_tip;
+    
+    y_root = wingDesign.y_root;
+    y_kink = wingDesign.y_kink;
+    y_tip  = wingDesign.y_tip;
+    
+    c_root = wingDesign.c_root;
+    c_kink = wingDesign.c_kink;
+    c_tip  = wingDesign.c_tip;
+    
+    % --- Trailing edge ---
+    x_te_root = x_root + c_root;
+    x_te_kink = x_kink + c_kink;
+    x_te_tip  = x_tip  + c_tip;
+    
+    % --- Leading & trailing edges ---
+    LE_x = [x_root, x_kink, x_tip];
+    LE_y = [y_root, y_kink, y_tip];
+    
+    TE_x = [x_te_root, x_te_kink, x_te_tip];
+    TE_y = [y_root, y_kink, y_tip];
+    
+    % --- Wing outline ---
+    wing_x = [LE_x, fliplr(TE_x)];
+    wing_y = [LE_y, fliplr(TE_y)];
+    
+    % --- Plot ---
+    hWing = fill(ax, wing_x, wing_y, wingColor, ...
+        'FaceAlpha', alphaVal, ...
+        'EdgeColor', 'none', ...
+        'DisplayName', wingLabel);
+    hold(ax, 'on');
+
+    plot(ax, LE_x, LE_y, 'k-', 'LineWidth', 1.5, ...
+        'HandleVisibility','off');
+
+    plot(ax, TE_x, TE_y, 'k--', 'LineWidth', 1.5, ...
+        'HandleVisibility','off');
+
+    axis(ax, 'equal');
+    grid(ax, 'on');
+
+    xlabel(ax, 'x (m)');
+    ylabel(ax, 'y (m)');
+    title(ax, 'Top-down view of wing planform');
+
+    legend(ax, 'show');
+end
+
+
+initializer = load("initializer.mat").initializer;
+fminconresults = load("fmincon_results_22_12.mat");
+
+x_opt_normalized = fminconresults.x_opt;
+x_opt = x_opt_normalized .* initializer.optimizer.x0;
+
+dvec = DesignVector();
+dvec = dvec.fromVector(x_opt);
+% dvec.LE_sweep = 20/180*pi;
+wingDesign_new = WingDesign(dvec);
+
+
+figure
+ax = axes;
+hold(ax,'on')
+
+
+
+plotWing(ax, wingDesign_new, ...
+    'Color',[1 0.4 0.4], ...
+    'Label','Optimized Wing');
+plotWing(ax, initializer.optimizer.wingDesign, ...
+    'Color',[0.6 0.8 1], ...
+    'Label','Baseline Wing');

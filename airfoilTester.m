@@ -19,10 +19,10 @@ function plotDatCoords(filename)
     y = data(:,2);
 
     % Plot
-    figure;
+    % figure;
     plot(x, y, 'LineWidth', 2);
     axis equal;
-    grid on;
+    hold on; grid on;
     xlabel('x');
     ylabel('y');
     title(['Plot of ', filename]);
@@ -95,4 +95,5 @@ wingDesign = WingDesign(dvec);
 N1 = 0.5;
 N2 = 1;
 plotCSTairfoil(N1,N2,wingDesign.AU,wingDesign.AL);
+hold on
 plotDatCoords('airfoil.dat')

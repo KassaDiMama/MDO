@@ -150,10 +150,10 @@ classdef Initializer < handle
 
             % --- parametric domain ---
             ts = linspace(0, 1, 10000);  % resolution for plotting
-            ratios = linspace(0,3,500);
+            ratios = linspace(0,3,10000);
             % --- compute upper and lower surfaces ---
-            for i = 1:length(ratios)
-                ratio = ratios(i);
+            for ratio_index = 1:length(ratios)
+                ratio = ratios(ratio_index);
                 yu = CSTcurve(ts, obj.AU*(1-ratio), N1, N2, CST_order);
                 yl = CSTcurve(ts, obj.AL * (1+ratio), N1, N2, CST_order);
 
@@ -162,15 +162,20 @@ classdef Initializer < handle
                 res = mask_u > mask_l;
                 if sum(res) < size(res,2)
                     % display(ratio)
-                    fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
-                    AU_lower_bound = (1 - ratios(i-1));
-                    AL_upper_bound = (1 + ratios(i-1));
+                    fprintf('Intersection occurred at ratio of %f\n', ratio);
+                    AU_lower_bound = (1 - ratios(ratio_index-1));
+                    AL_upper_bound = (1 + ratios(ratio_index-1));
+                    
+                    fprintf('Lower bound: AU = %f, AL = %f\n', AU_lower_bound, AL_upper_bound);
+                    
+                    fprintf('Lower Ratio(i-1): %f, Upper Ratio (i): %f\n', ratios(ratio_index-1), ratios(ratio_index));
+                    fprintf('Difference: %f\n', ratios(ratio_index) - ratios(ratio_index-1));
                     break;
                 end
             end
             ratios = linspace(0,20,500);
-            for i = 1:length(ratios)
-                ratio = ratios(i);
+            for ratio_index = 1:length(ratios)
+                ratio = ratios(ratio_index);
                 yu = CSTcurve(ts, obj.AU*(1+ratio), N1, N2, CST_order);
                 yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
 
@@ -182,8 +187,8 @@ classdef Initializer < handle
                     fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
                     % disp(max(yu+yl));
                     
-                    AU_upper_bound = (1 + ratios(i-1));
-                    AL_lower_bound = (1 - ratios(i-1));
+                    AU_upper_bound = (1 + ratios(ratio_index-1));
+                    AL_lower_bound = (1 - ratios(ratio_index-1));
                     break;
                 end
             end
