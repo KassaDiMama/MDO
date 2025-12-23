@@ -96,4 +96,18 @@ N1 = 0.5;
 N2 = 1;
 plotCSTairfoil(N1,N2,wingDesign.AU,wingDesign.AL);
 hold on
-plotDatCoords('airfoil.dat')
+
+
+% initializer = load("initializer.mat").initializer;
+% fminconresults = load("fmincon_results_22_12.mat");
+% 
+% x_opt_normalized = fminconresults.x_opt;
+% x_opt = x_opt_normalized .* initializer.optimizer.x0;
+% 
+% dvec = DesignVector();
+% dvec = dvec.fromVector(x_opt);
+% % dvec.LE_sweep = 20/180*pi;
+% wingDesign_new = WingDesign(dvec);
+% % Plot the new airfoil design
+% plotCSTairfoil(N1, N2, wingDesign_new.AU, wingDesign_new.AL);
+% hold off
