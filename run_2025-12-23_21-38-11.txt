@@ -3,3 +3,73 @@
     "Starting new run at 2025-12-23 21:38:11"
 
 23-Dec-2025 21:38:11 | Starting optimization...
+{Error using Q3D_solver
+Invalid file identifier, AVLstrip.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you
+can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc.
+and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and
+check for sufficient sweep, thickness etc.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('MDA/loadsFunc', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\MDA.m', 137)" style="font-weight:bold">MDA/loadsFunc</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\MDA.m',137,0)">line 137</a>)
+            Res = Q3D_solver(AC);
+            ^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('MDA/MDA_loop', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\MDA.m', 77)" style="font-weight:bold">MDA/MDA_loop</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\MDA.m',77,0)">line 77</a>)
+                [new_lift_dist, new_moment_dist] = obj.loadsFunc(new_W_TO,V_MO_initial);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('Optimizer/objective_loop', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m', 119)" style="font-weight:bold">Optimizer/objective_loop</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m',119,0)">line 119</a>)
+            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('Optimizer/objective_wrapper', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m', 106)" style="font-weight:bold">Optimizer/objective_wrapper</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m',106,0)">line 106</a>)
+            range = obj.objective_loop();
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('Optimizer>@(x)obj.objective_wrapper(x)', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m', 22)" style="font-weight:bold">Optimizer>@(x)obj.objective_wrapper(x)</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m',22,0)">line 22</a>)
+            objective = @(x) obj.objective_wrapper(x);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in finDiffEvalAndChkErr
+
+Error in finitedifferences
+
+Error in computeFinDiffGradAndJac
+
+Error in sqpInterface
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('fmincon', 'C:\Program Files\MATLAB\R2025b\toolbox\shared\optimlib\fmincon.m', 671)" style="font-weight:bold">fmincon</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2025b\toolbox\shared\optimlib\fmincon.m',671,0)">line 671</a>)
+                [X,FVAL,EXITFLAG,OUTPUT,LAMBDA,GRAD,HESSIAN] = sqpInterface(funfcn,X,full(A),full(B),full(Aeq),full(Beq), ...
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('Optimizer/start', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m', 89)" style="font-weight:bold">Optimizer/start</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\Optimizer.m',89,0)">line 89</a>)
+            [x_opt, fval, history, searchdir] = fmincon(objective, ...
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 299)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',299,0)">line 299</a>)
+optimizer.start();
+^^^^^^^^^^^^^^^^^^
+}
+ls
+
+.                                        emwet_wrapper.m                          run_2025-12-22_21-39-54.txt              
+..                                       fmincon_2025-12-23_17-46-41              run_2025-12-22_21-41-48.txt              
+.git                                     fmincon_2025-12-23_18-48-56              run_2025-12-22_21-43-31.txt              
+652215.dat                               fmincon_2025-12-23_20-27-30              run_2025-12-22_​18-04-41.txt             
+Const.m                                  fmincon_results.mat                      run_2025-12-22_​18-08-17.txt             
+Copy_of_Const.m                          fmincon_results_22_12.mat                run_2025-12-23_15-43-32.txt              
+DesignVector.m                           initialValueMassaging.m                  run_2025-12-23_17-41-43.txt              
+Drag_coeff_from_spanwise.m               initializer.mat                          run_2025-12-23_18-42-18.txt              
+EMWET.p                                  initializer2025-12-23_17-41-43.mat       run_2025-12-23_20-21-54.txt              
+Initalfunctions.m                        initializer2025-12-23_18-42-18.mat       run_2025-12-23_21-38-11.txt              
+Initializer.m                            initializer2025-12-23_20-21-54.mat       run_useful_2025-12-22_​21-40-06.txt      
+MDA.m                                    initializer2025-12-23_21-38-11.mat       run_useful_2025-12-22_​21-42-02.txt      
+Optimizer.m                              log.file                                 run_useful_2025-12-22_​21-43-44.txt      
+Q3D_Start.m                              logMessage.m                             run_useful_2025-12-23_​15-43-45.txt      
+Q3D_solver.p                             log_old.file                             run_useful_2025-12-23_​17-41-55.txt      
+README.md                                log_semi_suc6_but_crash_16_12_2115.file  run_useful_2025-12-23_​18-42-32.txt      
+Storage                                  logmsg.m                                 run_useful_2025-12-23_​20-21-54.txt      
+WingDesign.m                             main.asv                                 run_useful_2025-12-23_​21-38-11.txt      
+airfoil.dat                              main.m                                   sc20518.dat                              
+airfoilDesigner.m                        matlab-jsystem-master                    sc20610.dat                              
+airfoilTester.m                          optimizing.init                          sc207210.dat                             
+airfoil_area_test.m                      optimizing.load                          test.dat                                 
+archive                                  optimizing.weight                        test.init                                
+createAirfoilDat.m                       outputFcn.m                              test.load                                
+createLoadingFile.m                      run_2025-12-21_23-51-03.txt              tests.m                                  
+debug.log                                run_2025-12-22_17-52-07.txt              withcomb135.dat                          
+diary                                    run_2025-12-22_18-02-30.txt              
+drag_estimation.m                        run_2025-12-22_21-37-42.txt              
+
