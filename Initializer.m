@@ -160,12 +160,12 @@ classdef Initializer < handle
             for ratio_index = 1:length(ratios)
                 ratio = ratios(ratio_index);
                 yu = CSTcurve(ts, obj.AU*(1-ratio), N1, N2, CST_order);
-                yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * (1+ratio), N1, N2, CST_order);
 
                 mask_u = yu(2:end-1);
                 mask_l = yl(2:end-1);
                 res = mask_u > mask_l;
-                if ~all(res)
+                if sum(res) < size(res,2)
                     % display(ratio)
                     fprintf('Intersection occurred at ratio of %f\n', ratio);
                     AU_lower_bound = (1 - ratios(ratio_index-1));
