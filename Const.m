@@ -19,6 +19,17 @@ classdef Const
         fuel_weight_max_ref = 34890
         airfoil_ref = 'withcomb135.dat'
         airfoil_thickness_multiplier = 1
+        b_half_upper_bound = 26
+        b_half_lower_bound = 15
+
+        LE_sweep_upper_bound = 40 % deg
+        LE_sweep_lower_bound = 0 % deg
+
+        AR_upper_bound = 12
+        AR_lower_bound = 6
+
+        TR_upper_bound = 0.85
+        TR_lower_bound = 0.2
         % C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
         
         % W_ZF_initial = 122470-33785; % kg

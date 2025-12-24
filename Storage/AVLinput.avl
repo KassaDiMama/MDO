@@ -2,12 +2,12 @@ Wing
 # AVL input file
 
 # Mach
-0.86
+0.8
 
 # iYsym iZsym Zsym
 0 0 0 
 # Sref Cref Bref
-237.909 4.8875 41.7151
+271.177 5.03061 46.05
 # Xref Yref Zref
 0 0 0
 
@@ -28,7 +28,7 @@ ANGLE
 # ----------------------------------------------------------
 SECTION
 # Xle Yle Zle Chord Ainc
-20.5 0 2.05 10.1622 0
+20.5 0 2.05 10.5132 0
 AFILE
 AFsection1.dat
 CLAF
@@ -36,7 +36,7 @@ CLAF
 # ----------------------------------------------------------
 SECTION
 # Xle Yle Zle Chord Ainc
-24.2018 6.5 2.61868 6.56042 -1
+24.1372 6.5 2.61868 6.97604 -1
 AFILE
 AFsection2.dat
 CLAF
@@ -44,7 +44,7 @@ CLAF
 # ----------------------------------------------------------
 SECTION
 # Xle Yle Zle Chord Ainc
-32.0577 20.8575 3.8748 2.43914 -2
+33.0299 23.025 4.06443 2.55476 -2
 AFILE
 AFsection3.dat
 CLAF

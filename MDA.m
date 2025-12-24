@@ -149,7 +149,7 @@ classdef MDA < handle
             lift_distribution.y = y;
             lift_distribution.L = 0.5 * rho * V^2 * chord.*cl;
             moment_distribution.y = y;
-            moment_distribution.M = 0.5 * rho * V^2 * chord .* chord .*cm;
+            moment_distribution.M = 0.5 * rho * V^2 * chord * obj.wingDesign.MAC  .*cm;
 
             lift_distribution.y = [0;lift_distribution.y; obj.wingDesign.b_half];
             lift_distribution.L = [lift_distribution.L(1);lift_distribution.L;0];
@@ -289,7 +289,9 @@ classdef MDA < handle
             
             % Extract the number from the line using regexp
             massStr = regexp(firstLine, '\d+\.?\d*', 'match');  % match numeric values
-            wing_mass = str2double(massStr{1});                 % convert to double
+            
+            wing_mass = str2double(massStr{1});  
+        % convert to double
             % disp("wing mass: "+string(wing_mass))
             % disp(obj.wingDesign.LE_sweep*180/pi)
             

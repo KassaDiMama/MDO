@@ -22,10 +22,10 @@ classdef Optimizer < handle
             objective = @(x) obj.objective_wrapper(x);
             nonlcon = @(x) obj.constraints(x);
             ub = [];
-            ub(1) = 26/obj.x0(1); %b_outboard
-            ub(2) = 40/180*pi/obj.x0(2);
-            ub(3) = 0.85/obj.x0(3);
-            ub(4) = 12/obj.x0(4);
+            ub(1) = Const.b_half_upper_bound/obj.x0(1); %b_outboard
+            ub(2) = Const.LE_sweep_upper_bound/180*pi/obj.x0(2);
+            ub(3) = Const.TR_upper_bound/obj.x0(3);%obj.initializer.TR_upper_bound/obj.x0(3);
+            ub(4) = Const.AR_upper_bound/obj.x0(4);
             ub(5) = obj.initializer.AU_upper_bound;
             ub(6) = obj.initializer.AU_upper_bound;
             ub(7) = obj.initializer.AU_upper_bound;
@@ -41,11 +41,11 @@ classdef Optimizer < handle
             ub(17) = 0.88/obj.x0(17);
             ub(18) = 13075.92/obj.x0(18);
 
-            
-            lb(1) = 15/obj.x0(1);
-            lb(2) = 0/obj.x0(2);
-            lb(3) = 0.2/obj.x0(3);
-            lb(4) = 6/obj.x0(4);
+
+            lb(1) = Const.b_half_lower_bound/obj.x0(1);
+            lb(2) = Const.LE_sweep_lower_bound/180*pi/obj.x0(2);
+            lb(3) = Const.TR_lower_bound/obj.x0(3);
+            lb(4) = Const.AR_lower_bound/obj.x0(4);
             lb(5) = obj.initializer.AU_lower_bound;
             lb(6) = obj.initializer.AU_lower_bound;
             lb(7) = obj.initializer.AU_lower_bound;
@@ -80,8 +80,8 @@ classdef Optimizer < handle
             'FunctionTolerance',1e-6, ...
             'StepTolerance',1e-6, ...
             'OptimalityTolerance',1e-10, ...
-            'DiffMinChange',1e-2, ...
-            'DiffMaxChange',1e-1);
+            'DiffMinChange',8e-3, ...
+            'DiffMaxChange',5e-2);
 
             disp(string(datetime('now')) + " | Starting optimization...");
             tic;
@@ -92,7 +92,8 @@ classdef Optimizer < handle
             toc;
             disp(string(datetime('now')) + " | Finished optimization...");
             disp("Done optimizing!");
-            save('fmincon_results.mat', 'x_opt', 'fval', 'history', 'searchdir');
+            tstr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
+            save(tstr+"fmincon_results.mat", 'x_opt', 'fval', 'history', 'searchdir');
         end
         function objective = objective_wrapper(obj,x_normalized)
             x=x_normalized.*obj.x0;
@@ -103,9 +104,16 @@ classdef Optimizer < handle
             % obj.wingDesign = WingDesign(obj.dvec);
             % obj.mda.wingDesign = obj.wingDesign;
             logmsg("--------------------------------");
-            range = obj.objective_loop();
+            
+            
             logmsg("With wing design:");
             logmsg(obj.wingDesign.toString());
+            try
+                range = obj.objective_loop();
+            catch exception
+                range = 0;
+                logmsg("Error in objective_loop: " + exception.message);
+            end
             logmsg("At " + string(datetime('now')) + ...
                 " calculated range: " + string(range/1000) + " km");
             logmsg("With W_TO_max"+string(obj.mda.W_TO_max));
@@ -207,8 +215,14 @@ classdef Optimizer < handle
 
             
             % No inequality constraints
-            lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
-            c(1) = obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/obj.initializer.S_initial; % Wing loading constraint  
+            try
+                lol =obj.mda.MDA_loop(obj.mda.W_TO_max,obj.wingDesign.W_fuel,obj.mda.W_ZF,obj.initializer.W_AminusW_initial,obj.initializer.V_MO_initial);
+            catch exception
+                obj.mda.W_TO_max = 1000000;
+                logmsg("Error in constraint: " + exception.message);
+            end
+            
+            c(1) = (obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/obj.initializer.S_initial)/(Const.W_TO_max_initial/obj.initializer.S_initial); % Wing loading constraint  
             ceq = [];
         end
     end

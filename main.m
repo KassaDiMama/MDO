@@ -302,6 +302,7 @@ clear all
 close all
 clc
 dvec = DesignVector();
+dvec.b_half=dvec.b_half+4;
 initializer = Initializer(dvec);
 
 %% See result
@@ -386,7 +387,7 @@ end
 
 
 initializer = load("initializer.mat").initializer;
-fminconresults = load("fmincon_results_22_12.mat");
+fminconresults = load("fmincon_2025-12-24_18-11-55/fmincon_results.mat");
 
 x_opt_normalized = fminconresults.x_opt;
 x_opt = x_opt_normalized .* initializer.optimizer.x0;
@@ -406,6 +407,103 @@ hold(ax,'on')
 plotWing(ax, wingDesign_new, ...
     'Color',[1 0.4 0.4], ...
     'Label','Optimized Wing');
+fail_wingDesign = load("emwet_fail.mat").ans;
+% plotWing(ax, fail_wingDesign, ...
+%     'Color',[1 0.4 0.4], ...
+%     'Label','Optimized Wing');
 plotWing(ax, initializer.optimizer.wingDesign, ...
     'Color',[0.6 0.8 1], ...
     'Label','Baseline Wing');
+
+%% Test taper ratio c_kink
+clear all
+close all
+clc
+dvec = DesignVector();
+initializer = Initializer(dvec);
+TR_new = initializer.getTRbounds();
+
+dvec.TR= TR_new;
+dvec.AR = Const.AR_upper_bound;
+dvec.LE_sweep = Const.LE_sweep_upper_bound/180*pi;
+dvec.b_half = Const.b_half_upper_bound;
+% dvec.AR= dvec.AR*1.1;
+wingDesign = WingDesign(dvec);
+% fprintf("Changing AR value in design vector.\n");
+% fprintf("c_kink equals: %g\n", wingDesign.c_kink);
+% fprintf("c_tip equals: %g\n", wingDesign.c_tip);
+% ratio = wingDesign.c_kink / wingDesign.c_tip;
+% fprintf("Ratio of c_kink to c_tip equals: %g\n", ratio);
+% 
+% 
+% dvec.TR= TR_new;
+% dvec.AR= dvec.AR/1.1;
+% dvec.LE_sweep= dvec.LE_sweep*1.1;
+% wingDesign = WingDesign(dvec);
+% fprintf("Changing LE_sweep value in design vector.\n");
+% fprintf("c_kink equals: %g\n", wingDesign.c_kink);
+% fprintf("c_tip equals: %g\n", wingDesign.c_tip);
+% ratio = wingDesign.c_kink / wingDesign.c_tip;
+% fprintf("Ratio of c_kink to c_tip equals: %g\n", ratio);
+% 
+% dvec.TR= TR_new;
+% dvec.LE_sweep= dvec.LE_sweep/1.1;
+% dvec.b_half= dvec.b_half*0.9;
+% wingDesign = WingDesign(dvec);
+% fprintf("Changing b_half value in design vector.\n");
+% fprintf("c_kink equals: %g\n", wingDesign.c_kink);
+% fprintf("c_tip equals: %g\n", wingDesign.c_tip);
+% ratio = wingDesign.c_kink / wingDesign.c_tip;
+% fprintf("Ratio of c_kink to c_tip equals: %g\n", ratio);
+% 
+% dvec.TR= TR_new*1.1;
+% dvec.b_half= dvec.b_half/0.9;
+% wingDesign = WingDesign(dvec);
+% fprintf("Changing TR value in design vector.\n");
+% fprintf("c_kink equals: %g\n", wingDesign.c_kink);
+% fprintf("c_tip equals: %g\n", wingDesign.c_tip);
+% ratio = wingDesign.c_kink / wingDesign.c_tip;
+% fprintf("Ratio of c_kink to c_tip equals: %g\n", ratio);
+
+
+x_root = wingDesign.x_root;
+x_kink = wingDesign.x_kink;
+x_tip  = wingDesign.x_tip;
+
+y_root = wingDesign.y_root;
+y_kink = wingDesign.y_kink;
+y_tip  = wingDesign.y_tip;
+
+c_root = wingDesign.c_root;
+c_kink = wingDesign.c_kink;
+c_tip  = wingDesign.c_tip;
+
+% Calculate trailing edge coordinates (top view)
+x_te_root = x_root + c_root;
+x_te_kink = x_kink + c_kink;
+x_te_tip  = x_tip  + c_tip;
+
+% Leading edge coordinates (top view)
+LE_x = [x_root, x_kink, x_tip];
+LE_y = [y_root, y_kink, y_tip];
+
+% Trailing edge coordinates (top view)
+TE_x = [x_te_root, x_te_kink, x_te_tip];
+TE_y = [y_root, y_kink, y_tip];
+
+% Combine for plotting the wing outline
+wing_x = [LE_x, fliplr(TE_x)];
+wing_y = [LE_y, fliplr(TE_y)];
+
+% Plot
+figure;
+fill(wing_x, wing_y, [0.6 0.8 1]); % Wing shape filled with color
+hold on;
+plot(LE_x, LE_y, 'ko-', 'LineWidth', 1.5, 'MarkerFaceColor','k'); % Leading edge
+plot(TE_x, TE_y, 'ro-', 'LineWidth', 1.5, 'MarkerFaceColor','r'); % Trailing edge
+axis equal
+xlabel('x (m)');
+ylabel('y (m)');
+title('Top-down view of wing planform');
+grid on;
+legend('Wing','Leading Edge','Trailing Edge');

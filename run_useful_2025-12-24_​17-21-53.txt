@@ -1,0 +1,5454 @@
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:22:07 calculated range: 5612.6525 km
+With W_TO_max122470
+and with wingloading W_TO_max/S: 661.4959
+Maximum possible array:             9020 MB (9.46e+09 bytes) *
+Memory available for all arrays:    9020 MB (9.46e+09 bytes) *
+Memory used by MATLAB:              3639 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.47497
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.044
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.544
+c_root = 8.84416
+c_kink = 5.30695
+c_tip = 2.14913
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02715e+07
+V = 236.054
+S = 185.511
+MAC = 5.57328
+x_kink = 24.1372
+x_tip = 30.8635
+y_kink = 6.5
+y_tip = 19.044
+z_kink = 2.61868
+z_tip = 3.71614
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:22:26 calculated range: 5639.3004 km
+With W_TO_max122480.4
+and with wingloading W_TO_max/S: 660.2309
+Maximum possible array:             9003 MB (9.44e+09 bytes) *
+Memory available for all arrays:    9003 MB (9.44e+09 bytes) *
+Memory used by MATLAB:              3643 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498867
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83895
+c_kink = 5.29754
+c_tip = 2.14787
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02448e+07
+V = 236.054
+S = 185.141
+MAC = 5.56837
+x_kink = 24.1414
+x_tip = 30.8654
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:22:45 calculated range: 5612.4414 km
+With W_TO_max122476.6
+and with wingloading W_TO_max/S: 661.5315
+Maximum possible array:             8820 MB (9.25e+09 bytes) *
+Memory available for all arrays:    8820 MB (9.25e+09 bytes) *
+Memory used by MATLAB:              3643 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83521
+c_kink = 5.29801
+c_tip = 2.14911
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02394e+07
+V = 236.054
+S = 185.141
+MAC = 5.56737
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:23:03 calculated range: 5614.1918 km
+With W_TO_max122472.3
+and with wingloading W_TO_max/S: 661.5083
+Maximum possible array:             8891 MB (9.32e+09 bytes) *
+Memory available for all arrays:    8891 MB (9.32e+09 bytes) *
+Memory used by MATLAB:              3646 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82782
+b_outboard = 12.525
+c_root = 8.82968
+c_kink = 5.29247
+c_tip = 2.14561
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02143e+07
+V = 236.054
+S = 184.956
+MAC = 5.56275
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:23:22 calculated range: 5614.913 km
+With W_TO_max122481.2
+and with wingloading W_TO_max/S: 662.2179
+Maximum possible array:             8970 MB (9.41e+09 bytes) *
+Memory available for all arrays:    8970 MB (9.41e+09 bytes) *
+Memory used by MATLAB:              3647 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233884   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:23:41 calculated range: 5613.0016 km
+With W_TO_max122468.1
+and with wingloading W_TO_max/S: 661.4856
+Maximum possible array:             8871 MB ( 9.3e+09 bytes) *
+Memory available for all arrays:    8871 MB ( 9.3e+09 bytes) *
+Memory used by MATLAB:              3647 MB (3.82e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.08004  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:24:00 calculated range: 5614.3489 km
+With W_TO_max122468.9
+and with wingloading W_TO_max/S: 661.4899
+Maximum possible array:             8920 MB (9.35e+09 bytes) *
+Memory available for all arrays:    8920 MB (9.35e+09 bytes) *
+Memory used by MATLAB:              3647 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267684 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:24:18 calculated range: 5615.4628 km
+With W_TO_max122467.8
+and with wingloading W_TO_max/S: 661.484
+Maximum possible array:             8865 MB ( 9.3e+09 bytes) *
+Memory available for all arrays:    8865 MB ( 9.3e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0899435  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:24:37 calculated range: 5613.4914 km
+With W_TO_max122469.8
+and with wingloading W_TO_max/S: 661.4948
+Maximum possible array:             8926 MB (9.36e+09 bytes) *
+Memory available for all arrays:    8926 MB (9.36e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.278196  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:24:56 calculated range: 5615.8601 km
+With W_TO_max122469.8
+and with wingloading W_TO_max/S: 661.4948
+Maximum possible array:             8777 MB ( 9.2e+09 bytes) *
+Memory available for all arrays:    8777 MB ( 9.2e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918     0.382]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:25:15 calculated range: 5615.5507 km
+With W_TO_max122470
+and with wingloading W_TO_max/S: 661.4959
+Maximum possible array:             8891 MB (9.32e+09 bytes) *
+Memory available for all arrays:    8891 MB (9.32e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225574  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:25:34 calculated range: 5613.7441 km
+With W_TO_max122468.7
+and with wingloading W_TO_max/S: 661.4889
+Maximum possible array:             8909 MB (9.34e+09 bytes) *
+Memory available for all arrays:    8909 MB (9.34e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163835 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:25:52 calculated range: 5613.7056 km
+With W_TO_max122468.3
+and with wingloading W_TO_max/S: 661.4867
+Maximum possible array:             8790 MB (9.22e+09 bytes) *
+Memory available for all arrays:    8790 MB (9.22e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464919  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:26:11 calculated range: 5614.1555 km
+With W_TO_max122469.7
+and with wingloading W_TO_max/S: 661.4943
+Maximum possible array:             8765 MB (9.19e+09 bytes) *
+Memory available for all arrays:    8765 MB (9.19e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.478308  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:26:30 calculated range: 5613.1382 km
+With W_TO_max122467.6
+and with wingloading W_TO_max/S: 661.4829
+Maximum possible array:             8873 MB ( 9.3e+09 bytes) *
+Memory available for all arrays:    8873 MB ( 9.3e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0741347   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:26:50 calculated range: 5612.7405 km
+With W_TO_max122470.2
+and with wingloading W_TO_max/S: 661.497
+Maximum possible array:             8722 MB (9.15e+09 bytes) *
+Memory available for all arrays:    8722 MB (9.15e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325568]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:27:14 calculated range: 5614.4275 km
+With W_TO_max122470.3
+and with wingloading W_TO_max/S: 661.4975
+Maximum possible array:             8839 MB (9.27e+09 bytes) *
+Memory available for all arrays:    8839 MB (9.27e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8008
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02731e+07
+V = 236.29
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:27:33 calculated range: 5640.3503 km
+With W_TO_max122470
+and with wingloading W_TO_max/S: 661.4959
+Maximum possible array:             8886 MB (9.32e+09 bytes) *
+Memory available for all arrays:    8886 MB (9.32e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11685.5
+rho = 0.326633
+a = 295.068
+T = 216.65
+Re = 3.01872e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:27:52 calculated range: 5616.5853 km
+With W_TO_max122470.9
+and with wingloading W_TO_max/S: 661.5007
+Maximum possible array:             8820 MB (9.25e+09 bytes) *
+Memory available for all arrays:    8820 MB (9.25e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.83994
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 25.9998
+LE_sweep = 0.479627
+TR = 0.309646
+AR = 10.9695
+b_outboard = 19.4998
+c_root = 8.67717
+c_kink = 5.29628
+c_tip = 2.68685
+AU = [0.248185 0.104128 0.401317 0.103284 0.436748 0.578672]
+AL = [-0.243331  -0.176732 -0.0501517   -0.51596  0.0752213   0.351197]
+Mcr = 0.879992
+hcr = 13075.8
+rho = 0.26233
+a = 295.068
+T = 216.65
+Re = 2.50746e+07
+V = 259.657
+S = 246.497
+MAC = 5.23521
+x_kink = 23.9809
+x_tip = 34.0235
+y_kink = 6.5
+y_tip = 25.9998
+z_kink = 2.61868
+z_tip = 4.32469
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:28:07 calculated range: 16.6613 km
+With W_TO_max129578.7
+and with wingloading W_TO_max/S: 525.6807
+Maximum possible array:             8858 MB (9.29e+09 bytes) *
+Memory available for all arrays:    8858 MB (9.29e+09 bytes) *
+Memory used by MATLAB:              3648 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.1285
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 23.9074
+LE_sweep = 0.48525
+TR = 0.289652
+AR = 10.0247
+b_outboard = 17.4074
+c_root = 8.74493
+c_kink = 5.31747
+c_tip = 2.53302
+AU = [0.243825 0.0968774  0.361147  0.099255  0.389099  0.519556]
+AL = [-0.237937  -0.172814 -0.0490398  -0.504522  0.0748731   0.343411]
+Mcr = 0.855994
+hcr = 12655.2
+rho = 0.280318
+a = 295.068
+T = 216.65
+Re = 2.65079e+07
+V = 252.577
+S = 228.062
+MAC = 5.32452
+x_kink = 24.0275
+x_tip = 33.1064
+y_kink = 6.5
+y_tip = 23.9074
+z_kink = 2.61868
+z_tip = 4.14162
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:28:21 calculated range: 19.3264 km
+With W_TO_max127386.3
+and with wingloading W_TO_max/S: 558.5601
+Maximum possible array:             8745 MB (9.17e+09 bytes) *
+Memory available for all arrays:    8745 MB (9.17e+09 bytes) *
+Memory used by MATLAB:              3648 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.6305
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 22.4427
+LE_sweep = 0.489185
+TR = 0.275656
+AR = 9.36328
+b_outboard = 15.9427
+c_root = 8.78372
+c_kink = 5.32349
+c_tip = 2.4213
+AU = [0.240773 0.0918022  0.333028 0.0964346  0.355745  0.478175]
+AL = [-0.23416  -0.170072 -0.0482615  -0.496514  0.0746293   0.337961]
+Mcr = 0.839196
+hcr = 12360.8
+rho = 0.293639
+a = 295.068
+T = 216.65
+Re = 2.75697e+07
+V = 247.62
+S = 215.169
+MAC = 5.3924
+x_kink = 24.0602
+x_tip = 32.4472
+y_kink = 6.5
+y_tip = 22.4427
+z_kink = 2.61868
+z_tip = 4.01348
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:28:37 calculated range: 21.045 km
+With W_TO_max125867
+and with wingloading W_TO_max/S: 584.9669
+Maximum possible array:             8377 MB (8.78e+09 bytes) *
+Memory available for all arrays:    8377 MB (8.78e+09 bytes) *
+Memory used by MATLAB:              3648 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.2819
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 21.4174
+LE_sweep = 0.49194
+TR = 0.265859
+AR = 8.9003
+b_outboard = 14.9174
+c_root = 8.80567
+c_kink = 5.32243
+c_tip = 2.34108
+AU = [0.238636 0.0882495  0.313344 0.0944603  0.332397  0.449208]
+AL = [-0.231517  -0.168152 -0.0477167  -0.490909  0.0744587   0.334145]
+Mcr = 0.827437
+hcr = 12154.7
+rho = 0.303338
+a = 295.068
+T = 216.65
+Re = 2.83426e+07
+V = 244.15
+S = 206.152
+MAC = 5.44257
+x_kink = 24.0832
+x_tip = 31.9772
+y_kink = 6.5
+y_tip = 21.4174
+z_kink = 2.61868
+z_tip = 3.92378
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:28:52 calculated range: 22.1391 km
+With W_TO_max124826.3
+and with wingloading W_TO_max/S: 605.5063
+Maximum possible array:             8159 MB (8.56e+09 bytes) *
+Memory available for all arrays:    8159 MB (8.56e+09 bytes) *
+Memory used by MATLAB:              3648 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.03788
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.6997
+LE_sweep = 0.493869
+TR = 0.259002
+AR = 8.57621
+b_outboard = 14.1997
+c_root = 8.8181
+c_kink = 5.31871
+c_tip = 2.28391
+AU = [0.23714 0.0857627  0.299566 0.0930783  0.316053  0.428931]
+AL = [-0.229667  -0.166808 -0.0473353  -0.486986  0.0743393   0.331475]
+Mcr = 0.819206
+hcr = 12010.5
+rho = 0.310318
+a = 295.068
+T = 216.65
+Re = 2.88984e+07
+V = 241.722
+S = 199.844
+MAC = 5.47899
+x_kink = 24.0994
+x_tip = 31.644
+y_kink = 6.5
+y_tip = 20.6997
+z_kink = 2.61868
+z_tip = 3.86098
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:29:06 calculated range: 22.8408 km
+With W_TO_max124109.6
+and with wingloading W_TO_max/S: 621.0328
+Maximum possible array:             8342 MB (8.75e+09 bytes) *
+Memory available for all arrays:    8342 MB (8.75e+09 bytes) *
+Memory used by MATLAB:              3655 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86707
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.495219
+TR = 0.254201
+AR = 8.34934
+b_outboard = 13.6973
+c_root = 8.82522
+c_kink = 5.3145
+c_tip = 2.24338
+AU = [0.236093 0.0840219  0.289921 0.0921109  0.304613  0.414737]
+AL = [-0.228371  -0.165867 -0.0470683  -0.484239  0.0742557   0.329605]
+Mcr = 0.813444
+hcr = 11909.5
+rho = 0.315299
+a = 295.068
+T = 216.65
+Re = 2.92947e+07
+V = 240.021
+S = 195.431
+MAC = 5.50511
+x_kink = 24.1107
+x_tip = 31.4087
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:29:23 calculated range: 23.2969 km
+With W_TO_max123613.6
+and with wingloading W_TO_max/S: 632.5195
+Maximum possible array:             8311 MB (8.71e+09 bytes) *
+Memory available for all arrays:    8311 MB (8.71e+09 bytes) *
+Memory used by MATLAB:              3655 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.7475
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.8456
+LE_sweep = 0.496163
+TR = 0.250841
+AR = 8.19054
+b_outboard = 13.3456
+c_root = 8.82936
+c_kink = 5.31071
+c_tip = 2.21477
+AU = [0.235361 0.0828033   0.28317 0.0914337  0.296604  0.404801]
+AL = [-0.227465  -0.165208 -0.0468815  -0.482317  0.0741972   0.328297]
+Mcr = 0.809411
+hcr = 11838.8
+rho = 0.318833
+a = 295.068
+T = 216.65
+Re = 2.95758e+07
+V = 238.831
+S = 192.342
+MAC = 5.5237
+x_kink = 24.1187
+x_tip = 31.243
+y_kink = 6.5
+y_tip = 19.8456
+z_kink = 2.61868
+z_tip = 3.78626
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:29:39 calculated range: 23.5982 km
+With W_TO_max123261.6
+and with wingloading W_TO_max/S: 640.8448
+Maximum possible array:             8514 MB (8.93e+09 bytes) *
+Memory available for all arrays:    8514 MB (8.93e+09 bytes) *
+Memory used by MATLAB:              3652 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:29:57 calculated range: 5817.5263 km
+With W_TO_max123027.9
+and with wingloading W_TO_max/S: 646.898
+Maximum possible array:             8410 MB (8.82e+09 bytes) *
+Memory available for all arrays:    8410 MB (8.82e+09 bytes) *
+Memory used by MATLAB:              3652 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.67027
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6184
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.1184
+c_root = 8.83955
+c_kink = 5.31534
+c_tip = 2.19653
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.98015e+07
+V = 237.998
+S = 190.551
+MAC = 5.54193
+x_kink = 24.1242
+x_tip = 31.1369
+y_kink = 6.5
+y_tip = 19.6184
+z_kink = 2.61868
+z_tip = 3.76639
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:30:15 calculated range: 5819.6495 km
+With W_TO_max123038.2
+and with wingloading W_TO_max/S: 645.698
+Maximum possible array:             8511 MB (8.93e+09 bytes) *
+Memory available for all arrays:    8511 MB (8.93e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.497323
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83464
+c_kink = 5.30623
+c_tip = 2.19531
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.9776e+07
+V = 237.998
+S = 190.181
+MAC = 5.5372
+x_kink = 24.1284
+x_tip = 31.1392
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:30:34 calculated range: 5832.2974 km
+With W_TO_max123034.7
+and with wingloading W_TO_max/S: 646.9337
+Maximum possible array:             8310 MB (8.71e+09 bytes) *
+Memory available for all arrays:    8310 MB (8.71e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248732
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83088
+c_kink = 5.30666
+c_tip = 2.19652
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97708e+07
+V = 237.998
+S = 190.181
+MAC = 5.53622
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:30:53 calculated range: 5818.434 km
+With W_TO_max123030.2
+and with wingloading W_TO_max/S: 646.9101
+Maximum possible array:             7591 MB (7.96e+09 bytes) *
+Memory available for all arrays:    7591 MB (7.96e+09 bytes) *
+Memory used by MATLAB:              3650 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.0872
+b_outboard = 13.0994
+c_root = 8.82557
+c_kink = 5.30136
+c_tip = 2.19306
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97469e+07
+V = 237.998
+S = 189.997
+MAC = 5.53178
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:31:14 calculated range: 5818.2103 km
+With W_TO_max123039.1
+and with wingloading W_TO_max/S: 647.5831
+Maximum possible array:             8506 MB (8.92e+09 bytes) *
+Memory available for all arrays:    8506 MB (8.92e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.235081 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:31:33 calculated range: 5783.2601 km
+With W_TO_max123025.5
+and with wingloading W_TO_max/S: 646.8854
+Maximum possible array:             8478 MB (8.89e+09 bytes) *
+Memory available for all arrays:    8478 MB (8.89e+09 bytes) *
+Memory used by MATLAB:              3649 MB (3.83e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0820303  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:37:44 calculated range: 5780.0949 km
+With W_TO_max123026.7
+and with wingloading W_TO_max/S: 646.8917
+Maximum possible array:             8620 MB (9.04e+09 bytes) *
+Memory available for all arrays:    8620 MB (9.04e+09 bytes) *
+Memory used by MATLAB:              3724 MB (3.91e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278712 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:38:03 calculated range: 5768.288 km
+With W_TO_max123025.2
+and with wingloading W_TO_max/S: 646.8838
+Maximum possible array:             8667 MB (9.09e+09 bytes) *
+Memory available for all arrays:    8667 MB (9.09e+09 bytes) *
+Memory used by MATLAB:              3662 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0910495  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:38:21 calculated range: 5752.5043 km
+With W_TO_max123027.3
+and with wingloading W_TO_max/S: 646.8948
+Maximum possible array:             8775 MB ( 9.2e+09 bytes) *
+Memory available for all arrays:    8775 MB ( 9.2e+09 bytes) *
+Memory used by MATLAB:              3662 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.291276  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:38:40 calculated range: 5805.7033 km
+With W_TO_max123027.3
+and with wingloading W_TO_max/S: 646.8948
+Maximum possible array:             8580 MB (   9e+09 bytes) *
+Memory available for all arrays:    8580 MB (   9e+09 bytes) *
+Memory used by MATLAB:              3662 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.398228]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:39:00 calculated range: 5780.6231 km
+With W_TO_max123027.6
+and with wingloading W_TO_max/S: 646.8964
+Maximum possible array:             8699 MB (9.12e+09 bytes) *
+Memory available for all arrays:    8699 MB (9.12e+09 bytes) *
+Memory used by MATLAB:              3665 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.227055  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:39:18 calculated range: 5765.6047 km
+With W_TO_max123026.2
+and with wingloading W_TO_max/S: 646.889
+Maximum possible array:             8743 MB (9.17e+09 bytes) *
+Memory available for all arrays:    8743 MB (9.17e+09 bytes) *
+Memory used by MATLAB:              3665 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164911 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:39:36 calculated range: 5830.8754 km
+With W_TO_max123026
+and with wingloading W_TO_max/S: 646.888
+Maximum possible array:             8682 MB ( 9.1e+09 bytes) *
+Memory available for all arrays:    8682 MB ( 9.1e+09 bytes) *
+Memory used by MATLAB:              3666 MB (3.84e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467971  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:39:55 calculated range: 5817.3932 km
+With W_TO_max123027.2
+and with wingloading W_TO_max/S: 646.8943
+Maximum possible array:             8761 MB (9.19e+09 bytes) *
+Memory available for all arrays:    8761 MB (9.19e+09 bytes) *
+Memory used by MATLAB:              3667 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.481449  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:40:13 calculated range: 5834.1356 km
+With W_TO_max123025.1
+and with wingloading W_TO_max/S: 646.8833
+Maximum possible array:             8617 MB (9.04e+09 bytes) *
+Memory available for all arrays:    8617 MB (9.04e+09 bytes) *
+Memory used by MATLAB:              3667 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0742302   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:40:32 calculated range: 5788.9168 km
+With W_TO_max123027.8
+and with wingloading W_TO_max/S: 646.8975
+Maximum possible array:             8682 MB ( 9.1e+09 bytes) *
+Memory available for all arrays:    8682 MB ( 9.1e+09 bytes) *
+Memory used by MATLAB:              3667 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327706]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:40:50 calculated range: 5784.7816 km
+With W_TO_max123027.8
+and with wingloading W_TO_max/S: 646.8975
+Maximum possible array:             8717 MB (9.14e+09 bytes) *
+Memory available for all arrays:    8717 MB (9.14e+09 bytes) *
+Memory used by MATLAB:              3668 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.807388
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.98037e+07
+V = 238.234
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:41:09 calculated range: 5819.722 km
+With W_TO_max123027.7
+and with wingloading W_TO_max/S: 646.8969
+Maximum possible array:             8530 MB (8.95e+09 bytes) *
+Memory available for all arrays:    8530 MB (8.95e+09 bytes) *
+Memory used by MATLAB:              3668 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290998  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741562   0.327381]
+Mcr = 0.806588
+hcr = 11801
+rho = 0.32074
+a = 295.068
+T = 216.65
+Re = 2.97195e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+At 24-Dec-2025 17:41:29 calculated range: 5833.7429 km
+With W_TO_max123028.4
+and with wingloading W_TO_max/S: 646.9006
+Maximum possible array:             8520 MB (8.93e+09 bytes) *
+Memory available for all arrays:    8520 MB (8.93e+09 bytes) *
+Memory used by MATLAB:              3668 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.84
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 26
+LE_sweep = 0.569773
+TR = 0.370025
+AR = 12
+b_outboard = 19.5
+c_root = 8.39981
+c_kink = 4.23559
+c_tip = 3.10817
+AU = [0.215003 0.0816778  0.326222 0.0826826  0.525641  0.544563]
+AL = [-0.113671  -0.176734 -0.0501522  -0.515965  0.0456415   0.290462]
+Mcr = 0.88
+hcr = 13075.9
+rho = 0.262325
+a = 295.068
+T = 216.65
+Re = 2.26926e+07
+V = 259.66
+S = 225.333
+MAC = 4.73794
+x_kink = 24.7642
+x_tip = 37.1569
+y_kink = 6.5
+y_tip = 26
+z_kink = 2.61868
+z_tip = 4.32471
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Index exceeds array bounds.
+At 24-Dec-2025 17:41:47 calculated range: 0 km
+With W_TO_max123028.4
+and with wingloading W_TO_max/S: 545.984
+Maximum possible array:             8634 MB (9.05e+09 bytes) *
+Memory available for all arrays:    8634 MB (9.05e+09 bytes) *
+Memory used by MATLAB:              3670 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Index exceeds array bounds.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.18714
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 24.0798
+LE_sweep = 0.547889
+TR = 0.333564
+AR = 10.8238
+b_outboard = 17.5798
+c_root = 8.5005
+c_kink = 4.53417
+c_tip = 2.83546
+AU = [0.220957 0.0817596  0.311889 0.0851657  0.455248  0.500548]
+AL = [-0.147619  -0.173138 -0.0491317  -0.505467  0.0541959   0.301538]
+Mcr = 0.857976
+hcr = 12689.9
+rho = 0.278788
+a = 295.068
+T = 216.65
+Re = 2.44354e+07
+V = 253.161
+S = 214.282
+MAC = 4.92376
+x_kink = 24.5663
+x_tip = 35.1936
+y_kink = 6.5
+y_tip = 24.0798
+z_kink = 2.61868
+z_tip = 4.15671
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:51 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 4666.7419
+Maximum possible array:             8686 MB (9.11e+09 bytes) *
+Memory available for all arrays:    8686 MB (9.11e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.73014
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 22.7357
+LE_sweep = 0.53257
+TR = 0.308041
+AR = 10.0005
+b_outboard = 16.2357
+c_root = 8.58294
+c_kink = 4.752
+c_tip = 2.6439
+AU = [0.225124 0.0818168  0.301855 0.0869039  0.405973  0.469737]
+AL = [-0.171382  -0.170621 -0.0484174  -0.498118   0.060184    0.30929]
+Mcr = 0.84256
+hcr = 12419.7
+rho = 0.290922
+a = 295.068
+T = 216.65
+Re = 2.58247e+07
+V = 248.612
+S = 206.755
+MAC = 5.07791
+x_kink = 24.4309
+x_tip = 33.8998
+y_kink = 6.5
+y_tip = 22.7357
+z_kink = 2.61868
+z_tip = 4.03912
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:51 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 4836.6477
+Maximum possible array:             8683 MB (9.11e+09 bytes) *
+Memory available for all arrays:    8683 MB (9.11e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.41024
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 21.7948
+LE_sweep = 0.521846
+TR = 0.290175
+AR = 9.42415
+b_outboard = 15.2948
+c_root = 8.648
+c_kink = 4.9104
+c_tip = 2.50949
+AU = [0.228041 0.0818569  0.294832 0.0881206  0.371481   0.44817]
+AL = [-0.188017  -0.168859 -0.0479174  -0.492974  0.0643756   0.314717]
+Mcr = 0.831768
+hcr = 12230.6
+rho = 0.29973
+a = 295.068
+T = 216.65
+Re = 2.68948e+07
+V = 245.428
+S = 201.615
+MAC = 5.19952
+x_kink = 24.3376
+x_tip = 33.0324
+y_kink = 6.5
+y_tip = 21.7948
+z_kink = 2.61868
+z_tip = 3.9568
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:52 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 4959.9367
+Maximum possible array:             8705 MB (9.13e+09 bytes) *
+Memory available for all arrays:    8705 MB (9.13e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.1863
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 21.1362
+LE_sweep = 0.51434
+TR = 0.277669
+AR = 9.02072
+b_outboard = 14.6362
+c_root = 8.69793
+c_kink = 5.02498
+c_tip = 2.41518
+AU = [0.230083 0.0818849  0.289916 0.0889724  0.347336  0.433073]
+AL = [-0.199661  -0.167625 -0.0475674  -0.489373  0.0673098   0.318516]
+Mcr = 0.824214
+hcr = 12098.2
+rho = 0.306053
+a = 295.068
+T = 216.65
+Re = 2.7698e+07
+V = 243.199
+S = 198.094
+MAC = 5.29224
+x_kink = 24.273
+x_tip = 32.4434
+y_kink = 6.5
+y_tip = 21.1362
+z_kink = 2.61868
+z_tip = 3.89918
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:53 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5048.0991
+Maximum possible array:             8695 MB (9.12e+09 bytes) *
+Memory available for all arrays:    8695 MB (9.12e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.02955
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.6752
+LE_sweep = 0.509085
+TR = 0.268915
+AR = 8.73832
+b_outboard = 14.1752
+c_root = 8.73533
+c_kink = 5.1073
+c_tip = 2.34908
+AU = [0.231512 0.0819045  0.286474 0.0895686  0.330435  0.422505]
+AL = [-0.207811  -0.166762 -0.0473224  -0.486852  0.0693637   0.321176]
+Mcr = 0.818926
+hcr = 12005.5
+rho = 0.310558
+a = 295.068
+T = 216.65
+Re = 2.82895e+07
+V = 241.639
+S = 195.672
+MAC = 5.36123
+x_kink = 24.228
+x_tip = 32.04
+y_kink = 6.5
+y_tip = 20.6752
+z_kink = 2.61868
+z_tip = 3.85884
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:54 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5110.5819
+Maximum possible array:             8734 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8734 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.91983
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.3524
+LE_sweep = 0.505407
+TR = 0.262787
+AR = 8.54064
+b_outboard = 13.8524
+c_root = 8.76284
+c_kink = 5.1661
+c_tip = 2.30277
+AU = [0.232513 0.0819183  0.284065 0.0899859  0.318604  0.415107]
+AL = [-0.213517  -0.166158 -0.0471508  -0.485088  0.0708015   0.323037]
+Mcr = 0.815225
+hcr = 11940.7
+rho = 0.313752
+a = 295.068
+T = 216.65
+Re = 2.87189e+07
+V = 240.547
+S = 194
+MAC = 5.41168
+x_kink = 24.1967
+x_tip = 31.7619
+y_kink = 6.5
+y_tip = 20.3524
+z_kink = 2.61868
+z_tip = 3.83061
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:55 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5154.6327
+Maximum possible array:             8726 MB (9.15e+09 bytes) *
+Memory available for all arrays:    8726 MB (9.15e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.84302
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1265
+LE_sweep = 0.502833
+TR = 0.258498
+AR = 8.40226
+b_outboard = 13.6265
+c_root = 8.7828
+c_kink = 5.2079
+c_tip = 2.27034
+AU = [0.233213 0.0819279  0.282379  0.090278  0.310322  0.409929]
+AL = [-0.217511  -0.165735 -0.0470308  -0.483853  0.0718079    0.32434]
+Mcr = 0.812634
+hcr = 11895.3
+rho = 0.316006
+a = 295.068
+T = 216.65
+Re = 2.90274e+07
+V = 239.782
+S = 192.842
+MAC = 5.4481
+x_kink = 24.1749
+x_tip = 31.5693
+y_kink = 6.5
+y_tip = 20.1265
+z_kink = 2.61868
+z_tip = 3.81084
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:55 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5185.5951
+Maximum possible array:             8727 MB (9.15e+09 bytes) *
+Memory available for all arrays:    8727 MB (9.15e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.78925
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.9684
+LE_sweep = 0.50103
+TR = 0.255495
+AR = 8.30539
+b_outboard = 13.4684
+c_root = 8.79714
+c_kink = 5.23748
+c_tip = 2.24763
+AU = [0.233704 0.0819346  0.281198 0.0904825  0.304525  0.406304]
+AL = [-0.220307  -0.165438 -0.0469468  -0.482988  0.0725124   0.325252]
+Mcr = 0.81082
+hcr = 11863.5
+rho = 0.317594
+a = 295.068
+T = 216.65
+Re = 2.92474e+07
+V = 239.247
+S = 192.037
+MAC = 5.47416
+x_kink = 24.1597
+x_tip = 31.4355
+y_kink = 6.5
+y_tip = 19.9684
+z_kink = 2.61868
+z_tip = 3.79701
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:56 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5207.3206
+Maximum possible array:             8735 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8735 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.75162
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.8577
+LE_sweep = 0.499769
+TR = 0.253393
+AR = 8.23759
+b_outboard = 13.3577
+c_root = 8.80736
+c_kink = 5.25835
+c_tip = 2.23173
+AU = [0.234047 0.0819393  0.280372 0.0906257  0.300467  0.403767]
+AL = [-0.222264  -0.165231 -0.0468879  -0.482383  0.0730055   0.325891]
+Mcr = 0.80955
+hcr = 11841.2
+rho = 0.318711
+a = 295.068
+T = 216.65
+Re = 2.94034e+07
+V = 238.872
+S = 191.477
+MAC = 5.49269
+x_kink = 24.149
+x_tip = 31.3423
+y_kink = 6.5
+y_tip = 19.8577
+z_kink = 2.61868
+z_tip = 3.78732
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:57 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5222.5501
+Maximum possible array:             8733 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8733 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.72527
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.7802
+LE_sweep = 0.498886
+TR = 0.251922
+AR = 8.19013
+b_outboard = 13.2802
+c_root = 8.81461
+c_kink = 5.27305
+c_tip = 2.2206
+AU = [0.234287 0.0819426  0.279794 0.0907259  0.297626  0.401991]
+AL = [-0.223633  -0.165086 -0.0468467  -0.481959  0.0733507   0.326338]
+Mcr = 0.808661
+hcr = 11825.6
+rho = 0.319495
+a = 295.068
+T = 216.65
+Re = 2.95137e+07
+V = 238.61
+S = 191.087
+MAC = 5.5058
+x_kink = 24.1416
+x_tip = 31.2774
+y_kink = 6.5
+y_tip = 19.7802
+z_kink = 2.61868
+z_tip = 3.78054
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:58 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5233.2199
+Maximum possible array:             8735 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8735 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.70683
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.726
+LE_sweep = 0.498267
+TR = 0.250892
+AR = 8.1569
+b_outboard = 13.226
+c_root = 8.81973
+c_kink = 5.28338
+c_tip = 2.2128
+AU = [0.234455 0.081945 0.279389 0.090796 0.295638 0.400747]
+AL = [-0.224592  -0.164984 -0.0468179  -0.481663  0.0735924   0.326651]
+Mcr = 0.808039
+hcr = 11814.7
+rho = 0.320044
+a = 295.068
+T = 216.65
+Re = 2.95913e+07
+V = 238.427
+S = 190.814
+MAC = 5.51505
+x_kink = 24.1364
+x_tip = 31.232
+y_kink = 6.5
+y_tip = 19.726
+z_kink = 2.61868
+z_tip = 3.7758
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:58 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5240.6928
+Maximum possible array:             8736 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8736 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.69392
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.688
+LE_sweep = 0.497835
+TR = 0.250171
+AR = 8.13365
+b_outboard = 13.188
+c_root = 8.82334
+c_kink = 5.29063
+c_tip = 2.20735
+AU = [0.234573 0.0819466  0.279105 0.0908451  0.294246  0.399877]
+AL = [-0.225264  -0.164913 -0.0467977  -0.481455  0.0737615    0.32687]
+Mcr = 0.807604
+hcr = 11807.1
+rho = 0.32043
+a = 295.068
+T = 216.65
+Re = 2.9646e+07
+V = 238.298
+S = 190.624
+MAC = 5.52156
+x_kink = 24.1327
+x_tip = 31.2003
+y_kink = 6.5
+y_tip = 19.688
+z_kink = 2.61868
+z_tip = 3.77248
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:41:59 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5245.9256
+Maximum possible array:             8734 MB (9.16e+09 bytes) *
+Memory available for all arrays:    8734 MB (9.16e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.68488
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6614
+LE_sweep = 0.497532
+TR = 0.249666
+AR = 8.11737
+b_outboard = 13.1614
+c_root = 8.82588
+c_kink = 5.29572
+c_tip = 2.20353
+AU = [0.234655 0.0819477  0.278907 0.0908795  0.293272  0.399268]
+AL = [-0.225734  -0.164864 -0.0467836   -0.48131  0.0738799   0.327023]
+Mcr = 0.807299
+hcr = 11801.8
+rho = 0.3207
+a = 295.068
+T = 216.65
+Re = 2.96843e+07
+V = 238.208
+S = 190.491
+MAC = 5.52613
+x_kink = 24.1302
+x_tip = 31.1782
+y_kink = 6.5
+y_tip = 19.6614
+z_kink = 2.61868
+z_tip = 3.77015
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:00 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5249.5893
+Maximum possible array:             8729 MB (9.15e+09 bytes) *
+Memory available for all arrays:    8729 MB (9.15e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.67856
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6428
+LE_sweep = 0.49732
+TR = 0.249313
+AR = 8.10597
+b_outboard = 13.1428
+c_root = 8.82766
+c_kink = 5.29928
+c_tip = 2.20085
+AU = [0.234713 0.0819485  0.278768 0.0909036   0.29259  0.398841]
+AL = [-0.226062  -0.164829 -0.0467737  -0.481208  0.0739628    0.32713]
+Mcr = 0.807086
+hcr = 11798
+rho = 0.320889
+a = 295.068
+T = 216.65
+Re = 2.97112e+07
+V = 238.145
+S = 190.398
+MAC = 5.52934
+x_kink = 24.1284
+x_tip = 31.1627
+y_kink = 6.5
+y_tip = 19.6428
+z_kink = 2.61868
+z_tip = 3.76852
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:01 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5252.1543
+Maximum possible array:             8724 MB (9.15e+09 bytes) *
+Memory available for all arrays:    8724 MB (9.15e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.67413
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6298
+LE_sweep = 0.497171
+TR = 0.249066
+AR = 8.09799
+b_outboard = 13.1298
+c_root = 8.82891
+c_kink = 5.30178
+c_tip = 2.19898
+AU = [0.234753  0.081949  0.278671 0.0909204  0.292112  0.398543]
+AL = [-0.226293  -0.164804 -0.0467668  -0.481137  0.0740208   0.327205]
+Mcr = 0.806936
+hcr = 11795.4
+rho = 0.321022
+a = 295.068
+T = 216.65
+Re = 2.97301e+07
+V = 238.101
+S = 190.333
+MAC = 5.53159
+x_kink = 24.1271
+x_tip = 31.1518
+y_kink = 6.5
+y_tip = 19.6298
+z_kink = 2.61868
+z_tip = 3.76738
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:01 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5253.95
+Maximum possible array:             8674 MB ( 9.1e+09 bytes) *
+Memory available for all arrays:    8674 MB ( 9.1e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.67103
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6207
+LE_sweep = 0.497067
+TR = 0.248892
+AR = 8.09241
+b_outboard = 13.1207
+c_root = 8.82979
+c_kink = 5.30353
+c_tip = 2.19767
+AU = [0.234782 0.0819494  0.278603 0.0909322  0.291778  0.398334]
+AL = [-0.226454 -0.164787 -0.046762 -0.481087 0.0740614  0.327258]
+Mcr = 0.806832
+hcr = 11793.6
+rho = 0.321114
+a = 295.068
+T = 216.65
+Re = 2.97433e+07
+V = 238.07
+S = 190.287
+MAC = 5.53317
+x_kink = 24.1263
+x_tip = 31.1442
+y_kink = 6.5
+y_tip = 19.6207
+z_kink = 2.61868
+z_tip = 3.76659
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:02 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5255.2071
+Maximum possible array:             8696 MB (9.12e+09 bytes) *
+Memory available for all arrays:    8696 MB (9.12e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66886
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6143
+LE_sweep = 0.496995
+TR = 0.248771
+AR = 8.0885
+b_outboard = 13.1143
+c_root = 8.8304
+c_kink = 5.30476
+c_tip = 2.19675
+AU = [0.234801 0.0819497  0.278555 0.0909404  0.291544  0.398188]
+AL = [-0.226567  -0.164775 -0.0467586  -0.481052  0.0740898   0.327295]
+Mcr = 0.806758
+hcr = 11792.3
+rho = 0.321179
+a = 295.068
+T = 216.65
+Re = 2.97526e+07
+V = 238.049
+S = 190.256
+MAC = 5.53427
+x_kink = 24.1256
+x_tip = 31.1389
+y_kink = 6.5
+y_tip = 19.6143
+z_kink = 2.61868
+z_tip = 3.76603
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:03 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5256.087
+Maximum possible array:             8679 MB ( 9.1e+09 bytes) *
+Memory available for all arrays:    8679 MB ( 9.1e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66734
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6098
+LE_sweep = 0.496944
+TR = 0.248686
+AR = 8.08576
+b_outboard = 13.1098
+c_root = 8.83083
+c_kink = 5.30562
+c_tip = 2.19611
+AU = [0.234815 0.0819499  0.278522 0.0909462   0.29138  0.398085]
+AL = [-0.226646  -0.164767 -0.0467562  -0.481028  0.0741098    0.32732]
+Mcr = 0.806707
+hcr = 11791.4
+rho = 0.321225
+a = 295.068
+T = 216.65
+Re = 2.97591e+07
+V = 238.034
+S = 190.233
+MAC = 5.53505
+x_kink = 24.1252
+x_tip = 31.1352
+y_kink = 6.5
+y_tip = 19.6098
+z_kink = 2.61868
+z_tip = 3.76564
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:04 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5256.7031
+Maximum possible array:             8674 MB ( 9.1e+09 bytes) *
+Memory available for all arrays:    8674 MB ( 9.1e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66628
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6067
+LE_sweep = 0.496908
+TR = 0.248627
+AR = 8.08385
+b_outboard = 13.1067
+c_root = 8.83113
+c_kink = 5.30622
+c_tip = 2.19566
+AU = [0.234825   0.08195  0.278499 0.0909503  0.291266  0.398013]
+AL = [-0.226701  -0.164761 -0.0467545  -0.481011  0.0741237   0.327338]
+Mcr = 0.806671
+hcr = 11790.8
+rho = 0.321257
+a = 295.068
+T = 216.65
+Re = 2.97636e+07
+V = 238.023
+S = 190.218
+MAC = 5.53559
+x_kink = 24.1249
+x_tip = 31.1326
+y_kink = 6.5
+y_tip = 19.6067
+z_kink = 2.61868
+z_tip = 3.76536
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:05 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.1343
+Maximum possible array:             8662 MB (9.08e+09 bytes) *
+Memory available for all arrays:    8662 MB (9.08e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66553
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6045
+LE_sweep = 0.496883
+TR = 0.248586
+AR = 8.08251
+b_outboard = 13.1045
+c_root = 8.83134
+c_kink = 5.30664
+c_tip = 2.19535
+AU = [0.234832 0.0819501  0.278482 0.0909531  0.291186  0.397963]
+AL = [-0.22674  -0.164757 -0.0467534  -0.480999  0.0741334   0.327351]
+Mcr = 0.806646
+hcr = 11790.3
+rho = 0.321279
+a = 295.068
+T = 216.65
+Re = 2.97668e+07
+V = 238.016
+S = 190.207
+MAC = 5.53597
+x_kink = 24.1247
+x_tip = 31.1308
+y_kink = 6.5
+y_tip = 19.6045
+z_kink = 2.61868
+z_tip = 3.76517
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:05 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.4361
+Maximum possible array:             8648 MB (9.07e+09 bytes) *
+Memory available for all arrays:    8648 MB (9.07e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66501
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.603
+LE_sweep = 0.496866
+TR = 0.248556
+AR = 8.08157
+b_outboard = 13.103
+c_root = 8.83149
+c_kink = 5.30693
+c_tip = 2.19513
+AU = [0.234837 0.0819502  0.278471 0.0909551  0.291129  0.397928]
+AL = [-0.226767  -0.164754 -0.0467526   -0.48099  0.0741403    0.32736]
+Mcr = 0.806629
+hcr = 11790
+rho = 0.321294
+a = 295.068
+T = 216.65
+Re = 2.9769e+07
+V = 238.01
+S = 190.199
+MAC = 5.53624
+x_kink = 24.1246
+x_tip = 31.1295
+y_kink = 6.5
+y_tip = 19.603
+z_kink = 2.61868
+z_tip = 3.76504
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:06 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.6474
+Maximum possible array:             8655 MB (9.08e+09 bytes) *
+Memory available for all arrays:    8655 MB (9.08e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66465
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6019
+LE_sweep = 0.496853
+TR = 0.248536
+AR = 8.08091
+b_outboard = 13.1019
+c_root = 8.8316
+c_kink = 5.30714
+c_tip = 2.19497
+AU = [0.23484 0.0819502  0.278463 0.0909565   0.29109  0.397904]
+AL = [-0.226786 -0.164752 -0.046752 -0.480984  0.074145  0.327366]
+Mcr = 0.806616
+hcr = 11789.8
+rho = 0.321305
+a = 295.068
+T = 216.65
+Re = 2.97706e+07
+V = 238.007
+S = 190.194
+MAC = 5.53642
+x_kink = 24.1245
+x_tip = 31.1286
+y_kink = 6.5
+y_tip = 19.6019
+z_kink = 2.61868
+z_tip = 3.76494
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:07 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.7953
+Maximum possible array:             8651 MB (9.07e+09 bytes) *
+Memory available for all arrays:    8651 MB (9.07e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66439
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6012
+LE_sweep = 0.496845
+TR = 0.248522
+AR = 8.08045
+b_outboard = 13.1012
+c_root = 8.83167
+c_kink = 5.30728
+c_tip = 2.19486
+AU = [0.234842 0.0819503  0.278457 0.0909574  0.291063  0.397886]
+AL = [-0.226799  -0.164751 -0.0467516   -0.48098  0.0741484    0.32737]
+Mcr = 0.806608
+hcr = 11789.6
+rho = 0.321313
+a = 295.068
+T = 216.65
+Re = 2.97717e+07
+V = 238.004
+S = 190.19
+MAC = 5.53655
+x_kink = 24.1244
+x_tip = 31.128
+y_kink = 6.5
+y_tip = 19.6012
+z_kink = 2.61868
+z_tip = 3.76488
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:08 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.8989
+Maximum possible array:             8614 MB (9.03e+09 bytes) *
+Memory available for all arrays:    8614 MB (9.03e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66421
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6006
+LE_sweep = 0.496839
+TR = 0.248512
+AR = 8.08013
+b_outboard = 13.1006
+c_root = 8.83172
+c_kink = 5.30739
+c_tip = 2.19479
+AU = [0.234844 0.0819503  0.278453 0.0909581  0.291043  0.397874]
+AL = [-0.226808   -0.16475 -0.0467513  -0.480977  0.0741507   0.327373]
+Mcr = 0.806602
+hcr = 11789.5
+rho = 0.321318
+a = 295.068
+T = 216.65
+Re = 2.97724e+07
+V = 238.002
+S = 190.187
+MAC = 5.53664
+x_kink = 24.1243
+x_tip = 31.1276
+y_kink = 6.5
+y_tip = 19.6006
+z_kink = 2.61868
+z_tip = 3.76483
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:09 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5257.9713
+Maximum possible array:             8629 MB (9.05e+09 bytes) *
+Memory available for all arrays:    8629 MB (9.05e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66409
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6003
+LE_sweep = 0.496835
+TR = 0.248505
+AR = 8.0799
+b_outboard = 13.1003
+c_root = 8.83175
+c_kink = 5.30746
+c_tip = 2.19474
+AU = [0.234845 0.0819503  0.278451 0.0909586   0.29103  0.397866]
+AL = [-0.226815  -0.164749 -0.0467511  -0.480975  0.0741524   0.327376]
+Mcr = 0.806598
+hcr = 11789.5
+rho = 0.321322
+a = 295.068
+T = 216.65
+Re = 2.9773e+07
+V = 238.001
+S = 190.186
+MAC = 5.53671
+x_kink = 24.1243
+x_tip = 31.1273
+y_kink = 6.5
+y_tip = 19.6003
+z_kink = 2.61868
+z_tip = 3.7648
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:10 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.0221
+Maximum possible array:             8627 MB (9.05e+09 bytes) *
+Memory available for all arrays:    8627 MB (9.05e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.664
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.6
+LE_sweep = 0.496832
+TR = 0.2485
+AR = 8.07975
+b_outboard = 13.1
+c_root = 8.83178
+c_kink = 5.30751
+c_tip = 2.1947
+AU = [0.234846 0.0819503  0.278449 0.0909589   0.29102   0.39786]
+AL = [-0.226819 -0.164749 -0.046751 -0.480974 0.0741535  0.327377]
+Mcr = 0.806595
+hcr = 11789.4
+rho = 0.321325
+a = 295.068
+T = 216.65
+Re = 2.97733e+07
+V = 238
+S = 190.184
+MAC = 5.53675
+x_kink = 24.1243
+x_tip = 31.127
+y_kink = 6.5
+y_tip = 19.6
+z_kink = 2.61868
+z_tip = 3.76478
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:10 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.0576
+Maximum possible array:             8621 MB (9.04e+09 bytes) *
+Memory available for all arrays:    8621 MB (9.04e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66394
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5998
+LE_sweep = 0.49683
+TR = 0.248497
+AR = 8.07964
+b_outboard = 13.0998
+c_root = 8.8318
+c_kink = 5.30754
+c_tip = 2.19467
+AU = [0.234846 0.0819503  0.278447 0.0909592  0.291014  0.397856]
+AL = [-0.226822  -0.164748 -0.0467509  -0.480973  0.0741543   0.327378]
+Mcr = 0.806593
+hcr = 11789.4
+rho = 0.321327
+a = 295.068
+T = 216.65
+Re = 2.97736e+07
+V = 238
+S = 190.183
+MAC = 5.53678
+x_kink = 24.1243
+x_tip = 31.1269
+y_kink = 6.5
+y_tip = 19.5998
+z_kink = 2.61868
+z_tip = 3.76476
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:11 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.0825
+Maximum possible array:             8608 MB (9.03e+09 bytes) *
+Memory available for all arrays:    8608 MB (9.03e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6639
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5997
+LE_sweep = 0.496828
+TR = 0.248494
+AR = 8.07956
+b_outboard = 13.0997
+c_root = 8.83181
+c_kink = 5.30757
+c_tip = 2.19466
+AU = [0.234847 0.0819503  0.278446 0.0909593  0.291009  0.397853]
+AL = [-0.226825  -0.164748 -0.0467508  -0.480972  0.0741549   0.327379]
+Mcr = 0.806591
+hcr = 11789.4
+rho = 0.321328
+a = 295.068
+T = 216.65
+Re = 2.97738e+07
+V = 237.999
+S = 190.183
+MAC = 5.53681
+x_kink = 24.1242
+x_tip = 31.1268
+y_kink = 6.5
+y_tip = 19.5997
+z_kink = 2.61868
+z_tip = 3.76475
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:12 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.0999
+Maximum possible array:             8605 MB (9.02e+09 bytes) *
+Memory available for all arrays:    8605 MB (9.02e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66387
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5996
+LE_sweep = 0.496827
+TR = 0.248492
+AR = 8.07951
+b_outboard = 13.0996
+c_root = 8.83182
+c_kink = 5.30758
+c_tip = 2.19464
+AU = [0.234847 0.0819503  0.278446 0.0909594  0.291006  0.397851]
+AL = [-0.226826  -0.164748 -0.0467508  -0.480972  0.0741553   0.327379]
+Mcr = 0.80659
+hcr = 11789.3
+rho = 0.321329
+a = 295.068
+T = 216.65
+Re = 2.97739e+07
+V = 237.999
+S = 190.182
+MAC = 5.53682
+x_kink = 24.1242
+x_tip = 31.1267
+y_kink = 6.5
+y_tip = 19.5996
+z_kink = 2.61868
+z_tip = 3.76474
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:13 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.112
+Maximum possible array:             8612 MB (9.03e+09 bytes) *
+Memory available for all arrays:    8612 MB (9.03e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66385
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5995
+LE_sweep = 0.496827
+TR = 0.248491
+AR = 8.07947
+b_outboard = 13.0995
+c_root = 8.83182
+c_kink = 5.30759
+c_tip = 2.19463
+AU = [0.234847 0.0819503  0.278445 0.0909595  0.291004   0.39785]
+AL = [-0.226827  -0.164748 -0.0467507  -0.480972  0.0741555    0.32738]
+Mcr = 0.806589
+hcr = 11789.3
+rho = 0.321329
+a = 295.068
+T = 216.65
+Re = 2.9774e+07
+V = 237.999
+S = 190.182
+MAC = 5.53683
+x_kink = 24.1242
+x_tip = 31.1267
+y_kink = 6.5
+y_tip = 19.5995
+z_kink = 2.61868
+z_tip = 3.76474
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:14 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1206
+Maximum possible array:             8612 MB (9.03e+09 bytes) *
+Memory available for all arrays:    8612 MB (9.03e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66383
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5995
+LE_sweep = 0.496826
+TR = 0.24849
+AR = 8.07944
+b_outboard = 13.0995
+c_root = 8.83183
+c_kink = 5.3076
+c_tip = 2.19463
+AU = [0.234847 0.0819503  0.278445 0.0909596  0.291002  0.397849]
+AL = [-0.226828  -0.164748 -0.0467507  -0.480971  0.0741557    0.32738]
+Mcr = 0.806589
+hcr = 11789.3
+rho = 0.32133
+a = 295.068
+T = 216.65
+Re = 2.97741e+07
+V = 237.999
+S = 190.182
+MAC = 5.53684
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5995
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:14 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1265
+Maximum possible array:             8605 MB (9.02e+09 bytes) *
+Memory available for all arrays:    8605 MB (9.02e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66382
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5995
+LE_sweep = 0.496826
+TR = 0.24849
+AR = 8.07942
+b_outboard = 13.0995
+c_root = 8.83183
+c_kink = 5.30761
+c_tip = 2.19462
+AU = [0.234847 0.0819503  0.278445 0.0909596  0.291001  0.397848]
+AL = [-0.226829  -0.164748 -0.0467507  -0.480971  0.0741559    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.32133
+a = 295.068
+T = 216.65
+Re = 2.97741e+07
+V = 237.998
+S = 190.182
+MAC = 5.53685
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5995
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:15 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1307
+Maximum possible array:             8600 MB (9.02e+09 bytes) *
+Memory available for all arrays:    8600 MB (9.02e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66381
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5995
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07941
+b_outboard = 13.0995
+c_root = 8.83183
+c_kink = 5.30761
+c_tip = 2.19462
+AU = [0.234847 0.0819503  0.278444 0.0909596     0.291  0.397847]
+AL = [-0.226829  -0.164748 -0.0467507  -0.480971   0.074156    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.32133
+a = 295.068
+T = 216.65
+Re = 2.97741e+07
+V = 237.998
+S = 190.182
+MAC = 5.53685
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5995
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:16 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1336
+Maximum possible array:             8551 MB (8.97e+09 bytes) *
+Memory available for all arrays:    8551 MB (8.97e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66381
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.0794
+b_outboard = 13.0994
+c_root = 8.83183
+c_kink = 5.30762
+c_tip = 2.19462
+AU = [0.234848 0.0819503  0.278444 0.0909596     0.291  0.397847]
+AL = [-0.226829  -0.164747 -0.0467507  -0.480971   0.074156    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53685
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:17 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1357
+Maximum possible array:             8538 MB (8.95e+09 bytes) *
+Memory available for all arrays:    8538 MB (8.95e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.66381
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07939
+b_outboard = 13.0994
+c_root = 8.83183
+c_kink = 5.30762
+c_tip = 2.19462
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290999  0.397847]
+AL = [-0.226829  -0.164747 -0.0467507  -0.480971  0.0741561    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53685
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:18 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1371
+Maximum possible array:             8534 MB (8.95e+09 bytes) *
+Memory available for all arrays:    8534 MB (8.95e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07939
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19462
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290999  0.397847]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741561    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53685
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:18 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1381
+Maximum possible array:             8528 MB (8.94e+09 bytes) *
+Memory available for all arrays:    8528 MB (8.94e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07939
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290999  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741561    0.32738]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1266
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:19 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1388
+Maximum possible array:             8498 MB (8.91e+09 bytes) *
+Memory available for all arrays:    8498 MB (8.91e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.6638
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.5994
+LE_sweep = 0.496825
+TR = 0.248489
+AR = 8.07938
+b_outboard = 13.0994
+c_root = 8.83184
+c_kink = 5.30762
+c_tip = 2.19461
+AU = [0.234848 0.0819503  0.278444 0.0909597  0.290999  0.397846]
+AL = [-0.22683  -0.164747 -0.0467507  -0.480971  0.0741561   0.327381]
+Mcr = 0.806588
+hcr = 11789.3
+rho = 0.321331
+a = 295.068
+T = 216.65
+Re = 2.97742e+07
+V = 237.998
+S = 190.181
+MAC = 5.53686
+x_kink = 24.1242
+x_tip = 31.1265
+y_kink = 6.5
+y_tip = 19.5994
+z_kink = 2.61868
+z_tip = 3.76473
+W_fuel = 33785
+internal_tank_volume = 0
+Error in objective_loop: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.
+At 24-Dec-2025 17:42:20 calculated range: 0 km
+With W_TO_max1000000
+and with wingloading W_TO_max/S: 5258.1393
+Maximum possible array:             8642 MB (9.06e+09 bytes) *
+Memory available for all arrays:    8642 MB (9.06e+09 bytes) *
+Memory used by MATLAB:              3674 MB (3.85e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Error in constraint: Invalid file identifier, AVLaero.dat file does not exist. AVL did not generate output; either invalid geometry or invalid flight conditions! Check if you can manually run the AVLrun.dat in avl.exe, also make sure that code is not run on any cloud drive such as dropbox, google drive, one drive, iCloud, etc. and you have sufficient rights in the current directory. Otherwise, you are likely evaluating someting that is not realistic, check flight conditions and check for sufficient sweep, thickness etc.

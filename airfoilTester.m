@@ -94,6 +94,7 @@ dvec = DesignVector();
 wingDesign = WingDesign(dvec);
 N1 = 0.5;
 N2 = 1;
+% fail = load("emwet_fail.mat").ans;
 plotCSTairfoil(N1,N2,wingDesign.AU,wingDesign.AL);
 hold on
 plotDatCoords('airfoil.dat')

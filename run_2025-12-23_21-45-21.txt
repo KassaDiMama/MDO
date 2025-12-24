@@ -657,3 +657,20 @@ ans =
 
   661.4959
 
+openvar('optimValues',optimValues);
+Const.W_TO_max_initial/obj.initializer.S_initial; % Wing loading con
+{Unable to resolve the name 'obj.initializer.S_initial'.
+} 
+Const.W_TO_max_initial/initializer.S_initial; % Wing loading con
+Const.W_TO_max_initial/initializer.S_initial % Wing loading con
+
+ans =
+
+  661.4959
+
+fval*initializer.range_initial
+
+ans =
+
+  -5.9939e+06
+

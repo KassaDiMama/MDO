@@ -28,6 +28,9 @@ classdef Initializer < handle
         AL_upper_bound
         AU_upper_bound
         AL_lower_bound
+
+        TR_upper_bound
+
         range_initial
     end
     methods
@@ -71,6 +74,8 @@ classdef Initializer < handle
             obj.c_tip_initial = obj.optimizer.wingDesign.c_tip;
             [obj.AU_lower_bound, obj.AL_upper_bound, obj.AU_upper_bound, obj.AL_lower_bound] = obj.calculateAirfoilBounds();
             
+            obj.TR_upper_bound = obj.getTRbounds();
+
             obj.optimizer.wingDesign.fromDesignVector(obj.optimizer.dvec);
             obj.range_initial = obj.optimizer.objective_loop(); % in meters
             fprintf("Initial range equals: %g km\n",-obj.range_initial/1000);
@@ -155,12 +160,12 @@ classdef Initializer < handle
             for ratio_index = 1:length(ratios)
                 ratio = ratios(ratio_index);
                 yu = CSTcurve(ts, obj.AU*(1-ratio), N1, N2, CST_order);
-                yl = CSTcurve(ts, obj.AL * (1+ratio), N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
 
                 mask_u = yu(2:end-1);
                 mask_l = yl(2:end-1);
                 res = mask_u > mask_l;
-                if sum(res) < size(res,2)
+                if ~all(res)
                     % display(ratio)
                     fprintf('Intersection occurred at ratio of %f\n', ratio);
                     AU_lower_bound = (1 - ratios(ratio_index-1));
@@ -197,5 +202,14 @@ classdef Initializer < handle
             % fprintf("AU: %f",1/max(obj.AU));
             % fprintf("AL: %f",-1/max(obj.AL))
         end
+        function [TR_upper_bound] = getTRbounds(obj)
+            b_half = Const.b_half_lower_bound;
+            b = b_half*2;
+            AR = Const.AR_upper_bound;
+            LE_sweep = Const.LE_sweep_upper_bound/180*pi;
+            b_in = Const.b_inboard_ref;
+            TR_upper_bound = (b^2/(AR*b_in*tan(LE_sweep))-b_in)/((b^2/(AR*b_in*tan(LE_sweep)))+b_in+2*(b_half-b_in));
+            
+        end 
     end
 end

@@ -1,0 +1,255 @@
+    "---------------------------------"
+    "---------------------------------"
+    "Starting new run at 2025-12-24 16:41:35"
+
+24-Dec-2025 16:41:36 | Starting optimization...
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0          19   -1.000000e+00     0.000e+00     1.000e+00     0.000e+00     4.935e+00  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: Attention!:2D aerodynamic analysis did not converge in section 7 ! Values are mantained to continue the optimization iteration.Aerodynamic
+results should be checked at the end.] 
+    1          45   -1.036502e+00     0.000e+00     8.235e-02     9.714e-02     1.158e+01  
+openvar('x',x);
+WingDesign(DesignVector().fromVector(x))
+
+ans = 
+
+  <a href="matlab:helpPopup('WingDesign')" style="font-weight:bold">WingDesign</a> with properties:
+
+               b_inboard: 6.5000
+     number_of_platforms: 3
+      number_of_airfoils: 2
+          front_spar_pos: 0.1500
+           rear_spar_pos: 0.5500
+        engine_each_wing: 1
+         engine_location: 8.8400
+                  x_root: 20.5000
+                  y_root: 0
+                  z_root: 2.0500
+              start_tank: 0
+                end_tank: 0.8500
+                   twist: [0 -1 -2]
+               incidence: 3.2000
+                dihedral: 5
+                   E_mod: 7.0000e+10
+                 density: 2800
+           tensile_yield: 295000000
+       compressive_yield: 295000000
+       efficiency_factor: 0.9600
+               rib_pitch: 0.5000
+                 Mcr_ref: 0.8000
+                 hcr_ref: 1.1887e+04
+           engine_weight: 3705
+                  b_half: 26.0000
+                LE_sweep: 0.5698
+                      TR: 0.3700
+                      AR: 12
+              b_outboard: 19.5000
+                  c_root: 8.3998
+                  c_kink: 4.2356
+                   c_tip: 3.1082
+                      AU: [0.2150 0.0817 0.3262 0.0827 0.5256 0.5446]
+                      AL: [-0.1137 -0.1767 -0.0502 -0.5160 0.0456 0.2905]
+                     Mcr: 0.8800
+                     hcr: 1.3076e+04
+                     rho: 0.2623
+                       a: 295.0680
+                       T: 216.6500
+                      Re: 2.2693e+07
+                       V: 259.6599
+                       S: 225.3333
+                     MAC: 4.7379
+                  x_kink: 24.7642
+                   x_tip: 37.1569
+                  y_kink: 6.5000
+                   y_tip: 26.0000
+                  z_kink: 2.6187
+                   z_tip: 4.3247
+                  W_fuel: 33785
+    internal_tank_volume: 0
+
+  <a href="matlab:if exist('ans', 'var'),matlab.display.internal.getDebugObjectDisplay('ans', ans, 'WingDesign'), else, matlab.display.internal.getDebugObjectDisplay('ans'), end">Show all accessible properties of WingDesign</a>
+
+save("emwet_fail.mat","ans")
+N1 = 0.5;
+N2 = 1;
+plotCSTairfoil(N1,N2,ans.AU,ans.AL);
+{Unrecognized function or variable 'plotCSTairfoil'.
+} 
+function plotDatCoords(filename)
+ function plotDatCoords(filename)
+ ↑
+{Error: Function definitions are not supported in this context. Functions can only be created as local or nested functions in code files.
+} 
+airfoilTester.m
+{Unable to resolve the name 'airfoilTester.m'.
+} 
+airfoilTester
+N1 = 0.5;
+N2 = 1;
+plotCSTairfoil(N1,N2,ans.AU,ans.AL);
+{Unrecognized function or variable 'plotCSTairfoil'.
+} 
+airfoilTester
+airfoilTester
+airfoilTester
+airfoilTester
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+Unable to find file or directory 'withcomb.dat'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('airfoilTester>plotDatCoords', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\airfoilTester.m', 11)" style="font-weight:bold">airfoilTester>plotDatCoords</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\airfoilTester.m',11,0)">line 11</a>)
+    data = load(filename);
+           ^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('airfoilTester', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\airfoilTester.m', 100)" style="font-weight:bold">airfoilTester</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\airfoilTester.m',100,0)">line 100</a>)
+plotDatCoords('withcomb.dat')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+airfoilTester
+{Unrecognized method, property, or field 'wingDesign' for class 'WingDesign'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 412)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',412,0)">line 412</a>)
+plotWing(ax, load("emwet_fail.mat").ans.wingDesign, ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+}
+{Unrecognized method, property, or field 'wingDesign' for class 'WingDesign'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 409)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',409,0)">line 409</a>)
+plotWing(ax, load("emwet_fail.mat").ans.wingDesign, ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+}
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0          13    2.200316e-01     0.000e+00     1.000e+00     0.000e+00     3.198e-01  
+    1          26    3.744274e-02     0.000e+00     1.000e+00     5.646e-01     6.729e-02  
+    2          39    2.346186e-02     0.000e+00     1.000e+00     1.641e-01     3.615e-02  
+    3          52    1.814172e-02     0.000e+00     1.000e+00     1.333e-01     2.754e-02  
+    4          65    1.590373e-02     0.000e+00     1.000e+00     8.493e-02     2.009e-02  
+    5          78    1.196618e-02     0.000e+00     1.000e+00     1.836e-01     2.505e-02  
+    6          91    6.809911e-03     0.000e+00     1.000e+00     2.993e-01     2.831e-02  
+    7         104    2.619601e-03     0.000e+00     1.000e+00     3.106e-01     2.009e-02  
+    8         117    1.186949e-03     0.000e+00     1.000e+00     1.231e-01     9.542e-03  
+    9         130    8.940961e-04     0.000e+00     1.000e+00     2.826e-02     4.726e-03  
+   10         143    7.553996e-04     0.000e+00     1.000e+00     2.369e-02     4.859e-03  
+   11         156    6.145664e-04     0.000e+00     1.000e+00     3.147e-02     4.148e-03  
+   12         169    5.568162e-04     0.000e+00     1.000e+00     2.343e-02     1.617e-03  
+   13         182    5.461595e-04     0.000e+00     1.000e+00     1.134e-02     5.692e-04  
+   14         195    5.441955e-04     0.000e+00     1.000e+00     3.559e-03     6.730e-04  
+   15         208    5.408401e-04     0.000e+00     1.000e+00     5.437e-03     7.879e-04  
+   16         221    5.323797e-04     0.000e+00     1.000e+00     1.366e-02     1.185e-03  
+   17         234    5.131763e-04     0.000e+00     1.000e+00     3.295e-02     1.953e-03  
+   18         247    4.766032e-04     0.000e+00     1.000e+00     6.867e-02     2.651e-03  
+   19         260    4.302260e-04     0.000e+00     1.000e+00     9.827e-02     2.662e-03  
+   20         273    4.007411e-04     0.000e+00     1.000e+00     6.913e-02     1.573e-03  
+   21         286    3.931314e-04     0.000e+00     1.000e+00     1.209e-02     5.924e-04  
+   22         299    3.917517e-04     0.000e+00     1.000e+00     8.126e-03     4.694e-04  
+   23         312    3.903767e-04     0.000e+00     1.000e+00     7.087e-03     5.117e-04  
+   24         325    3.863018e-04     0.000e+00     1.000e+00     1.298e-02     8.056e-04  
+   25         338    3.765514e-04     0.000e+00     1.000e+00     2.261e-02     1.238e-03  
+   26         351    3.521439e-04     0.000e+00     1.000e+00     5.722e-02     1.872e-03  
+   27         364    2.989850e-04     0.000e+00     1.000e+00     1.432e-01     2.590e-03  
+   28         377    2.071508e-04     0.000e+00     1.000e+00     2.924e-01     3.048e-03  
+   29         390    1.108958e-04     0.000e+00     1.000e+00     3.738e-01     2.401e-03  
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+   30         403    6.582120e-05     0.000e+00     1.000e+00     2.073e-01     9.181e-04  
+   31         416    5.854512e-05     0.000e+00     1.000e+00     3.017e-02     1.175e-04  
+   32         429    5.819365e-05     0.000e+00     1.000e+00     2.211e-02     4.781e-06  
+   33         442    5.818897e-05     0.000e+00     1.000e+00     3.774e-03     1.079e-06  
+   34         455    5.818896e-05     0.000e+00     1.000e+00     1.738e-04     6.146e-08  
+   35         468    5.818896e-05     0.000e+00     1.000e+00     1.625e-06     3.202e-08  
+   36         481    5.818896e-05     0.000e+00     1.000e+00     2.689e-07     3.141e-08  
+   37         494    5.818896e-05     0.000e+00     1.000e+00     8.769e-07     3.108e-08  
+   38         507    5.818896e-05     0.000e+00     1.000e+00     8.098e-07     2.095e-08  
+   39         520    5.818896e-05     0.000e+00     1.000e+00     5.809e-07     1.166e-08  
+   40         533    5.818896e-05     0.000e+00     1.000e+00     3.405e-07     6.507e-09  
+   41         546    5.818896e-05     0.000e+00     1.000e+00     8.627e-08     6.085e-09  
+   42         559    5.818896e-05     0.000e+00     1.000e+00     1.857e-08     5.108e-09  
+   43         572    5.818896e-05     0.000e+00     1.000e+00     1.366e-08     4.304e-09  
+   44         585    5.818896e-05     0.000e+00     1.000e+00     1.240e-08     3.628e-09  
+   45         598    5.818896e-05     0.000e+00     1.000e+00     1.026e-08     3.063e-09  
+   46         611    5.818896e-05     0.000e+00     1.000e+00     1.230e-08     2.588e-09  
+   47         624    5.818896e-05     0.000e+00     1.000e+00     9.658e-09     2.177e-09  
+   48         637    5.818896e-05     0.000e+00     1.000e+00     1.762e-08     1.843e-09  
+   49         650    5.818896e-05     0.000e+00     1.000e+00     8.350e-09     1.556e-09  
+   50         663    5.818896e-05     0.000e+00     1.000e+00     3.949e-09     1.310e-09  
+   51         676    5.818896e-05     0.000e+00     1.000e+00     8.510e-09     1.114e-09  
+   52         694    5.818896e-05     0.000e+00     1.681e-01     2.001e-09     1.083e-09  
+   53         707    5.818896e-05     0.000e+00     1.000e+00     8.191e-09     9.195e-10  
+   54         720    5.818896e-05     0.000e+00     1.000e+00     3.998e-09     7.908e-10  
+   55         733    5.818896e-05     0.000e+00     1.000e+00     2.745e-09     6.994e-10  
+   56         746    5.818896e-05     0.000e+00     1.000e+00     1.800e-09     6.321e-10  
+   57         759    5.818896e-05     0.000e+00     1.000e+00     3.916e-09     5.639e-10  
+   58         772    5.818896e-05     0.000e+00     1.000e+00     1.761e-09     5.170e-10  
+   59         785    5.818896e-05     0.000e+00     1.000e+00     6.135e-09     4.652e-10  
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+   60         805    5.818896e-05     0.000e+00     8.235e-02     2.468e-10     4.620e-10  
+   61         836    5.818896e-05     0.000e+00     1.628e-03     1.321e-11     4.648e-10  
+   62         849    5.818896e-05     0.000e+00     1.000e+00     1.491e-09     4.297e-10  
+   63         874    5.818896e-05     0.000e+00     1.384e-02     1.107e-10     4.266e-10  
+   64         899    5.818896e-05     0.000e+00     1.341e-04     1.616e-12     4.266e-10  
+
+Optimization stopped because the <a href = "matlab: helpview('optim','norm_curr_step_fminconip','CSHelpWindow');">relative changes in all elements of x</a> are
+less than <a href = "matlab: helpview('optim','tolx','CSHelpWindow');">options.StepTolerance</a> = 1.000000e-12, and the relative maximum constraint
+violation, 0.000000e+00, is less than <a href = "matlab: helpview('optim','tol_con','CSHelpWindow');">options.ConstraintTolerance</a> = 1.000000e-06.
+
+Intersection occurred at ratio of 0.080108
+Lower bound: AU = 0.920192, AL = 1.079808
+Lower Ratio(i-1): 0.079808, Upper Ratio (i): 0.080108
+Difference: 0.000300
+Intersection occurred at ratio of 2.2445
+Initial range equals: -5612.65 km
