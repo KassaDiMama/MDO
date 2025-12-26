@@ -28,49 +28,28 @@ function plotDatCoords(filename)
     title(['Plot of ', filename]);
 end
 
-function plotCSTairfoil(N1, N2, AU, AL)
+function plotCSTairfoil(N1, N2, AU, AL, styleU, styleL, labelU, labelL)
 % plotCSTairfoil  Plots an airfoil using CST parameterization
 %
-% Inputs:
-%   N1  - leading edge exponent
-%   N2  - trailing edge exponent
-%   AU  - upper surface CST coefficients
-%   AL  - lower surface CST coefficients
-%
-% CST order is automatically detected:
-%   CST_order = length(AU) - 1    (same for AL)
-%
-% Example:
-%   plotCSTairfoil(0.5, 1.0, [0.1 0.2 0.05], [0 -0.05 -0.01])
+% Optional styling and legend labels
 
-    % --- automatic CST order detection ---
     CST_order_U = length(AU) - 1;
     CST_order_L = length(AL) - 1;
 
     if CST_order_U ~= CST_order_L
         error('AU and AL must have the same CST order.');
     end
+
     CST_order = CST_order_U;
+    t = linspace(0, 1, 400);
 
-    % --- parametric domain ---
-    t = linspace(0, 1, 400);  % resolution for plotting
-
-    % --- compute upper and lower surfaces ---
     yu = CSTcurve(t, AU, N1, N2, CST_order);
     yl = CSTcurve(t, AL, N1, N2, CST_order);
 
-    % --- plot ---
-    figure; hold on; grid on;
-    plot(t, yu, 'r-', 'LineWidth', 2);
-    plot(t, yl, 'b-', 'LineWidth', 2);
-    axis equal;
-
-    xlabel('x');
-    ylabel('y');
-    title('CST Airfoil');
-    legend('Upper Surface','Lower Surface');
-
+    plot(t, yu, styleU, 'LineWidth', 2, 'DisplayName', labelU);
+    plot(t, yl, styleL, 'LineWidth', 2, 'DisplayName', labelL);
 end
+
 function y = CSTcurve(t, A, N1, N2, n)
 % CSTcurve  evaluates CST curve with given coefficients
 %
@@ -90,25 +69,40 @@ function y = CSTcurve(t, A, N1, N2, n)
 
     y = C .* S;
 end
-dvec = DesignVector();
-wingDesign = WingDesign(dvec);
+figure; hold on; grid on;
+
 N1 = 0.5;
 N2 = 1;
-% fail = load("emwet_fail.mat").ans;
-plotCSTairfoil(N1,N2,wingDesign.AU,wingDesign.AL);
-hold on
 
+% ---- Original design ----
+dvec = DesignVector();
+wingDesign = WingDesign(dvec);
 
-% initializer = load("initializer.mat").initializer;
-% fminconresults = load("fmincon_results_22_12.mat");
-% 
-% x_opt_normalized = fminconresults.x_opt;
-% x_opt = x_opt_normalized .* initializer.optimizer.x0;
-% 
-% dvec = DesignVector();
-% dvec = dvec.fromVector(x_opt);
-% % dvec.LE_sweep = 20/180*pi;
-% wingDesign_new = WingDesign(dvec);
-% % Plot the new airfoil design
-% plotCSTairfoil(N1, N2, wingDesign_new.AU, wingDesign_new.AL);
-% hold off
+plotCSTairfoil( ...
+    N1, N2, ...
+    wingDesign.AU, wingDesign.AL, ...
+    'r-', 'r--', ...
+    'Original Upper', 'Original Lower');
+
+% ---- Optimized design ----
+initializer = load("initializer.mat").initializer;
+fminconresults = load("fmincon_results.mat");
+
+x_opt = fminconresults.x_opt .* initializer.optimizer.x0;
+
+dvec = DesignVector();
+dvec = dvec.fromVector(x_opt);
+wingDesign_new = WingDesign(dvec);
+
+plotCSTairfoil( ...
+    N1, N2, ...
+    wingDesign_new.AU, wingDesign_new.AL, ...
+    'b-', 'b--', ...
+    'Optimized Upper', 'Optimized Lower');
+
+axis equal;
+xlabel('x');
+ylabel('y');
+title('CST Airfoil Comparison');
+legend('Location','best');
+hold off;

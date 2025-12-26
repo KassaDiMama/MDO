@@ -73,7 +73,10 @@ classdef Initializer < handle
             obj.c_kink_initial = obj.optimizer.wingDesign.c_kink;
             obj.c_tip_initial = obj.optimizer.wingDesign.c_tip;
             [obj.AU_lower_bound, obj.AL_upper_bound, obj.AU_upper_bound, obj.AL_lower_bound] = obj.calculateAirfoilBounds();
-            
+            % obj.AU_lower_bound=-1;
+            % obj.AL_upper_bound=2;
+            % obj.AU_upper_bound=2;
+            % obj.AL_lower_bound=-1;
             obj.TR_upper_bound = obj.getTRbounds();
 
             obj.optimizer.wingDesign.fromDesignVector(obj.optimizer.dvec);

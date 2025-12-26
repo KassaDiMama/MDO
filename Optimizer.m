@@ -223,6 +223,38 @@ classdef Optimizer < handle
             end
             
             c(1) = (obj.mda.W_TO_max/obj.wingDesign.S  - Const.W_TO_max_initial/obj.initializer.S_initial)/(Const.W_TO_max_initial/obj.initializer.S_initial); % Wing loading constraint  
+            
+            % N1 = 0.5;
+            % N2 = 1;
+            % CST_order = length(obj.wingDesign.AU) - 1;
+            % 
+            % function y = CSTcurve(t, A, N1, N2, n)
+            % 
+            %     % Class function
+            %     C = t.^N1 .* (1 - t).^N2;
+            % 
+            %     % Shape function 
+            %     S = zeros(size(t));
+            %     for i = 0:n
+            %         S = S + nchoosek(n, i) .* t.^i .* (1 - t).^(n - i) .* A(i + 1);
+            %     end
+            % 
+            %     y = C .* S;
+            % end
+            % 
+            % ts = linspace(0, 1, 10000);
+            % yu = CSTcurve(ts, obj.wingDesign.AU, N1, N2, CST_order);
+            % yl = CSTcurve(ts, obj.wingDesign.AL, N1, N2, CST_order);
+            % 
+            % mask_u = yu(2:end-1);
+            % mask_l = yl(2:end-1);
+            % res = mask_u < mask_l;
+            % not_good = sum(res)/length(ts);
+            % 
+            % % Print statement for the second constraint
+            % fprintf('Second constraint (not_good): %f\n', not_good);
+            % logmsg('Second constraint (not_good): '+string(not_good))
+            % c(2)=not_good;
             ceq = [];
         end
     end

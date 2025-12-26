@@ -387,7 +387,7 @@ end
 
 
 initializer = load("initializer.mat").initializer;
-fminconresults = load("fmincon_2025-12-24_18-11-55/fmincon_results.mat");
+fminconresults = load("fmincon_results.mat");
 
 x_opt_normalized = fminconresults.x_opt;
 x_opt = x_opt_normalized .* initializer.optimizer.x0;
