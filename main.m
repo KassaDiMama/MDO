@@ -386,8 +386,9 @@ function plotWing(ax, wingDesign, varargin)
 end
 
 
-initializer = load("initializer.mat").initializer;
-fminconresults = load("fmincon_results.mat");
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+
+fminconresults = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\2025-12-24_20-15-52fmincon_results.mat");
 
 x_opt_normalized = fminconresults.x_opt;
 x_opt = x_opt_normalized .* initializer.optimizer.x0;
