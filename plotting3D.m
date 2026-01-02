@@ -27,6 +27,7 @@ function plotWing3D(wingDesign, varargin)
     %       x_kink, y_kink, z_kink: kink coordinates [m]
     %       x_tip, y_tip, z_tip: tip coordinates [m]
     %       c_root, c_kink, c_tip: chords [m]
+    %       twist: 1x3 array of twist angles at root, kink, tip [deg] (positive = nose up)
     %       S: wing area [m²]
     %       AR: aspect ratio
     %       TR: taper ratio
@@ -95,8 +96,11 @@ function plotWing3D(wingDesign, varargin)
     c_kink = wingDesign.c_kink;
     c_tip  = wingDesign.c_tip;
 
-    % Get incidence angle (assume it's always provided)
-    incidence = -wingDesign.incidence; % degrees
+    % Get twist angles (1x3 array: [root, kink, tip])
+    twist_angles = wingDesign.twist; % degrees (positive = nose up)
+    
+    % Get incidence angle (positive = nose up)
+    incidence = wingDesign.incidence; % degrees (positive = nose up)
     dihedral = wingDesign.dihedral;
 
     % --- Trailing edge positions ---
@@ -140,10 +144,10 @@ function plotWing3D(wingDesign, varargin)
     % Set 3D view
     view(ax, viewAngle);
     
-    % --- Generate CST airfoil sections with incidence ---
+    % --- Generate CST airfoil sections with incidence and twist ---
     t = linspace(0, 1, n_points)';
     
-    % Generate baseline airfoil (no incidence)
+    % Generate baseline airfoil (no incidence, no twist)
     y_upper = CSTcurve(t, AU, N1, N2, n);
     y_lower = CSTcurve(t, AL, N1, N2, n);
     
@@ -156,6 +160,7 @@ function plotWing3D(wingDesign, varargin)
     sections_x_le = [x_root, x_kink, x_tip];
     sections_z = [z_root, z_kink, z_tip];
     sections_chords = [c_root, c_kink, c_tip];
+    sections_twist = twist_angles; % [root, kink, tip] twist in degrees (positive = nose up)
     
     % Trailing edge x positions
     sections_x_te = [x_te_root, x_te_kink, x_te_tip];
@@ -170,13 +175,20 @@ function plotWing3D(wingDesign, varargin)
     % Convert incidence to radians (positive = nose up)
     inc_rad = deg2rad(incidence);
     
-    % --- Create airfoil sections with incidence ---
+    % --- Create airfoil sections with incidence AND twist ---
     for i = 1:n_sections
         x_le = sections_x_le(i);
         x_te = sections_x_te(i);
         y_section = sections_y(i);
         z_le = sections_z(i);
         chord = sections_chords(i);
+        twist_deg = sections_twist(i); % Local twist at this section (positive = nose up)
+        
+        % Calculate total rotation angle for this section
+        % Total rotation = incidence + local twist
+        % Both are positive = nose up
+        total_rotation_deg = incidence + twist_deg;
+        total_rotation_rad = deg2rad(total_rotation_deg);
         
         % For each point on the airfoil
         for j = 1:n_vertices
@@ -187,7 +199,7 @@ function plotWing3D(wingDesign, varargin)
             x_unrotated = x_le + chord_pos * (x_te - x_le);
             z_unrotated = z_le + y_airfoil(j) * chord;
             
-            if incidence == 0
+            if total_rotation_deg == 0
                 % No rotation
                 X(j, i) = x_unrotated;
                 Z(j, i) = z_unrotated;
@@ -197,9 +209,9 @@ function plotWing3D(wingDesign, varargin)
                 dx = x_unrotated - x_le;
                 dz = z_unrotated - z_le;
                 
-                % Apply rotation matrix (positive angle = counterclockwise)
-                X(j, i) = x_le + dx * cos(inc_rad) - dz * sin(inc_rad);
-                Z(j, i) = z_le + dx * sin(inc_rad) + dz * cos(inc_rad);
+                % Apply rotation matrix (positive angle = counterclockwise = nose up)
+                X(j, i) = x_le + dx * cos(total_rotation_rad) - dz * sin(total_rotation_rad);
+                Z(j, i) = z_le + dx * sin(total_rotation_rad) + dz * cos(total_rotation_rad);
             end
         end
         
@@ -278,12 +290,23 @@ function plotWing3D(wingDesign, varargin)
              'BackgroundColor', 'w', 'EdgeColor', station_colors{i});
     end
     
+    % --- Add twist information to plot ---
+    twist_text = sprintf('Twist: Root=%.1f°, Kink=%.1f°, Tip=%.1f°', ...
+                         twist_angles(1), twist_angles(2), twist_angles(3));
+    
+    text(ax, min(X(:)) + (max(X(:))-min(X(:)))/2, ...
+         max(Y(:)) + (max(Y(:))-min(Y(:)))*0.1, ...
+         max(Z(:)) + (max(Z(:))-min(Z(:)))*0.1, ...
+         twist_text, ...
+         'HorizontalAlignment', 'center', 'FontSize', 10, 'FontWeight', 'bold', ...
+         'BackgroundColor', 'w', 'EdgeColor', 'b');
+    
     % --- Plot MAC if requested ---
     if showMAC
         % Calculate MAC spanwise position
         y_bar = y_tip * (1 + 2*TR) / (3*(1 + TR));
         
-        % Interpolate to find MAC position
+        % Interpolate to find MAC position and twist
         if y_bar <= y_kink
             % Inboard section
             alpha = (y_bar - y_root) / (y_kink - y_root);
@@ -291,6 +314,9 @@ function plotWing3D(wingDesign, varargin)
             MAC_z_le = (1-alpha)*LE_z_actual(1) + alpha*LE_z_actual(2);
             MAC_x_te = (1-alpha)*TE_x_actual(1) + alpha*TE_x_actual(2);
             MAC_z_te = (1-alpha)*TE_z_actual(1) + alpha*TE_z_actual(2);
+            
+            % Interpolate twist
+            MAC_twist = (1-alpha)*twist_angles(1) + alpha*twist_angles(2);
         else
             % Outboard section
             alpha = (y_bar - y_kink) / (y_tip - y_kink);
@@ -298,6 +324,9 @@ function plotWing3D(wingDesign, varargin)
             MAC_z_le = (1-alpha)*LE_z_actual(2) + alpha*LE_z_actual(3);
             MAC_x_te = (1-alpha)*TE_x_actual(2) + alpha*TE_x_actual(3);
             MAC_z_te = (1-alpha)*TE_z_actual(2) + alpha*TE_z_actual(3);
+            
+            % Interpolate twist
+            MAC_twist = (1-alpha)*twist_angles(2) + alpha*twist_angles(3);
         end
         
         % Plot MAC line
@@ -313,7 +342,7 @@ function plotWing3D(wingDesign, varargin)
         
         % Label MAC
         text(ax, MAC_center_x+2, y_bar+0.5, MAC_center_z + 1, ...
-             sprintf('MAC = %.2f m', MAC), ...
+             sprintf('MAC = %.2f m\nTwist = %.1f°', MAC, MAC_twist), ...
              'HorizontalAlignment', 'center', 'FontSize', 10, 'FontWeight', 'bold', ...
              'BackgroundColor', 'w', 'EdgeColor', 'g');
     end
@@ -350,16 +379,13 @@ function plotWing3D(wingDesign, varargin)
         plot3(ax, [0, axis_length], [0, 0], [0, 0], ...
               'k-', 'LineWidth', 2, 'DisplayName', 'X-axis','HandleVisibility', 'off');
         
-        
         % Y-axis
         plot3(ax, [0, 0], [0, axis_length], [0, 0], ...
               'k-', 'LineWidth', 2, 'DisplayName', 'Y-axis','HandleVisibility', 'off');
         
-        
         % Z-axis
         plot3(ax, [0, 0], [0, 0], [0, axis_length/3], ...
               'k-', 'LineWidth', 2, 'DisplayName', 'Z-axis','HandleVisibility', 'off');
-        
         
         % Origin marker
         scatter3(ax, 0, 0, 0, 80, 'k', 'o', 'filled', ...
@@ -397,8 +423,8 @@ function plotWing3D(wingDesign, varargin)
     
     % --- Add title and labels ---
     title_str = sprintf('Wing 3D Geometry');
-    subtitle_str = sprintf('S = %.1f m² | AR = %.1f | dihedral = %.1f | Incidence = %.1f°', ...
-                          S, AR, dihedral, -incidence);
+    subtitle_str = sprintf('S = %.1f m² | AR = %.1f | dihedral = %.1f° | Incidence = %.1f°', ...
+                          S, AR, dihedral, incidence);
     title(ax, {title_str; subtitle_str}, 'FontSize', 12, 'FontWeight', 'bold');
     xlabel(ax, 'X [m]', 'FontSize', 11, 'FontWeight', 'bold');
     ylabel(ax, 'Y [m]', 'FontSize', 11, 'FontWeight', 'bold');
@@ -426,7 +452,8 @@ function plotWing3D(wingDesign, varargin)
     fprintf('Root chord: %.2f m\n', c_root);
     fprintf('Kink chord: %.2f m (TE aligned with root)\n', c_kink);
     fprintf('Tip chord: %.2f m\n', c_tip);
-    fprintf('Incidence angle: %.1f°\n', -incidence);
+    fprintf('Incidence angle: %.1f° (positive = nose up)\n', incidence);
+    fprintf('Twist: Root=%.1f°, Kink=%.1f°, Tip=%.1f° (positive = nose up)\n', twist_angles(1), twist_angles(2), twist_angles(3));
     fprintf('Dihedral at tip: %.1f°\n', atan2(z_tip - z_root, y_tip - y_root) * 180/pi);
     fprintf('CST Airfoils: Enabled (Order %d)\n', n);
     fprintf('=============================\n\n');
