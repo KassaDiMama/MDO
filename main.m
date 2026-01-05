@@ -192,7 +192,7 @@ legend('Wing','Leading Edge','Trailing Edge');
 %             arguments
 %                 wingDesign WingDesign
 %             end
-%             obj.wingDesign = wingDesign ;
+%             wingDesign = wingDesign ;
 % end
 % 
 % obj = MDA(wingDesign)
@@ -385,8 +385,9 @@ function plotWing(ax, wingDesign, varargin)
 end
 
 
-initializer = load("initializer.mat").initializer;
-fminconresults = load("fmincon_results.mat");
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+
+fminconresults = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\2025-12-24_20-15-52fmincon_results.mat");
 
 x_opt_normalized = fminconresults.x_opt;
 x_opt = x_opt_normalized .* initializer.optimizer.x0;
@@ -506,6 +507,84 @@ ylabel('y (m)');
 title('Top-down view of wing planform');
 grid on;
 legend('Wing','Leading Edge','Trailing Edge');
+
+%% Drag plots
+clear all
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer= initializer.optimizer;
+final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+final_x = final_x_normalized.*optimizer.x0;
+dvec = DesignVector().fromVector(final_x);
+wingDesign = WingDesign(dvec);
+optimizer.dvec = dvec;
+optimizer.wingDesign = wingDesign;
+optimizer.mda.wingDesign = wingDesign;
+const = Const();
+
+optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
+% 
+% function Result = Q3D(wingDesign)
+% Wing planform geometry 
+%               x    y     z   chord(m)    twist angle (deg) 
+AC.Wing.Geom = [wingDesign.x_root     wingDesign.y_root     wingDesign.z_root     wingDesign.c_root         wingDesign.twist(1)
+                wingDesign.x_kink     wingDesign.y_kink     wingDesign.z_kink     wingDesign.c_kink         wingDesign.twist(2)
+                wingDesign.x_tip     wingDesign.y_tip     wingDesign.z_tip     wingDesign.c_tip        wingDesign.twist(3)];
+
+% Wing incidence angle (degree)
+AC.Wing.inc  = wingDesign.incidence;   
+            
+            
+% Airfoil coefficients input matrix
+%                    | ->     upper curve coeff.                <-|   | ->       lower curve coeff.       <-| 
+AC.Wing.Airfoils   = [wingDesign.AU wingDesign.AL;
+                      wingDesign.AU wingDesign.AL];
+                  
+%AC.Wing.eta = [wingDesign.y_root/wingDesign.b_half;wingDesign.y_kink/wingDesign.b_half;wingDesign.y_tip/wingDesign.b_half];  % Spanwise location of the airfoil sections
+AC.Wing.eta = [0;1];
+% Viscous vs inviscid
+AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
+AC.Aero.MaxIterIndex = 150;
+% Flight Condition
+[rho_dont_use,a,T_dont_use] = wingDesign.isa_func();
+Mcritical = initializer.V_MO_initial/a;
+Re_corrected = wingDesign.Re/initializer.V_MO_initial*wingDesign.V;
+AC.Aero.V     = initializer.V_MO_initial;            % flight speed (m/s)
+AC.Aero.rho   = wingDesign.rho;         % air density  (kg/m3)
+AC.Aero.alt   = wingDesign.hcr;             % flight altitude (m)
+AC.Aero.Re    = Re_corrected;        % reynolds number (bqased on mean aerodynamic chord)
+AC.Aero.M     = Mcritical;           % flight Mach number 
+AC.Aero.CL    = wingDesign.calculateCL_cruise(const.W_TO_max_initial,initializer.V_MO_initial);          % lift coefficient - comment this line to run the code for given alpha%
+% AC.Aero.Alpha = 2;             % angle of attack -  comment this line to run the code for given cl 
+
+% tic
+
+% try 
+% disp("Starting Q3D");
+Res = Q3D_solver(AC)
+
+
+
+%% Example
+clear all
+close all
+clc
+dvec1 = DesignVector();
+initial_values = Initializer(dvec1);
+
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer= initializer.optimizer;
+final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+final_x = final_x_normalized.*optimizer.x0;
+dvec = DesignVector().fromVector(final_x);
+wingDesign = WingDesign(dvec);
+optimizer.dvec = dvec;
+optimizer.wingDesign = wingDesign;
+optimizer.mda.wingDesign = wingDesign;
+
+optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
+
+% Initial_values.optimizer.wingDesign
+% optimizer.wingDesign
 
 %% Example
 
