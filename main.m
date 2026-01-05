@@ -585,3 +585,171 @@ optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initia
 
 % Initial_values.optimizer.wingDesign
 % optimizer.wingDesign
+
+%% Example
+
+final_x = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+dvec = DesignVector().fromVector(final_x);
+wingDesign = WingDesign(dvec);
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer= Optimizer(dvec,wingDesign,initializer);
+optimizer.mda.MDA_loop();
+optimizer.mda.loadsFunc(optimizer.mda.W_TO_max,initializer.V_MO_initial)
+
+%% Example
+clear all
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer= initializer.optimizer;
+final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+final_x = final_x_normalized.*optimizer.x0;
+dvec = DesignVector().fromVector(final_x);
+wingDesign = WingDesign(dvec);
+optimizer.dvec = dvec;
+optimizer.wingDesign = wingDesign;
+optimizer.mda.wingDesign = wingDesign;
+
+optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
+W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
+[CL_wing, CD_wing]=optimizer.calcCL_CD(optimizer.mda.W_TO_max,W_fuel);
+
+%% Calculating Initial Values For Report
+
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+W_wing = initializer.W_wing_initial;
+emission = Const.W_fuel_cruise_initial*3.16;
+wing_tank_volume = initializer.wing_tank_volume_initial;
+eta = initializer.optimizer.performanceFunction();
+CL_wing = initializer.CL_initial;
+[alpha_cruise, CD_wing, CD_wing_induced] = initializer.optimizer.calculateAoACruise(Const.W_TO_max_initial, Const.W_fuel_cruise_initial);
+wingless_drag_force = initializer.drag_fus_initial;
+cd_fus_init=wingless_drag_force/initializer.optimizer.calculateDesignDynamicPressure()/initializer.S_initial;
+W_a_min_w = initializer.W_AminusW_initial;
+fprintf('W_wing: %f\n', W_wing);
+fprintf('Emission: %f\n', emission);
+fprintf('Wing Tank Volume: %f\n', wing_tank_volume);
+fprintf('Efficiency (eta): %f\n', eta);
+fprintf('CL_wing: %f\n', CL_wing);
+fprintf('Alpha Cruise: %f\n', alpha_cruise);
+fprintf('CD_wing: %f\n', CD_wing);
+fprintf('CD_wing Induced: %f\n', CD_wing_induced);
+fprintf('Wingless Drag Force: %f\n', wingless_drag_force);
+fprintf('CD_fus_init: %f\n', cd_fus_init);
+fprintf('W_a_min_w: %f\n', W_a_min_w);
+
+%% Calculate Optimized
+clear all
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer= initializer.optimizer;
+final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+final_x = final_x_normalized.*optimizer.x0;
+dvec = DesignVector().fromVector(final_x);
+wingDesign = WingDesign(dvec);
+optimizer.dvec = dvec;
+optimizer.wingDesign = wingDesign;
+optimizer.mda.wingDesign = wingDesign;
+
+optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
+W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
+[CL_wing, CD_wing]=optimizer.calcCL_CD(optimizer.mda.W_TO_max,W_fuel);
+W_TO = optimizer.mda.W_TO_max;
+[lift_dist, moment_dist] = optimizer.mda.loadsFunc(W_TO,initializer.V_MO_initial);
+W_wing = optimizer.mda.structuresFunc(lift_dist,moment_dist,W_TO,optimizer.mda.W_ZF);
+W_co2 = W_fuel * 3.16;
+FuelVolume = W_fuel / 0.81715e3;
+tank_volume = optimizer.wingDesign.calculateWingTankVolume();
+dynamic_pressure=optimizer.calculateDesignDynamicPressure();
+eta=optimizer.performanceFunction();
+CL_cr = optimizer.wingDesign.calculateCL_cruise(W_TO,W_fuel);
+V = optimizer.wingDesign.V;
+hcr = optimizer.wingDesign.hcr;
+mcr = optimizer.wingDesign.Mcr;
+Re_cr = optimizer.wingDesign.Re;
+[alpha_cruise, CD_wing, CD_wing_induced] = optimizer.calculateAoACruise(Const.W_TO_max_initial, Const.W_fuel_cruise_initial);
+L_over_D = optimizer.aerodynamicsFunc(W_TO,W_fuel);
+W_a_min_w = W_TO - W_fuel-W_wing;
+S = optimizer.wingDesign.S;
+MAC = optimizer.wingDesign.MAC;
+wing_loading = W_TO/S;
+AR = optimizer.wingDesign.AR;
+LE_sweep = optimizer.wingDesign.LE_sweep;
+b_inboard = optimizer.wingDesign.b_inboard;
+b_outboard = optimizer.wingDesign.b_outboard;
+c_root = optimizer.wingDesign.c_root;
+c_kink = optimizer.wingDesign.c_kink;
+c_tip = optimizer.wingDesign.c_tip;
+
+range = optimizer.objectiveFunc(optimizer.wingDesign.W_fuel, optimizer.mda.W_TO_max, L_over_D, eta);
+objective = -(range/optimizer.initializer.range_initial);
+
+wing_loading_constraint_value = (optimizer.mda.W_TO_max/optimizer.wingDesign.S  - Const.W_TO_max_initial/optimizer.initializer.S_initial)/(Const.W_TO_max_initial/optimizer.initializer.S_initial); % Wing loading constraint  
+
+
+fprintf('W_TO: %f\n', W_TO);
+fprintf('W_fuel: %f\n', W_fuel);
+fprintf('W_wing: %f\n', W_wing);
+fprintf('W_co2: %f\n', W_co2);
+fprintf('Fuel Volume: %f\n', FuelVolume);
+fprintf('Tank Volume: %f\n', tank_volume);
+fprintf('Dynamic Pressure: %f\n', dynamic_pressure);
+fprintf('Efficiency (eta): %f\n', eta);
+fprintf('CL_cr: %f\n', CL_cr);
+fprintf('V: %f\n', V);
+fprintf('hcr: %f\n', hcr);
+fprintf('mcr: %f\n', mcr);
+fprintf('Re_cr: %f\n', Re_cr);
+fprintf('Alpha Cruise: %f\n', alpha_cruise);
+fprintf('CD_wing: %f\n', CD_wing);
+fprintf('CD_wing Induced: %f\n', CD_wing_induced);
+fprintf('L/D Ratio: %f\n', L_over_D);
+fprintf('Wing Loading: %f\n', wing_loading);
+fprintf('Aspect Ratio (AR): %f\n', AR);
+fprintf('Leading Edge Sweep: %f\n', LE_sweep);
+fprintf('Inboard Span: %f\n', b_inboard);
+fprintf('Outboard Span: %f\n', b_outboard);
+fprintf('Root Chord: %f\n', c_root);
+fprintf('Kink Chord: %f\n', c_kink);
+fprintf('Tip Chord: %f\n', c_tip);
+fprintf('Objective: %f\n', objective);
+fprintf('Range: %f\n', range);
+fprintf('Wing Loading Constraint Value: %f\n', wing_loading_constraint_value);
+
+%% Analyze Convergence History
+initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+optimizer = initializer.optimizer;
+iteration_history = {};
+
+for iteration = 0:10
+    filename = sprintf("FINAL_CORRECT_fmincon_2025-12-24_18-11-55/iter_%05d.mat", iteration);
+    data = load(filename);
+    x_normalized = data.x;
+    x_scaled = x_normalized .* optimizer.x0;
+    dvec = DesignVector().fromVector(x_scaled);
+    wingDesign = WingDesign(dvec);
+
+    optimizer.dvec = dvec;
+    optimizer.wingDesign = wingDesign;
+    optimizer.mda.wingDesign = wingDesign;
+    
+    optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
+    eta=optimizer.performanceFunction();
+    W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
+    [CL_wing, CD_wing]=optimizer.calcCL_CD(optimizer.mda.W_TO_max,W_fuel);
+    W_TO = optimizer.mda.W_TO_max;
+    L_over_D = optimizer.aerodynamicsFunc(W_TO,W_fuel);
+    range = optimizer.objectiveFunc(optimizer.wingDesign.W_fuel, optimizer.mda.W_TO_max, L_over_D, eta);
+    objective = -(range/optimizer.initializer.range_initial);
+    
+    wing_loading_constraint_value = (optimizer.mda.W_TO_max/optimizer.wingDesign.S  - Const.W_TO_max_initial/optimizer.initializer.S_initial)/(Const.W_TO_max_initial/optimizer.initializer.S_initial); % Wing loading constraint  
+    
+    W_TO = optimizer.mda.W_TO_max;
+    S = optimizer.wingDesign.S;
+    wing_loading = W_TO/S;
+
+    iteration_block.iteration = iteration;
+    iteration_block.range = range;
+    iteration_block.objective = objective;
+    iteration_block.wing_loading_constraint_value = wing_loading_constraint_value;
+    iteration_block.wing_loading = wing_loading;
+    iteration_history{iteration+1} = iteration_block;
+
+end

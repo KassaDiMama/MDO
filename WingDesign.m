@@ -326,7 +326,7 @@ classdef WingDesign < handle
             %Calculate the required lift coeficient of the aircraft at cruise
             L = W_TO_max*9.81* Const.n_max;
             % Cl = W_TO_max*9.81/(1/2*obj.rho*obj.V^2*(obj.S*2));
-            CL_critical = L/(1/2*obj.rho*V_MO_initial^2*(obj.S));%CHANGED
+            CL_critical = L/(1/2*obj.rho*V_MO_initial^2*obj.S);%CHANGED
         end
 
         function dvec = toDesignVector(obj)
