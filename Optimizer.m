@@ -81,7 +81,7 @@ classdef Optimizer < handle
             'StepTolerance',1e-6, ...
             'OptimalityTolerance',1e-10, ...
             'DiffMinChange',8e-3, ...
-            'DiffMaxChange',5e-2);
+            'DiffMaxChange',0.2);
 
             disp(string(datetime('now')) + " | Starting optimization...");
             tic;
@@ -203,6 +203,52 @@ classdef Optimizer < handle
             % disp("CL_wing = " + string(CL_wing) + ", CD_wing = " + string(CD_wing));
             
 
+        end
+        function [alpha_cruise, CD_wing, CD_wing_induced] = calculateAoACruise(obj,W_TO_max,W_fuel)
+            % Wing planform geometry 
+            %               x    y     z   chord(m)    twist angle (deg) 
+            AC.Wing.Geom = [obj.wingDesign.x_root     obj.wingDesign.y_root     obj.wingDesign.z_root     obj.wingDesign.c_root         obj.wingDesign.twist(1)
+                            obj.wingDesign.x_kink     obj.wingDesign.y_kink     obj.wingDesign.z_kink     obj.wingDesign.c_kink         obj.wingDesign.twist(2)
+                            obj.wingDesign.x_tip     obj.wingDesign.y_tip     obj.wingDesign.z_tip     obj.wingDesign.c_tip        obj.wingDesign.twist(3)];
+
+            % Wing incidence angle (degree)
+            AC.Wing.inc  = obj.wingDesign.incidence;   
+                        
+                        
+            % Airfoil coefficients input matrix
+            %                    | ->     upper curve coeff.                <-|   | ->       lower curve coeff.       <-| 
+            AC.Wing.Airfoils   = [obj.wingDesign.AU obj.wingDesign.AL;
+                                  obj.wingDesign.AU obj.wingDesign.AL];
+                              
+            %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half;obj.wingDesign.y_tip/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
+            AC.Wing.eta = [0;1];
+            % Viscous vs inviscid
+            AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
+            AC.Aero.MaxIterIndex = 600;
+            % Flight Condition
+            AC.Aero.V     = obj.wingDesign.V;            % flight speed (m/s)
+            AC.Aero.rho   = obj.wingDesign.rho;         % air density  (kg/m3)
+            AC.Aero.alt   = obj.wingDesign.hcr;             % flight altitude (m)
+            AC.Aero.Re    = obj.wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
+            AC.Aero.M     = obj.wingDesign.Mcr;           % flight Mach number 
+            AC.Aero.CL    = obj.wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
+            % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
+            
+            Res = Q3D_solver(AC);
+            CL_wing = Res.CLwing;
+            CD_wing = Res.CDwing;
+
+            if isnan(CD_wing)
+                CD_wing = 10;
+                disp("CD_wing was NaN")
+            end
+            % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC) + " | CL: " + string(CL_wing) + " | CD: " + string(CD_wing)], "log.file");
+            % disp("CL_wing = " + string(CL_wing) + ", CD_wing = " + string(CD_wing));
+            alpha_cruise = Res.Alpha;
+
+            AC.Visc = 0;
+            Res_invis = Q3D_solver(AC);
+            CD_wing_induced = Res_invis.CDiwing;
         end
         function q = calculateDesignDynamicPressure(obj)
             q=0.5*obj.wingDesign.rho*obj.wingDesign.V^2;

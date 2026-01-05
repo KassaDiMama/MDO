@@ -85,8 +85,8 @@ plotCSTairfoil( ...
     'Original Upper', 'Original Lower');
 
 % ---- Optimized design ----
-initializer = load("initializer.mat").initializer;
-fminconresults = load("fmincon_results.mat");
+initializer = load("fmincon_2026-01-05_17-29-48/initializer2026-01-05_17-24-20.mat").initializer;
+fminconresults = load("fmincon_2026-01-05_17-29-48/2026-01-05_19-13-35fmincon_results.mat");
 
 x_opt = fminconresults.x_opt .* initializer.optimizer.x0;
 

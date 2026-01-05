@@ -3,9 +3,9 @@ oper
 m
 mn 0.86
 v 253.758
-d 0.335721
+d 0.332653
 
-a c 10.3737
+a c 1.28653
 x
 st AVLaero.dat
 vm AVLload.dat
