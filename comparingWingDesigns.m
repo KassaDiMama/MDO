@@ -10,10 +10,10 @@ function compareWingDesigns(initial_val, optimizer)
     wingDesign_final = optimizer.wingDesign;
     
     % Calculate results for initial design
-    Res_initial = calcQ3D(wingDesign_initial,initial_val.optimizer.mda.W_TO_max,initial_val.optimizer.wingDesign.W_fuel,'Initial design');
+    Res_initial = calcQ3D(wingDesign_initial,initial_val.optimizer.mda.W_TO_max,initial_val.optimizer.wingDesign.W_fuel,'Initial design',itial_val);
     
     % Calculate results for final design
-    Res_final = calcQ3D(wingDesign_final,optimizer.mda.W_TO_max,optimizer.wingDesign.W_fuel,'final Design');
+    Res_final = calcQ3D(wingDesign_final,optimizer.mda.W_TO_max,optimizer.wingDesign.W_fuel,'final Design',optimizer.initializer);
     
     % Create overlapping plots for drag distribution
     % plotOverlappingDrag(Res_initial, Res_final);
@@ -22,7 +22,7 @@ function compareWingDesigns(initial_val, optimizer)
     plotOverlappingLift(Res_initial, Res_final);
 end
 
-function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName)
+function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName,initializer)
             % Wing planform geometry 
             %               x    y     z   chord(m)    twist angle (deg) 
             AC.Wing.Geom = [wingDesign.x_root     wingDesign.y_root     wingDesign.z_root     wingDesign.c_root         wingDesign.twist(1)
@@ -41,7 +41,7 @@ function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName)
             %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half;obj.wingDesign.y_tip/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
-            AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
+            AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 600;
             % Flight Condition
             AC.Aero.V     = wingDesign.V;            % flight speed (m/s)
@@ -49,7 +49,8 @@ function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName)
             AC.Aero.alt   = wingDesign.hcr;             % flight altitude (m)
             AC.Aero.Re    = wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = wingDesign.Mcr;           % flight Mach number 
-            AC.Aero.CL    = wingDesign.calculateCL_critical(W_TO_max,W_fuel);          % lift coefficient - comment this line to run the code for given alpha%
+            % AC.Aero.CL    = wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - at cruise
+            AC.Aero.CL    = wingDesign.calculateCL_critical(W_TO_max,initializer.V_MO_initial);          % lift coefficient - comment this line to run the code for given alpha%
             % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
             
             Res = Q3D_solver(AC);
@@ -307,27 +308,4 @@ optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initia
 W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
 [CL_wing, CD_wing]=optimizer.calcCL_CD(optimizer.mda.W_TO_max,W_fuel); 
 
-% Initial_values.optimizer.wingDesign
-% optimizer.wingDesign
-% After your existing code, call the comparison function
-% Extract wing designs
-% wingDesign_initial = initial_values.optimizer.wingDesign;
-% wingDesign_final = optimizer.wingDesign;
-% 
-% % % Calculate results for initial design
-% % Res_initial = runQ3DAnalysis(wingDesign_initial, initializer, 'Initial Design',initial_values.optimizer.mda.W_TO_max);
-% % 
-% % % Calculate results for final design
-% % Res_final = runQ3DAnalysis(wingDesign_final, initializer, 'Final Design',optimizer.mda.W_TO_max);
-% 
-% plotOverlappingLift(Res_initial, Res_final)
-wingDesign_initial = initial_values.optimizer.wingDesign;
-
-
-% Calculate results for initial design
-Res_initial = calcQ3D(wingDesign_initial,initial_values.optimizer.mda.W_TO_max,initial_values.optimizer.wingDesign.W_fuel,'Initial design');
-
-wingDesign_final = optimizer.wingDesign;
-    
-% Calculate results for final design
-Res_final = calcQ3D(wingDesign_final,optimizer.mda.W_TO_max,optimizer.wingDesign.W_fuel,'final Design');
+compareWingDesigns(initial_values,optimizer)
