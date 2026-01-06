@@ -161,9 +161,8 @@ dvec = DesignVector();
 % dvec.LE_sweep = 20/180*pi;
 wingDesign = WingDesign(dvec);
 
-initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
-fminconresults = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\2025-12-24_20-15-52fmincon_results.mat");
-
+initializer = load("fmincon_2026-01-05_17-29-48/initializer2026-01-05_17-24-20.mat").initializer;
+fminconresults = load("fmincon_2026-01-05_17-29-48/2026-01-05_19-13-35fmincon_results.mat");
 x_opt_normalized = fminconresults.x_opt;
 x_opt = x_opt_normalized .* initializer.optimizer.x0;
 
