@@ -755,42 +755,29 @@ for iteration = 0:10
 end
 
 %% Plot Convergence History
-% Load file
-data = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55/iteration_history.mat");
+iteration_history = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55/iteration_history.mat");
+% Extract data for plotting
+iterations = [iteration_history{:}].iteration;
+ranges = [iteration_history{:}].range;
+wing_loadings = [iteration_history{:}].wing_loading;
 
-iteration_history = data.iteration_history;
-
-n = numel(iteration_history);
-
-% Preallocate
-iterations    = zeros(1, n);
-ranges        = zeros(1, n);
-wing_loadings = zeros(1, n);
-objectives = zeros(1, n);
-wing_loading_constraints = zeros(1, n);
-
-for i = 1:n
-    iterations(i)               = iteration_history{i}.iteration;
-    ranges(i)                   = iteration_history{i}.range;
-    wing_loadings(i)            = iteration_history{i}.wing_loading;
-    objectives(i)               = iteration_history{i}.objective;
-    wing_loading_constraints(i) = iteration_history{i}.wing_loading_constraint_value;
-end
-
-
+% Create a new figure for the plots
 figure;
-plot(iterations, objectives, 'b-', 'LineWidth', 2)
-xlabel('Iteration')
-ylabel('Normalized Objective')
-title('Objective Function History')
-grid on
 
-figure;
-plot(iterations, wing_loading_constraints, 'b-', 'LineWidth', 2)
-yline(0, '--k', 'Constraint Boundary', 'LineWidth', 1.5)
+% Create the first subplot for range
+subplot(2, 1, 1);
+plot(iterations, ranges, '-o', 'DisplayName', 'Range');
+xlabel('Iteration');
+ylabel('Range');
+title('Convergence History: Range');
+grid on;
+legend;
 
-xlabel('Iteration')
-ylabel('Constraint Value')
-title('Wing Loading Constraint History')
-grid on
-
+% Create the second subplot for wing loading
+subplot(2, 1, 2);
+plot(iterations, wing_loadings, '-s', 'DisplayName', 'Wing Loading', 'Color', 'r');
+xlabel('Iteration');
+ylabel('Wing Loading');
+title('Convergence History: Wing Loading');
+grid on;
+legend;
