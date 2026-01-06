@@ -878,3 +878,32 @@ violation, 0.000000e+00, is less than <a href = "matlab: helpview('optim','tol_c
 Elapsed time is 6554.998074 seconds.
 05-Jan-2026 19:13:35 | Finished optimization...
 Done optimizing!
+openvar('msg',msg);
+airfoilTester
+5600*1.1
+
+ans =
+
+   6.1600e+03
+
+{<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',760,36)">File: main.m Line: 760 Column: 36</a>
+Invalid use of operator.
+}
+{Brace indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 765)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',765,0)">line 765</a>)
+    iterations(i) = iteration_history{i}.iteration;
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+}
+{Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 774)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',774,0)">line 774</a>)
+    iterations(i)    = iteration_history(i).iteration;
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+}
+{Unrecognized function or variable 'objectives'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('main', 'C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m', 778)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('C:\Users\Kaspe\Desktop\Master\Q1\MDO\Github\MDO\main.m',778,0)">line 778</a>)
+plot(iterations, objectives, '-o', 'LineWidth', 2)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+}
