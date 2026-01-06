@@ -189,8 +189,8 @@ classdef Initializer < handle
             ratios = linspace(1,5,1000);
             for ratio_index = 1:length(ratios)
                 ratio = ratios(ratio_index);
-                yu = CSTcurve(ts, obj.AU*(1+ratio), N1, N2, CST_order);
-                yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
+                yu = CSTcurve(ts, obj.AU*ratio, N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * ratio, N1, N2, CST_order);
 
                 mask_u = yu(2:end-1);
                 mask_l = yl(2:end-1);
@@ -199,7 +199,7 @@ classdef Initializer < handle
                     fprintf('Maximum thickness reached %f\n', max(yu-yl));
                     AU_upper_bound = ratios(ratio_index-1);
                     AL_upper_bound = ratios(ratio_index-1);
-                    
+
                     mask_u = yu(2:end-1);
                     mask_l = yl(2:end-1);
                     res = mask_u < mask_l;
