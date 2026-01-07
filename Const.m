@@ -31,7 +31,7 @@ classdef Const
         TR_upper_bound = 0.85
         TR_lower_bound = 0.2
         t_c_min = 0.08
-        t_c_max=0.22
+        t_c_max=0.15
         % C_D_AnoW = 0.0248; % This was run for inviscid sim, fix update whan viscus works
         
         % W_ZF_initial = 122470-33785; % kg

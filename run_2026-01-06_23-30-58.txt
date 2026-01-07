@@ -1,0 +1,481 @@
+    "---------------------------------"
+    "---------------------------------"
+    "Starting new run at 2026-01-06 23:30:58"
+
+06-Jan-2026 23:30:59 | Starting optimization...
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0          19   -1.000000e+00     0.000e+00     1.000e+00     0.000e+00     1.112e+00  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+    1          42   -1.107958e+00     0.000e+00     2.401e-01     1.318e-01     1.382e+02  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: Attention!:2D aerodynamic analysis did not converge in section 5 ! Values are mantained to continue the optimization
+iteration.Aerodynamic results should be checked at the end.] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+    2          75   -1.183406e+00     0.000e+00     6.782e-03     4.135e-03     1.476e+02  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: Attention!:2D aerodynamic analysis did not converge in section 5 ! Values are mantained to continue the optimization
+iteration.Aerodynamic results should be checked at the end.] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+    3         116   -1.195024e+00     0.000e+00     3.910e-04     6.223e-04     1.490e+02  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+    4         149   -1.211740e+00     0.000e+00     6.782e-03     1.160e-02     1.503e+02  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: Attention!:2D aerodynamic analysis did not converge in section 4 ! Values are mantained to continue the optimization
+iteration.Aerodynamic results should be checked at the end.] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
