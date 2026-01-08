@@ -20,7 +20,7 @@ classdef Const
         airfoil_ref = 'withcomb135.dat'
         airfoil_thickness_multiplier = 1
         b_half_upper_bound = 26
-        b_half_lower_bound = 15
+        b_half_lower_bound = 18
 
         LE_sweep_upper_bound = 40 % deg
         LE_sweep_lower_bound = 0 % deg

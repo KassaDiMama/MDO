@@ -26,18 +26,18 @@ classdef Optimizer < handle
             ub(2) = Const.LE_sweep_upper_bound/180*pi/obj.x0(2);
             ub(3) = Const.TR_upper_bound/obj.x0(3);%obj.initializer.TR_upper_bound/obj.x0(3);
             ub(4) = Const.AR_upper_bound/obj.x0(4);
-            ub(5) = obj.initializer.AU_upper_bound;
-            ub(6) = obj.initializer.AU_upper_bound;
-            ub(7) = obj.initializer.AU_upper_bound;
-            ub(8) = obj.initializer.AU_upper_bound;
-            ub(9) = obj.initializer.AU_upper_bound;
-            ub(10) = obj.initializer.AU_upper_bound;
-            ub(11) = obj.initializer.AL_upper_bound;
-            ub(12) = obj.initializer.AL_upper_bound;
-            ub(13) = obj.initializer.AL_upper_bound;
-            ub(14) = obj.initializer.AL_upper_bound;
-            ub(15) = obj.initializer.AL_upper_bound;
-            ub(16) = obj.initializer.AL_upper_bound;
+            ub(5) = obj.initializer.AU_upper_bound(1);
+            ub(6) = obj.initializer.AU_upper_bound(2);
+            ub(7) = obj.initializer.AU_upper_bound(3);
+            ub(8) = obj.initializer.AU_upper_bound(4);
+            ub(9) = obj.initializer.AU_upper_bound(5);
+            ub(10) = obj.initializer.AU_upper_bound(6);
+            ub(11) = obj.initializer.AL_upper_bound(1);
+            ub(12) = obj.initializer.AL_upper_bound(2);
+            ub(13) = obj.initializer.AL_upper_bound(3);
+            ub(14) = obj.initializer.AL_upper_bound(4);
+            ub(15) = obj.initializer.AL_upper_bound(5);
+            ub(16) = obj.initializer.AL_upper_bound(6);
             ub(17) = 0.88/obj.x0(17);
             ub(18) = 13075.92/obj.x0(18);
 
@@ -46,18 +46,18 @@ classdef Optimizer < handle
             lb(2) = Const.LE_sweep_lower_bound/180*pi/obj.x0(2);
             lb(3) = Const.TR_lower_bound/obj.x0(3);
             lb(4) = Const.AR_lower_bound/obj.x0(4);
-            lb(5) = obj.initializer.AU_lower_bound;
-            lb(6) = obj.initializer.AU_lower_bound;
-            lb(7) = obj.initializer.AU_lower_bound;
-            lb(8) = obj.initializer.AU_lower_bound;
-            lb(9) = obj.initializer.AU_lower_bound;
-            lb(10) = obj.initializer.AU_lower_bound;
-            lb(11) = obj.initializer.AL_lower_bound;
-            lb(12) = obj.initializer.AL_lower_bound;
-            lb(13) = obj.initializer.AL_lower_bound;
-            lb(14) = obj.initializer.AL_lower_bound;
-            lb(15) = obj.initializer.AL_lower_bound;
-            lb(16) = obj.initializer.AL_lower_bound;
+            lb(5) = obj.initializer.AU_lower_bound(1);
+            lb(6) = obj.initializer.AU_lower_bound(2);
+            lb(7) = obj.initializer.AU_lower_bound(3);
+            lb(8) = obj.initializer.AU_lower_bound(4);
+            lb(9) = obj.initializer.AU_lower_bound(5);
+            lb(10) = obj.initializer.AU_lower_bound(6);
+            lb(11) = obj.initializer.AL_lower_bound(1);
+            lb(12) = obj.initializer.AL_lower_bound(2);
+            lb(13) = obj.initializer.AL_lower_bound(3);
+            lb(14) = obj.initializer.AL_lower_bound(4);
+            lb(15) = obj.initializer.AL_lower_bound(5);
+            lb(16) = obj.initializer.AL_lower_bound(6);
             lb(17) = 0.72/obj.x0(17);
             lb(18) = 10698.48/obj.x0(18);
 
@@ -300,7 +300,7 @@ classdef Optimizer < handle
             % Print statement for the second constraint
             % fprintf('Second constraint (upperLowerOverlapFraction): %f\n', upperLowerOverlapFraction);
             logmsg('Second constraint (upperLowerOverlapFraction): '+string(upperLowerOverlapFraction))
-            c(2)=upperLowerOverlapFraction;
+            % c(2)=upperLowerOverlapFraction;
             ceq = [];
         end
     end
