@@ -638,9 +638,9 @@ fprintf('W_a_min_w: %f\n', W_a_min_w);
 
 %% Calculate Optimized
 clear all
-initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+initializer = load("fmincon_2026-01-07_11-55-38\initializer2026-01-07_11-51-48.mat").initializer;
 optimizer= initializer.optimizer;
-final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+final_x_normalized = load("fmincon_2026-01-07_11-55-38\final.mat","x").x;
 final_x = final_x_normalized.*optimizer.x0;
 dvec = DesignVector().fromVector(final_x);
 wingDesign = WingDesign(dvec);
@@ -714,12 +714,24 @@ fprintf('Range: %f\n', range);
 fprintf('Wing Loading Constraint Value: %f\n', wing_loading_constraint_value);
 
 %% Analyze Convergence History
-initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+initializer = load("fmincon_2026-01-07_11-55-38\initializer2026-01-07_11-51-48.mat").initializer;
 optimizer = initializer.optimizer;
 iteration_history = {};
+function y = CSTcurve(t, A, N1, N2, n)
+    
+    % Class function
+    C = t.^N1 .* (1 - t).^N2;
 
-for iteration = 0:10
-    filename = sprintf("FINAL_CORRECT_fmincon_2025-12-24_18-11-55/iter_%05d.mat", iteration);
+    % Shape function 
+    S = zeros(size(t));
+    for i = 0:n
+        S = S + nchoosek(n, i) .* t.^i .* (1 - t).^(n - i) .* A(i + 1);
+    end
+
+    y = C .* S;
+end
+for iteration = 0:5
+    filename = sprintf("fmincon_2026-01-07_11-55-38/iter_%05d.mat", iteration);
     data = load(filename);
     x_normalized = data.x;
     x_scaled = x_normalized .* optimizer.x0;
@@ -750,6 +762,28 @@ for iteration = 0:10
     iteration_block.objective = objective;
     iteration_block.wing_loading_constraint_value = wing_loading_constraint_value;
     iteration_block.wing_loading = wing_loading;
+
+    N1 = 0.5;
+    N2 = 1;
+    CST_order = length(optimizer.wingDesign.AU) - 1;
+    
+    
+    
+    ts = linspace(0, 1, 10000);
+    yu = CSTcurve(ts, optimizer.wingDesign.AU, N1, N2, CST_order);
+    yl = CSTcurve(ts, optimizer.wingDesign.AL, N1, N2, CST_order);
+    
+    mask_u = yu(2:end-1);
+    mask_l = yl(2:end-1);
+    res = mask_u < mask_l;
+    upperLowerOverlapFraction = sum(res)/length(mask_u);
+    iteration_block.iteration = iteration;
+    iteration_block.range = range;
+    iteration_block.objective = objective;
+    iteration_block.wing_loading_constraint_value = wing_loading_constraint_value;
+    iteration_block.wing_loading = wing_loading;
+    iteration_block.upperLowerOverlapFraction = upperLowerOverlapFraction;
+    iteration_block.aboveUpper = sum(res);
     iteration_history{iteration+1} = iteration_block;
 
 end
