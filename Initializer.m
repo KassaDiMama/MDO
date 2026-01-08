@@ -72,7 +72,7 @@ classdef Initializer < handle
             obj.c_root_initial = obj.optimizer.wingDesign.c_root;
             obj.c_kink_initial = obj.optimizer.wingDesign.c_kink;
             obj.c_tip_initial = obj.optimizer.wingDesign.c_tip;
-            [obj.AU_lower_bound, obj.AL_upper_bound, obj.AU_upper_bound, obj.AL_lower_bound] = obj.calculateAirfoilBounds();
+            [obj.AU_lower_bound, obj.AU_upper_bound, obj.AL_lower_bound, obj.AL_upper_bound] = obj.newAirfoilBounds();
             % obj.AU_lower_bound=-1;
             % obj.AL_upper_bound=2;
             % obj.AU_upper_bound=2;
@@ -138,6 +138,28 @@ classdef Initializer < handle
             AU = x_opt(1:CST_order+1);
             AL = x_opt(CST_order+2:2*CST_order+2);
         end
+
+        function [AU_lower_bound,AU_upper_bound,AL_lower_bound,AL_upper_bound] = newAirfoilBounds(obj)
+            AU_max = max(obj.AU);
+            AU_min = min(obj.AU);
+
+            AU_upper = AU_max./obj.AU;
+            AU_lower = AU_min./obj.AU;
+
+            AU_upper_bound = 2*max(AU_upper, AU_lower);
+            AU_lower_bound = min(AU_upper,AU_lower);
+            AU_lower_bound = 2*min(AU_lower_bound, zeros(1,length(AU_lower_bound)));
+            
+            AL_max = max(obj.AL);
+            AL_min = min(obj.AL);
+
+            AL_upper = AL_max./obj.AL;
+            AL_lower = AL_min./obj.AL;
+
+            AL_upper_bound =2 * max(AL_upper, AL_lower);
+            AL_lower_bound = 2 * min(AL_upper, AL_lower);
+        end
+
         function [AU_lower_bound,AL_upper_bound,AU_upper_bound,AL_lower_bound] =calculateAirfoilBounds(obj)
             function y = CSTcurve(t, A, N1, N2, n)
 
