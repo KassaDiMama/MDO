@@ -44,67 +44,86 @@ N1 = 0.5;
 
             % --- parametric domain ---
             ts = linspace(0, 1, 10000);  % resolution for plotting
-            ratios = linspace(0,3,10000);
+            ratios = linspace(1,0,1000);
             % --- compute upper and lower surfaces ---
             for ratio_index = 1:length(ratios)
                 ratio = ratios(ratio_index);
-                yu = CSTcurve(ts, obj.AU*(1-ratio), N1, N2, CST_order);
-                yl = CSTcurve(ts, obj.AL * (1+ratio), N1, N2, CST_order);
+                yu = CSTcurve(ts, obj.AU*ratio, N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * ratio, N1, N2, CST_order);
 
-                mask_u = yu(2:end-1);
-                mask_l = yl(2:end-1);
-                res = mask_u > mask_l;
-                if sum(res) < size(res,2)
+                y_u = yu(2:end-1);
+                y_l = yl(2:end-1);
+                % res = mask_u > mask_l;
+                if max(yu-yl)<Const.t_c_min
                     % display(ratio)
-                    fprintf('Intersection occurred at ratio of %f\n', ratio);
-                    AU_lower_bound = (1 - ratios(ratio_index-1));
-                    AL_upper_bound = (1 + ratios(ratio_index-1));
+                    fprintf('Minimum thickness reached %f\n', max(yu-yl));
+                    AU_lower_bound = ratios(round(ratio_index-1));
+                    AL_lower_bound = ratios(round(ratio_index-1));
                     
-                    fprintf('Lower bound: AU = %f, AL = %f\n', AU_lower_bound, AL_upper_bound);
+                    fprintf('Lower bound: AU = %f, AL = %f\n', AU_lower_bound, AL_lower_bound);
+                    mask_u = yu(2:end-1);
+                    mask_l = yl(2:end-1);
+                    res = mask_u < mask_l;
+                    upperLowerOverlapFraction = sum(res)/length(mask_u);
                     
-                    fprintf('Lower Ratio(i-1): %f, Upper Ratio (i): %f\n', ratios(ratio_index-1), ratios(ratio_index));
+                    fprintf('Upper-Lower Overlap Fraction: %f\n', upperLowerOverlapFraction);
+                    % fprintf('Lower Ratio(i-1): %f, Upper Ratio (i): %f\n', ratios(ratio_index-1), ratios(ratio_index));
                     fprintf('Difference: %f\n', ratios(ratio_index) - ratios(ratio_index-1));
                     break;
                 end
             end
-            ratios = linspace(0,20,500);
+            ratios = linspace(1,5,1000);
             for ratio_index = 1:length(ratios)
                 ratio = ratios(ratio_index);
-                yu = CSTcurve(ts, obj.AU*(1+ratio), N1, N2, CST_order);
-                yl = CSTcurve(ts, obj.AL * (1-ratio), N1, N2, CST_order);
+                yu = CSTcurve(ts, obj.AU*ratio, N1, N2, CST_order);
+                yl = CSTcurve(ts, obj.AL * ratio, N1, N2, CST_order);
 
                 mask_u = yu(2:end-1);
                 mask_l = yl(2:end-1);
                 res = mask_u > mask_l;
-                if max(yu+yl)>0.3
-                    % display(ratio)
-                    fprintf('Intersection occurred at ratio of %s\n', num2str(ratio));
-                    % disp(max(yu+yl));
+                if max(yu-yl)>Const.t_c_max
+                    fprintf('Maximum thickness reached %f\n', max(yu-yl));
+                    AU_upper_bound = ratios(ratio_index-1);
+                    AL_upper_bound = ratios(ratio_index-1);
+
+                    mask_u = yu(2:end-1);
+                    mask_l = yl(2:end-1);
+                    res = mask_u < mask_l;
+                    upperLowerOverlapFraction = sum(res)/length(mask_u);
                     
-                    AU_upper_bound = (1 + ratios(ratio_index-1));
-                    AL_lower_bound = (1 - ratios(ratio_index-1));
-                    break;
+                    fprintf('Upper-Lower Overlap Fraction: %f\n', upperLowerOverlapFraction);
+                    fprintf('Upper bound: AU = %f, AL = %f\n', AU_upper_bound, AL_upper_bound);
+                    
+                    % fprintf('Lower Ratio(i-1): %f, Upper Ratio (i): %f\n', ratios(ratio_index-1), ratios(ratio_index));
+                    fprintf('Difference: %f\n', ratios(ratio_index) - ratios(ratio_index-1));
+                    break
                 end
             end
             % disp(AU_upper_bound);
+            % disp(AU_lower_bound);
             % disp(AL_lower_bound);
+            % disp(AL_upper_bound);
             % fprintf("AU: %f",1/max(obj.AU));
             % fprintf("AL: %f",-1/max(obj.AL))
         
-
-% AUm(1:4) = obj.AU(1:4)*AU_upper_bound;
+      
+AUm = obj.AU;
+ALm = obj.AL;
+disp(AUm);
+i = 2;
+AUm(i) = obj.AU(i)*AU_upper_bound;
+disp(AUm);
 % AUm(4:end) = obj.AU(4:end)*(AU_upper_bound+0);
 % ALm(1:4) = obj.AL(1:4)*(AL_lower_bound);
 % ALm(4:5) = obj.AL(4:5)*(AL_lower_bound);
 % ALm(end) = obj.AL(end)*(AL_lower_bound);
-AUm = obj.AU*AU_lower_bound;
-ALm = obj.AL*AL_lower_bound;
-disp(ALm)
-disp(AUm)
 
-disp(AU_upper_bound);
-disp(obj.AL*AL_lower_bound);
-disp(AL_lower_bound);
+% disp(ALm)
+% disp(AUm)
+% 
+% disp(AU_upper_bound);
+% disp(obj.AL*AL_lower_bound);
+% disp(AL_lower_bound);
 
 
 figure; hold on; grid on;

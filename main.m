@@ -794,3 +794,5 @@ ylabel('Constraint Value')
 title('Wing Loading Constraint History')
 grid on
 
+%%
+display(searchdir.message)
