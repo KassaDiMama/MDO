@@ -1,0 +1,2003 @@
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:48:22 calculated range: 5612.6525 km
+With W_TO_max122470
+and with wingloading W_TO_max/S: 661.4959
+Maximum possible array:            11829 MB (1.24e+10 bytes) *
+Memory available for all arrays:   11829 MB (1.24e+10 bytes) *
+Memory used by MATLAB:              2454 MB (2.57e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.50084
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.1201
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.6201
+c_root = 8.87616
+c_kink = 5.33896
+c_tip = 2.15691
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.03859e+07
+V = 236.054
+S = 186.997
+MAC = 5.59436
+x_kink = 24.1372
+x_tip = 30.9049
+y_kink = 6.5
+y_tip = 19.1201
+z_kink = 2.61868
+z_tip = 3.72279
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:48:46 calculated range: 5643.1491 km
+With W_TO_max122523.2
+and with wingloading W_TO_max/S: 655.2147
+Maximum possible array:            11883 MB (1.25e+10 bytes) *
+Memory available for all arrays:   11883 MB (1.25e+10 bytes) *
+Memory used by MATLAB:              2452 MB (2.57e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.50086
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.85015
+c_kink = 5.29192
+c_tip = 2.15059
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02525e+07
+V = 236.054
+S = 185.141
+MAC = 5.56979
+x_kink = 24.1582
+x_tip = 30.9147
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:49:09 calculated range: 5615.7607 km
+With W_TO_max122503.9
+and with wingloading W_TO_max/S: 661.679
+Maximum possible array:            11884 MB (1.25e+10 bytes) *
+Memory available for all arrays:   11884 MB (1.25e+10 bytes) *
+Memory used by MATLAB:              2450 MB (2.57e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.244215
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83145
+c_kink = 5.29424
+c_tip = 2.15677
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02254e+07
+V = 236.054
+S = 185.141
+MAC = 5.5648
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:49:32 calculated range: 5612.3874 km
+With W_TO_max122482.4
+and with wingloading W_TO_max/S: 661.5629
+Maximum possible array:            11792 MB (1.24e+10 bytes) *
+Memory available for all arrays:   11792 MB (1.24e+10 bytes) *
+Memory used by MATLAB:              2450 MB (2.57e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.8591
+b_outboard = 12.525
+c_root = 8.80391
+c_kink = 5.2667
+c_tip = 2.13935
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.01005e+07
+V = 236.054
+S = 184.22
+MAC = 5.5418
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:49:55 calculated range: 5616.0696 km
+With W_TO_max122527.8
+and with wingloading W_TO_max/S: 665.1171
+Maximum possible array:            11815 MB (1.24e+10 bytes) *
+Memory available for all arrays:   11815 MB (1.24e+10 bytes) *
+Memory used by MATLAB:              2445 MB (2.56e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.234819   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:50:19 calculated range: 5610.7669 km
+With W_TO_max122460.4
+and with wingloading W_TO_max/S: 661.444
+Maximum possible array:            11704 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11704 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2440 MB (2.56e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651 0.0803598  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:50:45 calculated range: 5620.9739 km
+With W_TO_max122464.9
+and with wingloading W_TO_max/S: 661.4683
+Maximum possible array:            11646 MB (1.22e+10 bytes) *
+Memory available for all arrays:   11646 MB (1.22e+10 bytes) *
+Memory used by MATLAB:              2433 MB (2.55e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.268754 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:51:10 calculated range: 5630.4928 km
+With W_TO_max122458.7
+and with wingloading W_TO_max/S: 661.4349
+Maximum possible array:            11855 MB (1.24e+10 bytes) *
+Memory available for all arrays:   11855 MB (1.24e+10 bytes) *
+Memory used by MATLAB:              2422 MB (2.54e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0903029  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:51:34 calculated range: 5617.761 km
+With W_TO_max122468.5
+and with wingloading W_TO_max/S: 661.4878
+Maximum possible array:            11739 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11739 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2417 MB (2.53e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.279308  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:51:57 calculated range: 5625.1066 km
+With W_TO_max122468.7
+and with wingloading W_TO_max/S: 661.4889
+Maximum possible array:            11868 MB (1.24e+10 bytes) *
+Memory available for all arrays:   11868 MB (1.24e+10 bytes) *
+Memory used by MATLAB:              2410 MB (2.53e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.383526]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:52:21 calculated range: 5622.3652 km
+With W_TO_max122469.4
+and with wingloading W_TO_max/S: 661.4926
+Maximum possible array:            11742 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11742 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2408 MB (2.53e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.226476  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:52:46 calculated range: 5620.7191 km
+With W_TO_max122463.1
+and with wingloading W_TO_max/S: 661.4586
+Maximum possible array:            11746 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11746 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2400 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349   -0.16449 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:53:13 calculated range: 5620.8935 km
+With W_TO_max122461.5
+and with wingloading W_TO_max/S: 661.45
+Maximum possible array:            11467 MB ( 1.2e+10 bytes) *
+Memory available for all arrays:   11467 MB ( 1.2e+10 bytes) *
+Memory used by MATLAB:              2401 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0466777  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:53:36 calculated range: 5614.0196 km
+With W_TO_max122468
+and with wingloading W_TO_max/S: 661.4851
+Maximum possible array:            11754 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11754 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2401 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454   -0.48022  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:53:59 calculated range: 5618.8283 km
+With W_TO_max122457.7
+and with wingloading W_TO_max/S: 661.4295
+Maximum possible array:            11726 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11726 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2401 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0744309   0.325243]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:54:22 calculated range: 5613.4397 km
+With W_TO_max122470.8
+and with wingloading W_TO_max/S: 661.5002
+Maximum possible array:            11725 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11725 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2402 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.326869]
+Mcr = 0.8
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.02429e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:54:46 calculated range: 5623.6871 km
+With W_TO_max122470.2
+and with wingloading W_TO_max/S: 661.497
+Maximum possible array:            11686 MB (1.23e+10 bytes) *
+Memory available for all arrays:   11686 MB (1.23e+10 bytes) *
+Memory used by MATLAB:              2404 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.804
+hcr = 11673.8
+rho = 0.327235
+a = 295.068
+T = 216.65
+Re = 3.03941e+07
+V = 237.235
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:55:11 calculated range: 5615.0574 km
+With W_TO_max122470
+and with wingloading W_TO_max/S: 661.4959
+Maximum possible array:            11661 MB (1.22e+10 bytes) *
+Memory available for all arrays:   11661 MB (1.22e+10 bytes) *
+Memory used by MATLAB:              2404 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.4685
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 19.025
+LE_sweep = 0.498368
+TR = 0.243
+AR = 7.82
+b_outboard = 12.525
+c_root = 8.83615
+c_kink = 5.29895
+c_tip = 2.14719
+AU = [0.233651   0.07996  0.267417 0.0898536  0.277918  0.381618]
+AL = [-0.225349  -0.163672 -0.0464454  -0.477831  0.0740606   0.325243]
+Mcr = 0.8
+hcr = 11732.2
+rho = 0.324237
+a = 295.068
+T = 216.65
+Re = 2.99658e+07
+V = 236.054
+S = 185.141
+MAC = 5.56802
+x_kink = 24.1372
+x_tip = 30.8531
+y_kink = 6.5
+y_tip = 19.025
+z_kink = 2.61868
+z_tip = 3.71447
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:55:36 calculated range: 5625.0181 km
+With W_TO_max122473.9
+and with wingloading W_TO_max/S: 661.517
+Maximum possible array:            11601 MB (1.22e+10 bytes) *
+Memory available for all arrays:   11601 MB (1.22e+10 bytes) *
+Memory used by MATLAB:              2403 MB (2.52e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.84
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 26
+LE_sweep = 0.553565
+TR = 0.240704
+AR = 8.77219
+b_outboard = 19.5
+c_root = 11.0957
+c_kink = 7.07861
+c_tip = 2.6708
+AU = [0.217951  0.10367 0.437418  0.10621 0.401255 0.513695]
+AL = [-0.290124  -0.211735 -0.0487081  -0.582985   0.076138   0.453131]
+Mcr = 0.868557
+hcr = 13075.9
+rho = 0.262325
+a = 295.068
+T = 216.65
+Re = 3.19122e+07
+V = 256.283
+S = 308.247
+MAC = 6.75067
+x_kink = 24.6171
+x_tip = 36.5686
+y_kink = 6.5
+y_tip = 26
+z_kink = 2.61868
+z_tip = 4.32471
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:56:11 calculated range: 13.7146 km
+With W_TO_max125327.5
+and with wingloading W_TO_max/S: 406.5818
+Maximum possible array:            11219 MB (1.18e+10 bytes) *
+Memory available for all arrays:   11219 MB (1.18e+10 bytes) *
+Memory used by MATLAB:              2649 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 8.12855
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 23.9075
+LE_sweep = 0.537006
+TR = 0.241393
+AR = 8.48654
+b_outboard = 17.4075
+c_root = 10.4572
+c_kink = 6.5873
+c_tip = 2.52434
+AU = [0.222661 0.0965571  0.386418  0.101303  0.364254  0.474072]
+AL = [-0.270691  -0.197316 -0.0480293  -0.551438  0.0755148   0.414764]
+Mcr = 0.84799
+hcr = 12655.3
+rho = 0.280314
+a = 295.068
+T = 216.65
+Re = 3.1687e+07
+V = 250.215
+S = 269.4
+MAC = 6.42499
+x_kink = 24.4699
+x_tip = 34.7337
+y_kink = 6.5
+y_tip = 23.9075
+z_kink = 2.61868
+z_tip = 4.14164
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:56:28 calculated range: 16.6474 km
+With W_TO_max124450
+and with wingloading W_TO_max/S: 461.9522
+Maximum possible array:            11126 MB (1.17e+10 bytes) *
+Memory available for all arrays:   11126 MB (1.17e+10 bytes) *
+Memory used by MATLAB:              2653 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.63053
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 22.4427
+LE_sweep = 0.525415
+TR = 0.241875
+AR = 8.28658
+b_outboard = 15.9427
+c_root = 9.99134
+c_kink = 6.22281
+c_tip = 2.41667
+AU = [0.225958  0.091578  0.350718 0.0978683  0.338353  0.446336]
+AL = [-0.257089  -0.187223 -0.0475541  -0.529356  0.0750785   0.387908]
+Mcr = 0.833593
+hcr = 12360.9
+rho = 0.293636
+a = 295.068
+T = 216.65
+Re = 3.14009e+07
+V = 245.967
+S = 243.129
+MAC = 6.18309
+x_kink = 24.3685
+x_tip = 33.5117
+y_kink = 6.5
+y_tip = 22.4427
+z_kink = 2.61868
+z_tip = 4.01349
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:56:44 calculated range: 18.8256 km
+With W_TO_max123851.2
+and with wingloading W_TO_max/S: 509.405
+Maximum possible array:            11010 MB (1.15e+10 bytes) *
+Memory available for all arrays:   11010 MB (1.15e+10 bytes) *
+Memory used by MATLAB:              2654 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.28192
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 21.4174
+LE_sweep = 0.517301
+TR = 0.242213
+AR = 8.1466
+b_outboard = 14.9174
+c_root = 9.65523
+c_kink = 5.95684
+c_tip = 2.33864
+AU = [0.228266 0.0880926  0.325727 0.0954639  0.320223  0.426921]
+AL = [-0.247567  -0.180158 -0.0472215  -0.513898  0.0747731   0.369109]
+Mcr = 0.823515
+hcr = 12154.8
+rho = 0.303336
+a = 295.068
+T = 216.65
+Re = 3.113e+07
+V = 242.993
+S = 225.226
+MAC = 6.00634
+x_kink = 24.2984
+x_tip = 32.6862
+y_kink = 6.5
+y_tip = 21.4174
+z_kink = 2.61868
+z_tip = 3.92378
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:57:00 calculated range: 20.4028 km
+With W_TO_max123435.7
+and with wingloading W_TO_max/S: 548.0533
+Maximum possible array:            11024 MB (1.16e+10 bytes) *
+Memory available for all arrays:   11024 MB (1.16e+10 bytes) *
+Memory used by MATLAB:              2654 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 7.0379
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.6997
+LE_sweep = 0.511621
+TR = 0.242449
+AR = 8.04862
+b_outboard = 14.1997
+c_root = 9.41479
+c_kink = 5.76511
+c_tip = 2.28261
+AU = [0.229881 0.0856528  0.308234 0.0937808  0.307531   0.41333]
+AL = [-0.240901  -0.175212 -0.0469887  -0.503078  0.0745594   0.355949]
+Mcr = 0.816461
+hcr = 12010.5
+rho = 0.310317
+a = 295.068
+T = 216.65
+Re = 3.0903e+07
+V = 240.911
+S = 212.945
+MAC = 5.87878
+x_kink = 24.2497
+x_tip = 32.1227
+y_kink = 6.5
+y_tip = 20.6997
+z_kink = 2.61868
+z_tip = 3.86099
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:57:19 calculated range: 21.5307 km
+With W_TO_max123151.4
+and with wingloading W_TO_max/S: 578.3262
+Maximum possible array:            10800 MB (1.13e+10 bytes) *
+Memory available for all arrays:   10800 MB (1.13e+10 bytes) *
+Memory used by MATLAB:              2654 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.507645
+TR = 0.242614
+AR = 7.98004
+b_outboard = 13.6973
+c_root = 9.24384
+c_kink = 5.62807
+c_tip = 2.24269
+AU = [0.231012  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.07247e+07
+V = 239.454
+S = 204.476
+MAC = 5.78753
+x_kink = 24.2158
+x_tip = 31.7352
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:57:43 calculated range: 6004.8116 km
+With W_TO_max122942.9
+and with wingloading W_TO_max/S: 601.2598
+Maximum possible array:            11154 MB (1.17e+10 bytes) *
+Memory available for all arrays:   11154 MB (1.17e+10 bytes) *
+Memory used by MATLAB:              2653 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.89942
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.2924
+LE_sweep = 0.507645
+TR = 0.242614
+AR = 7.98004
+b_outboard = 13.7924
+c_root = 9.28305
+c_kink = 5.66729
+c_tip = 2.2522
+AU = [0.231012  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.08617e+07
+V = 239.454
+S = 206.406
+MAC = 5.81333
+x_kink = 24.2158
+x_tip = 31.7881
+y_kink = 6.5
+y_tip = 20.2924
+z_kink = 2.61868
+z_tip = 3.82536
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:58:05 calculated range: 6029.2466 km
+With W_TO_max122994.5
+and with wingloading W_TO_max/S: 595.8859
+Maximum possible array:            11398 MB ( 1.2e+10 bytes) *
+Memory available for all arrays:   11398 MB ( 1.2e+10 bytes) *
+Memory used by MATLAB:              2649 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.510137
+TR = 0.242614
+AR = 7.98004
+b_outboard = 13.6973
+c_root = 9.25813
+c_kink = 5.62112
+c_tip = 2.24616
+AU = [0.231012  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.07335e+07
+V = 239.454
+S = 204.476
+MAC = 5.78919
+x_kink = 24.237
+x_tip = 31.8012
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:58:25 calculated range: 6004.734 km
+With W_TO_max122978.5
+and with wingloading W_TO_max/S: 601.4339
+Maximum possible array:            11410 MB ( 1.2e+10 bytes) *
+Memory available for all arrays:   11410 MB ( 1.2e+10 bytes) *
+Memory used by MATLAB:              2649 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.507645
+TR = 0.243829
+AR = 7.98004
+b_outboard = 13.6973
+c_root = 9.23872
+c_kink = 5.62295
+c_tip = 2.25267
+AU = [0.231012  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.07066e+07
+V = 239.454
+S = 204.476
+MAC = 5.78411
+x_kink = 24.2158
+x_tip = 31.7352
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:58:43 calculated range: 6003.3133 km
+With W_TO_max122955.8
+and with wingloading W_TO_max/S: 601.3229
+Maximum possible array:            11373 MB (1.19e+10 bytes) *
+Memory available for all arrays:   11373 MB (1.19e+10 bytes) *
+Memory used by MATLAB:              2648 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.507645
+TR = 0.242614
+AR = 8.01914
+b_outboard = 13.6973
+c_root = 9.21063
+c_kink = 5.59486
+c_tip = 2.23463
+AU = [0.231012  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.05822e+07
+V = 239.454
+S = 203.479
+MAC = 5.76069
+x_kink = 24.2158
+x_tip = 31.7352
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:59:02 calculated range: 6023.5519 km
+With W_TO_max123000.5
+and with wingloading W_TO_max/S: 604.4889
+Maximum possible array:            11308 MB (1.19e+10 bytes) *
+Memory available for all arrays:   11308 MB (1.19e+10 bytes) *
+Memory used by MATLAB:              2647 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.507645
+TR = 0.242614
+AR = 7.98004
+b_outboard = 13.6973
+c_root = 9.24384
+c_kink = 5.62807
+c_tip = 2.24269
+AU = [0.23218  0.083945  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.07247e+07
+V = 239.454
+S = 204.476
+MAC = 5.78753
+x_kink = 24.2158
+x_tip = 31.7352
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0
+At 09-Jan-2026 10:59:24 calculated range: 5944.4897 km
+With W_TO_max122933.4
+and with wingloading W_TO_max/S: 601.2133
+Maximum possible array:            11198 MB (1.17e+10 bytes) *
+Memory available for all arrays:   11198 MB (1.17e+10 bytes) *
+Memory used by MATLAB:              2646 MB (2.78e+09 bytes)
+Physical Memory (RAM):             16156 MB (1.69e+10 bytes)
+
+*  Limited by System Memory (physical + swap file) available.
+
+--------------------------------
+Second constraint (upperLowerOverlapFraction): 0
+--------------------------------
+With wing design:
+b_inboard = 6.5
+number_of_platforms = 3
+number_of_airfoils = 2
+front_spar_pos = 0.15
+rear_spar_pos = 0.55
+engine_each_wing = 1
+engine_location = 6.86708
+x_root = 20.5
+y_root = 0
+z_root = 2.05
+start_tank = 0
+end_tank = 0.85
+twist = [0 -1 -2]
+incidence = 3.2
+dihedral = 5
+E_mod = 7e+10
+density = 2800
+tensile_yield = 2.95e+08
+compressive_yield = 2.95e+08
+efficiency_factor = 0.96
+rib_pitch = 0.5
+Mcr_ref = 0.8
+hcr_ref = 11887.2
+engine_weight = 3705
+b_half = 20.1973
+LE_sweep = 0.507645
+TR = 0.242614
+AR = 7.98004
+b_outboard = 13.6973
+c_root = 9.24384
+c_kink = 5.62807
+c_tip = 2.24269
+AU = [0.231012 0.0843448  0.295989 0.0926027  0.298647  0.403816]
+AL = [-0.236236   -0.17175 -0.0468257  -0.495504  0.0744097   0.346737]
+Mcr = 0.811522
+hcr = 11909.5
+rho = 0.315298
+a = 295.068
+T = 216.65
+Re = 3.07247e+07
+V = 239.454
+S = 204.476
+MAC = 5.78753
+x_kink = 24.2158
+x_tip = 31.7352
+y_kink = 6.5
+y_tip = 20.1973
+z_kink = 2.61868
+z_tip = 3.81703
+W_fuel = 33785
+internal_tank_volume = 0

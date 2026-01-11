@@ -614,7 +614,7 @@ W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
 
 %% Calculating Initial Values For Report
 
-initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+initializer = load("fmincon_2026-01-07_11-55-38\initializer2026-01-07_11-51-48.mat").initializer;
 W_wing = initializer.W_wing_initial;
 emission = Const.W_fuel_cruise_initial*3.16;
 wing_tank_volume = initializer.wing_tank_volume_initial;
@@ -635,6 +635,8 @@ fprintf('CD_wing Induced: %f\n', CD_wing_induced);
 fprintf('Wingless Drag Force: %f\n', wingless_drag_force);
 fprintf('CD_fus_init: %f\n', cd_fus_init);
 fprintf('W_a_min_w: %f\n', W_a_min_w);
+CT = Const.CT_bar/eta;
+fprintf('CT: %f\n', CT);
 
 %% Calculate Optimized
 clear all
@@ -790,7 +792,7 @@ end
 
 %% Plot Convergence History
 % Load file
-data = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55/iteration_history.mat");
+data = load("fmincon_2026-01-07_11-55-38/iteration_history2.mat");
 
 iteration_history = data.iteration_history;
 
@@ -802,6 +804,8 @@ ranges        = zeros(1, n);
 wing_loadings = zeros(1, n);
 objectives = zeros(1, n);
 wing_loading_constraints = zeros(1, n);
+aboveUpper = zeros(1,n);
+upperLowerOverlapFractions = zeros(1, n); % Preallocate for upper-lower overlap fractions
 
 for i = 1:n
     iterations(i)               = iteration_history{i}.iteration;
@@ -809,6 +813,8 @@ for i = 1:n
     wing_loadings(i)            = iteration_history{i}.wing_loading;
     objectives(i)               = iteration_history{i}.objective;
     wing_loading_constraints(i) = iteration_history{i}.wing_loading_constraint_value;
+    aboveUpper(i)               = iteration_history{i}.aboveUpper;
+    upperLowerOverlapFractions(i) = iteration_history{i}.upperLowerOverlapFraction;
 end
 
 
@@ -820,11 +826,18 @@ title('Objective Function History')
 grid on
 
 figure;
-plot(iterations, wing_loading_constraints, 'b-', 'LineWidth', 2)
-yline(0, '--k', 'Constraint Boundary', 'LineWidth', 1.5)
+plot(iterations, wing_loading_constraints, 'b-', 'LineWidth', 2); hold on
+plot(iterations, upperLowerOverlapFractions, 'r-', 'LineWidth', 2);
+yline(0, '--k', 'Constraint Boundary', 'LineWidth', 1.5);
+ymin = min(wing_loading_constraints)-0.01;
+ymax = 0.01;
+ylim([ymin ymax]);
+hold off
 
 xlabel('Iteration')
-ylabel('Constraint Value')
-title('Wing Loading Constraint History')
+ylabel('Normalized Value')
+title('Wing Loading Constraint & Upper–Lower Overlap History')
+legend('Constraint','Overlap Fraction','Boundary','Location','best')
 grid on
+
 

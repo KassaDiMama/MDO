@@ -1,8 +1,8 @@
     "---------------------------------"
     "---------------------------------"
-    "Starting new run at 2026-01-08 21:20:49"
+    "Starting new run at 2026-01-08 21:33:23"
 
-08-Jan-2026 21:20:49 | Starting optimization...
+08-Jan-2026 21:33:23 | Starting optimization...
  Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
                                                                        step    optimality
     0          13    2.200316e-01     0.000e+00     1.000e+00     0.000e+00     3.198e-01  

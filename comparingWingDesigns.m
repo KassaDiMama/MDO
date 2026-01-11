@@ -10,13 +10,13 @@ function compareWingDesigns(initial_val, optimizer)
     wingDesign_final = optimizer.wingDesign;
     
     % Calculate results for initial design
-    Res_initial = calcQ3D(wingDesign_initial,initial_val.optimizer.mda.W_TO_max,initial_val.optimizer.wingDesign.W_fuel,'Initial design',itial_val);
+    Res_initial = calcQ3D(wingDesign_initial,initial_val.optimizer.mda.W_TO_max,initial_val.optimizer.wingDesign.W_fuel,'Initial design',initial_val);
     
     % Calculate results for final design
     Res_final = calcQ3D(wingDesign_final,optimizer.mda.W_TO_max,optimizer.wingDesign.W_fuel,'final Design',optimizer.initializer);
     
     % Create overlapping plots for drag distribution
-    % plotOverlappingDrag(Res_initial, Res_final);
+    plotOverlappingDrag(Res_initial, Res_final);
     
     % Create overlapping plots for lift distribution
     plotOverlappingLift(Res_initial, Res_final);

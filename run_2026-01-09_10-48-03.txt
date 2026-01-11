@@ -1,0 +1,56 @@
+    "---------------------------------"
+    "---------------------------------"
+    "Starting new run at 2026-01-09 10:48:03"
+
+09-Jan-2026 10:48:04 | Starting optimization...
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0          19   -1.000000e+00     0.000e+00     1.000e+00     0.000e+00     1.087e+00  
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+CD_wing was NaN
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
+[Warning: airfoil transonic analysis diverged:no output produced] 
