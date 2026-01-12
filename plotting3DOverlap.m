@@ -663,9 +663,9 @@ close all
 clc
 
 
-initializer = load("fmincon_2026-01-07_11-55-38\init.mat").initializer;
+initializer = load("fmincon_2026-01-07_11-55-38\initializer2026-01-07_11-51-48.mat").initializer;
 
-fminconresults = load("fmincon_2026-01-07_11-55-38\final.mat");
+fminconresults = load("fmincon_2026-01-07_11-55-38\2026-01-07_12-46-42fmincon_results.mat");
 
 % initializer = load("fmincon_2026-01-05_17-29-48\initializer2026-01-05_17-24-20.mat").initializer;
 % % 

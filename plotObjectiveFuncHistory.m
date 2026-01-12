@@ -97,4 +97,4 @@ end
 
 
 
-plotOptimizationHistory("FINAL_CORRECT_fmincon_2025-12-24_18-11-55")
+plotOptimizationHistory("fmincon_2026-01-07_11-55-38")

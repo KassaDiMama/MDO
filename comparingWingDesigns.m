@@ -41,7 +41,7 @@ function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName,initializer)
             %AC.Wing.eta = [obj.wingDesign.y_root/obj.wingDesign.b_half;obj.wingDesign.y_kink/obj.wingDesign.b_half;obj.wingDesign.y_tip/obj.wingDesign.b_half];  % Spanwise location of the airfoil sections
             AC.Wing.eta = [0;1];
             % Viscous vs inviscid
-            AC.Visc  = 0;              % 0 for inviscid and 1 for viscous analysis
+            AC.Visc  = 1;              % 0 for inviscid and 1 for viscous analysis
             AC.Aero.MaxIterIndex = 600;
             % Flight Condition
             AC.Aero.V     = wingDesign.V;            % flight speed (m/s)
@@ -49,8 +49,8 @@ function Res = calcQ3D(wingDesign,W_TO_max,W_fuel,designName,initializer)
             AC.Aero.alt   = wingDesign.hcr;             % flight altitude (m)
             AC.Aero.Re    = wingDesign.Re;        % reynolds number (bqased on mean aerodynamic chord)
             AC.Aero.M     = wingDesign.Mcr;           % flight Mach number 
-            % AC.Aero.CL    = wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - at cruise
-            AC.Aero.CL    = wingDesign.calculateCL_critical(W_TO_max,initializer.V_MO_initial);          % lift coefficient - comment this line to run the code for given alpha%
+            AC.Aero.CL    = wingDesign.calculateCL_cruise(W_TO_max,W_fuel);          % lift coefficient - at cruise
+            % AC.Aero.CL    = wingDesign.calculateCL_critical(W_TO_max,initializer.V_MO_initial);          % lift coefficient - comment this line to run the code for given alpha%
             % logMessage([string(datetime('now')) + " | AC details: " + jsonencode(AC)], "log.file");
             
             Res = Q3D_solver(AC);
@@ -287,16 +287,23 @@ function plotOverlappingLift(Res_initial, Res_final)
     
     
 end
-clear all
-close all
-clc
-dvec1 = DesignVector();
-initial_values = Initializer(dvec1);
+% clear all
+% close all
+% clc
+% dvec1 = DesignVector();
+% initial_values = Initializer(dvec1);
 
 % clear all
-initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+%load files
+initializer = load("fmincon_2026-01-07_11-55-38\initializer2026-01-07_11-51-48.mat").initializer;
+final_x_normalized = load("fmincon_2026-01-07_11-55-38\final.mat","x").x;
+
+% initializer = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\initializer2025-12-24_18-05-34.mat").initializer;
+% final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+%
+
 optimizer= initializer.optimizer;
-final_x_normalized = load("FINAL_CORRECT_fmincon_2025-12-24_18-11-55\final.mat","x").x;
+
 final_x = final_x_normalized.*optimizer.x0;
 dvec = DesignVector().fromVector(final_x);
 wingDesign = WingDesign(dvec);
@@ -307,5 +314,8 @@ optimizer.mda.wingDesign = wingDesign;
 optimizer.mda.MDA_loop(Const.W_TO_max_initial,Const.W_fuel_cruise_initial,initializer.W_ZF_initial,initializer.W_AminusW_initial,initializer.V_MO_initial);
 W_fuel = optimizer.mda.W_TO_max-optimizer.mda.W_ZF;
 [CL_wing, CD_wing]=optimizer.calcCL_CD(optimizer.mda.W_TO_max,W_fuel); 
-
-compareWingDesigns(initial_values,optimizer)
+display(CL_wing)
+display(CD_wing)
+LD = optimizer.aerodynamicsFunc(optimizer.mda.W_TO_max,W_fuel);
+display(LD)
+            % Wing planform geometry 

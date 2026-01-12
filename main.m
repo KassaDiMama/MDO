@@ -840,4 +840,5 @@ title('Wing Loading Constraint & Upper–Lower Overlap History')
 legend('Constraint','Overlap Fraction','Boundary','Location','best')
 grid on
 
-
+%%
+display(searchdir.message)
